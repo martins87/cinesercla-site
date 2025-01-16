@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 
 import "./globals.css";
+import Navbar from "./components/Navbar";
 
 const proximaNova = localFont({
   src: [
@@ -33,8 +34,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${proximaNova.variable} antialiased`}>{children}</body>
+    <html lang="pt-BR">
+      <body className={`${proximaNova.variable} antialiased`}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
