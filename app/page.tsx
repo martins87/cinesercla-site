@@ -1,13 +1,20 @@
-import Typography from "./components/Typography";
+import Container from "./components/Container";
+import Hero from "./components/Hero";
+import Movies from "./components/Movies";
+import Newsletter from "./components/Newsletter";
+import Promotions from "./components/Promotions";
+import Services from "./components/Services";
 
 export default function Home() {
   return (
-    <div>
-      <main className="flex flex-col">
-        <Typography className="text-4xl" font="proxima-nova" weight="700">
-          Cinesercla
-        </Typography>
-      </main>
-    </div>
+    <main>
+      <Container>
+        <Hero />
+        <Movies />
+        <Newsletter />
+        <Services />
+        <Promotions />
+      </Container>
+    </main>
   );
 }
