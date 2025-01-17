@@ -7,8 +7,8 @@ import CitySelector from "./CitySelector";
 
 const Navbar = () => {
   return (
-    <Container className="h-24">
-      <div className="w-full flex items-center justify-between">
+    <div className="w-full fixed top-0 h-24">
+      <Container className="w-full flex flex-row items-center justify-between">
         <Logo />
         <div className="flex items-center justify-around gap-x-4">
           <Links />
@@ -16,8 +16,8 @@ const Navbar = () => {
         </div>
         <SearchBar />
         <UserActionMenu />
-      </div>
-    </Container>
+      </Container>
+    </div>
   );
 };
 
