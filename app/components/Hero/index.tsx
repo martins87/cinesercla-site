@@ -1,9 +1,9 @@
-import Slider from "./Slider";
+import Carousel from "./Carousel";
 
 const Hero = () => {
   return (
     <div>
-      <Slider />
+      <Carousel />
     </div>
   );
 };
