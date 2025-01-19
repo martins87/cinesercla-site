@@ -8,7 +8,11 @@ const CitySelector = () => {
   return (
     <div className="h-10 flex items-center gap-x-3">
       <Image src={Pin} alt="pin icon" />
-      <Typography className="text-base" font="proxima-nova" weight="700">
+      <Typography
+        className="text-base text-white"
+        font="proxima-nova"
+        weight="700"
+      >
         BELO HORIZONTE
       </Typography>
       <Image src={ArrowDown} alt="arrow down icon" />

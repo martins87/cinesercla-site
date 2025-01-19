@@ -14,7 +14,7 @@ const Links = () => {
           <li key={link.src}>
             <Link href={link.src}>
               <Typography
-                className="text-base"
+                className="text-base text-white tracking-wide"
                 font="proxima-nova"
                 weight="700"
               >

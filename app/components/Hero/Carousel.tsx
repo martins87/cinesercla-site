@@ -22,8 +22,8 @@ const Carousel = () => {
   };
 
   return (
-    <div style={{ width: "100vw" }}>
-      <Slider {...settings}>
+    <div className="w-screen">
+      <Slider className="" {...settings}>
         {movies.map((movie) => (
           <Movie key={movie.id} movie={movie} />
         ))}
