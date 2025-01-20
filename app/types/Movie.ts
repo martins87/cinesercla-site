@@ -4,9 +4,10 @@ export type Movie = {
   id: string,
   cover: StaticImport,
   title: string,
-  description: string,
+  description?: string,
+  genre?: string;
   imdbRate: string,
-  rtRate: string,
+  rtRate?: string,
   rating: string,
-  duration: string,
+  duration?: string,
 }

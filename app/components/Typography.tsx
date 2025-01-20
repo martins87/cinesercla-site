@@ -1,11 +1,12 @@
-import { FC } from "react";
+import { FC, ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 
 type TypographyProps = {
   className?: string;
   font?: "proxima-nova" | "gellix";
   weight?: "400" | "700" | "800";
-  children: string;
+  children: string | ReactNode;
+  maxChar?: number;
 };
 
 const Typography: FC<TypographyProps> = ({
@@ -13,6 +14,7 @@ const Typography: FC<TypographyProps> = ({
   font = "proxima-nova",
   weight = "700",
   children,
+  maxChar,
 }) => {
   return (
     <span
@@ -29,7 +31,11 @@ const Typography: FC<TypographyProps> = ({
         className
       )}
     >
-      {children}
+      {maxChar
+        ? children!.toString().length > maxChar
+          ? `${children!.toString().slice(0, maxChar)}...`
+          : children!.toString()
+        : children}
     </span>
   );
 };
