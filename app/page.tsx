@@ -1,4 +1,4 @@
-import Container from "./components/Container";
+import Container from "./components/ui/Container";
 import Hero from "./components/Hero";
 import Movies from "./components/Movies";
 import Newsletter from "./components/Newsletter";
