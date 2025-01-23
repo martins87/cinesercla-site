@@ -7,7 +7,7 @@ import { twMerge } from "tailwind-merge";
 
 type ArrowProps = {
   direction: "left" | "right";
-  onClick: () => void;
+  onClick?: () => void;
 };
 
 const Arrow: FC<ArrowProps> = ({ direction, onClick }) => {
