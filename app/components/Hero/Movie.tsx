@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Movie as M } from "@/app/types/Movie";
 import Typography from "../Typography";
 import DarkerBackground from "./DarkerBackground";
-import Container from "../Container";
+import Container from "../ui/Container";
 import IMDBLogo from "../../assets/images/imdb-logo.png";
 import RTLogo from "../../assets/images/rotten-tomatoes-logo.png";
 import Ticket from "../../assets/icons/ticket.png";
