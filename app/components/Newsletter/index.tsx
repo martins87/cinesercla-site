@@ -7,7 +7,7 @@ import CenteredEl from "../ui/CenteredElement";
 
 const Newsletter = () => {
   return (
-    <CenteredEl className="h-[60vh]" direction="col">
+    <CenteredEl className="my-10" direction="col">
       <CenteredEl className="relative rounded-2xl overflow-hidden z-0 px-10 py-28">
         <Image
           className="absolute top-0 left-0"
