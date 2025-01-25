@@ -8,7 +8,7 @@ import RightItem from "./RightItem";
 
 const Footer = () => {
   return (
-    <Container>
+    <Container className="mt-20">
       <HorizontalLine />
       <CenteredEl className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-10 gap-y-20 my-10">
         <LeftItem />
