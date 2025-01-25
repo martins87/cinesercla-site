@@ -1,6 +1,6 @@
-import Typography from "../Typography";
-import CenteredEl from "../ui/CenteredElement";
-import Recaptcha from "../../assets/images/recaptcha.png";
+import Typography from "./Typography";
+import CenteredEl from "./ui/CenteredElement";
+import Recaptcha from "../assets/images/recaptcha.png";
 import Image from "next/image";
 
 const Capcha = () => {

@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 const proximaNova = localFont({
   src: [
@@ -35,9 +36,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${proximaNova.variable} antialiased`}>
+      <body className={`${proximaNova.variable} antialiased bg-[#EAEAEA]`}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
