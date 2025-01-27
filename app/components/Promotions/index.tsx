@@ -54,13 +54,12 @@ const Promotions = () => {
         }}
         {...settings}
       >
-        {/* <CenteredEl className="grid grid-cols-2 gap-x-2"> */}
-        {/* {imgData.slice(0, 2).map((img, index) => ( */}
         {imgData.map((img, index) => (
-          <PromotionCard key={index} img={img} />
+          <div key={index} className="px-1">
+            <PromotionCard img={img} />
+          </div>
         ))}
       </Slider>
-      {/* </CenteredEl> */}
     </CenteredEl>
   );
 };

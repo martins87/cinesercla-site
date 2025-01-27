@@ -50,7 +50,9 @@ const Services = () => {
         {...settings}
       >
         {imgData.map((imgData) => (
-          <ServiceCard key={imgData.label} imgData={imgData} />
+          <div key={imgData.label} className="px-1">
+            <ServiceCard imgData={imgData} />
+          </div>
         ))}
       </Slider>
       {/* </CenteredEl> */}

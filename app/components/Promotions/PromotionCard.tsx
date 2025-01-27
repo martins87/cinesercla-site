@@ -9,7 +9,7 @@ type PromotionCardProps = {
 
 const PromotionCard: FC<PromotionCardProps> = ({ img }) => {
   return (
-    <CenteredEl className="w-full h-80 rounded-xl overflow-hidden hover:cursor-pointer bg-red-100">
+    <CenteredEl className="w-full h-80 rounded-xl overflow-hidden hover:cursor-pointer">
       <Image
         className="w-full h-80 hover:scale-[103%] transition-transform ease-in-out duration-300"
         src={img}

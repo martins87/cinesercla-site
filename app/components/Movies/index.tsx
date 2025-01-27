@@ -56,7 +56,9 @@ const Movies = () => {
         {...settings}
       >
         {movies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
+          <div key={movie.id} className="px-1">
+            <MovieCard movie={movie} />
+          </div>
         ))}
       </Slider>
     </CenteredEl>
