@@ -1,5 +1,8 @@
 "use client";
 
+import { useRef } from "react";
+import Slider from "react-slick";
+
 import Typography from "../Typography";
 import MovieCard from "./MovieCard";
 import { movies } from "../../constants/cards-movies";
@@ -7,6 +10,26 @@ import Arrow from "../SectionHeader/SectionArrow";
 import CenteredEl from "../ui/CenteredElement";
 
 const Movies = () => {
+  let sliderRef = useRef(null);
+
+  const previous = () => sliderRef.slickPrev();
+
+  const next = () => sliderRef.slickNext();
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    // autoplay: true,
+    autoplay: false,
+    autoplaySpeed: 3000,
+    arrows: false,
+    // arrows: true,
+    pauseOnHover: false,
+  };
+
   return (
     <CenteredEl className="my-10" direction="col">
       <div className="w-full flex items-center mb-4">
@@ -22,16 +45,22 @@ const Movies = () => {
           </Typography>
         </div>
         <div className="flex items-center justify-between gap-x-2">
-          <Arrow direction="left" onClick={() => {}} />
-          <Arrow direction="right" onClick={() => {}} />
+          <Arrow direction="left" onClick={previous} />
+          <Arrow direction="right" onClick={next} />
         </div>
       </div>
-      <div className="grid grid-cols-4 gap-x-3">
-        <MovieCard movie={movies[0]} />
-        <MovieCard movie={movies[1]} />
-        <MovieCard movie={movies[2]} />
-        <MovieCard movie={movies[3]} />
-      </div>
+
+      <Slider
+        className="w-full"
+        ref={(slider) => {
+          sliderRef = slider;
+        }}
+        {...settings}
+      >
+        {movies.map((movie) => (
+          <MovieCard key={movie.id} movie={movie} />
+        ))}
+      </Slider>
     </CenteredEl>
   );
 };

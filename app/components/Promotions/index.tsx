@@ -1,3 +1,8 @@
+"use client";
+
+import { useRef } from "react";
+import Slider from "react-slick";
+
 import SectionHeader from "../SectionHeader/SectionHeader";
 import CenteredEl from "../ui/CenteredElement";
 
@@ -19,14 +24,43 @@ const imgData = [
 ];
 
 const Promotions = () => {
+  let sliderRef = useRef(null);
+
+  const previous = () => sliderRef.slickPrev();
+
+  const next = () => sliderRef.slickNext();
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: false,
+    autoplaySpeed: 3000,
+    arrows: false,
+    // arrows: true,
+    pauseOnHover: false,
+  };
+
   return (
     <CenteredEl className="my-10" direction="col">
-      <SectionHeader title="Promoções" />
-      <CenteredEl className="grid grid-cols-2 gap-x-2">
-        {imgData.slice(0, 2).map((img, index) => (
+      <SectionHeader title="Promoções" prevFn={previous} nextFn={next} />
+
+      <Slider
+        className="w-full"
+        ref={(slider) => {
+          sliderRef = slider;
+        }}
+        {...settings}
+      >
+        {/* <CenteredEl className="grid grid-cols-2 gap-x-2"> */}
+        {/* {imgData.slice(0, 2).map((img, index) => ( */}
+        {imgData.map((img, index) => (
           <PromotionCard key={index} img={img} />
         ))}
-      </CenteredEl>
+      </Slider>
+      {/* </CenteredEl> */}
     </CenteredEl>
   );
 };
