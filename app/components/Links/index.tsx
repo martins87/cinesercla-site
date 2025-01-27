@@ -1,11 +1,16 @@
-import React from "react";
+import { FC } from "react";
 import Link from "next/link";
 
 import { links } from "../../constants/links";
 import { Link as PageLink } from "../../types/Link";
 import Typography from "../Typography";
+import { twMerge } from "tailwind-merge";
 
-const Links = () => {
+type LinksProps = {
+  isOnTop: boolean;
+};
+
+const Links: FC<LinksProps> = ({ isOnTop }) => {
   return (
     // for responsive navbar
     <div className="">
@@ -14,7 +19,10 @@ const Links = () => {
           <li key={link.src}>
             <Link href={link.src}>
               <Typography
-                className="text-base text-white tracking-wide"
+                className={twMerge(
+                  "text-base tracking-wide",
+                  isOnTop ? "text-black" : "text-white"
+                )}
                 font="proxima-nova"
                 weight="700"
               >
