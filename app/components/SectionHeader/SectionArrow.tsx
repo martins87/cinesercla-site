@@ -8,14 +8,17 @@ import { twMerge } from "tailwind-merge";
 type ArrowProps = {
   direction: "left" | "right";
   onClick?: () => void;
+  hero?: boolean;
 };
 
-const Arrow: FC<ArrowProps> = ({ direction, onClick }) => {
+const Arrow: FC<ArrowProps> = ({ direction, onClick, hero }) => {
   return (
     <div
       className={twMerge(
         "w-8 aspect-square flex items-center justify-center rounded-full p-2 hover:cursor-pointer",
-        direction === "left" ? "bg-[#980038]/70" : "bg-[#980038]"
+        hero
+          ? "w-10 bg-white/20 backdrop-blur-md hover:bg-white/50 rounded-xl"
+          : "bg-[#980038]/70 transition-all ease-in-out duration-300 hover:bg-[#980038]"
       )}
       onClick={onClick}
     >

@@ -6,6 +6,7 @@ import { movies } from "../../constants/movies";
 import Movie from "./Movie";
 import { useRef } from "react";
 import Arrow from "../SectionHeader/SectionArrow";
+import CenteredEl from "../ui/CenteredElement";
 
 const Hero = () => {
   let sliderRef = useRef(null);
@@ -29,8 +30,7 @@ const Hero = () => {
   };
 
   return (
-    // <div className="w-full">
-    <div className="w-[99.1vw]">
+    <div className="relative w-screen">
       <Slider
         className="w-full"
         ref={(slider) => {
@@ -42,10 +42,13 @@ const Hero = () => {
           <Movie key={movie.id} movie={movie} />
         ))}
       </Slider>
-      <div className="flex items-center justify-between gap-x-2">
-        <Arrow direction="left" onClick={previous} />
-        <Arrow direction="right" onClick={next} />
-      </div>
+      <CenteredEl
+        className="w-fit absolute bottom-[30%] right-[5%] sm:right-[2.5%] lg:right-[10%] xl:right-[12.5%] gap-x-1 z-20"
+        justify="end"
+      >
+        <Arrow direction="left" onClick={previous} hero />
+        <Arrow direction="right" onClick={next} hero />
+      </CenteredEl>
     </div>
   );
 };

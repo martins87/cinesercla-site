@@ -35,7 +35,6 @@ const Services = () => {
     autoplay: false,
     autoplaySpeed: 3000,
     arrows: false,
-    // arrows: true,
     pauseOnHover: false,
   };
 
