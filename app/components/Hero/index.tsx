@@ -30,9 +30,8 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative w-screen">
+    <div className="relative">
       <Slider
-        className="w-full"
         ref={(slider) => {
           sliderRef = slider;
         }}

@@ -11,8 +11,8 @@ import "slick-carousel/slick/slick-theme.css";
 export default function Home() {
   return (
     <main>
+      <Hero />
       <Container>
-        <Hero />
         <Movies />
         <Newsletter />
         <Services />
