@@ -23,8 +23,8 @@ const PageInfo: FC<PageInfoProps> = ({
 }) => {
   return (
     <CenteredElement className="mt-10 gap-x-12">
-      <CenteredElement className="rounded-2xl overflow-hidden">
-        <Image className="w-full" src={img} alt="cover" />
+      <CenteredElement className="h-[512px] rounded-2xl overflow-hidden">
+        <Image className="w-full h-[512px]" src={img} alt="cover" />
       </CenteredElement>
       <CenteredElement
         className={twMerge(
