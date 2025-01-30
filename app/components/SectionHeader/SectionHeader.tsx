@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import Typography from "../Typography";
-import SectionArrow from "./SectionArrow";
+import CarouselArrow from "../CarouselArrow";
 
 type SectionHeaderProps = {
   title: string;
@@ -15,8 +15,8 @@ const SectionHeader: FC<SectionHeaderProps> = ({ title, prevFn, nextFn }) => {
         {title}
       </Typography>
       <div className="flex items-center justify-between gap-x-2">
-        <SectionArrow direction="left" onClick={prevFn} />
-        <SectionArrow direction="right" onClick={nextFn} />
+        <CarouselArrow direction="left" onClick={prevFn} />
+        <CarouselArrow direction="right" onClick={nextFn} />
       </div>
     </div>
   );

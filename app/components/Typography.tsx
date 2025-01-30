@@ -7,6 +7,7 @@ type TypographyProps = {
   weight?: "400" | "700" | "800";
   children: string | ReactNode;
   maxChar?: number;
+  onClick?: () => void;
 };
 
 const Typography: FC<TypographyProps> = ({
@@ -15,6 +16,7 @@ const Typography: FC<TypographyProps> = ({
   weight = "700",
   children,
   maxChar,
+  onClick,
 }) => {
   return (
     <span
@@ -30,6 +32,7 @@ const Typography: FC<TypographyProps> = ({
           : weight,
         className
       )}
+      onClick={onClick}
     >
       {maxChar
         ? children!.toString().length > maxChar

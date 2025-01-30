@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import ArrowLeft from "../../assets/icons/arrow-left.svg";
-import ArrowRight from "../../assets/icons/arrow-right.svg";
+import ArrowLeft from "../assets/icons/arrow-left.svg";
+import ArrowRight from "../assets/icons/arrow-right.svg";
 import { FC } from "react";
 import { twMerge } from "tailwind-merge";
 
@@ -11,7 +11,7 @@ type ArrowProps = {
   hero?: boolean;
 };
 
-const Arrow: FC<ArrowProps> = ({ direction, onClick, hero }) => {
+const CarouselArrow: FC<ArrowProps> = ({ direction, onClick, hero }) => {
   return (
     <div
       className={twMerge(
@@ -30,4 +30,4 @@ const Arrow: FC<ArrowProps> = ({ direction, onClick, hero }) => {
   );
 };
 
-export default Arrow;
+export default CarouselArrow;
