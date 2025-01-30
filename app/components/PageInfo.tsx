@@ -10,7 +10,7 @@ type PageInfoProps = {
   title: string;
   description: string;
   img: StaticImport;
-  btnLabel: string;
+  btnLabel?: string;
   orderInverted?: boolean;
 };
 
@@ -24,7 +24,7 @@ const PageInfo: FC<PageInfoProps> = ({
   return (
     <CenteredElement className="mt-10 gap-x-12">
       <CenteredElement className="rounded-2xl overflow-hidden">
-        <Image src={img} alt="cover" />
+        <Image className="w-full" src={img} alt="cover" />
       </CenteredElement>
       <CenteredElement
         className={twMerge(
@@ -41,11 +41,13 @@ const PageInfo: FC<PageInfoProps> = ({
           {description}
         </Typography>
         {/* Button */}
-        <CenteredElement className="w-fit px-5 py-4 rounded-2xl bg-[#980038]">
-          <Typography className="text-white text-2xl uppercase" weight="800">
-            {btnLabel}
-          </Typography>
-        </CenteredElement>
+        {btnLabel && (
+          <CenteredElement className="w-fit px-5 py-4 rounded-2xl bg-[#980038]">
+            <Typography className="text-white text-2xl uppercase" weight="800">
+              {btnLabel}
+            </Typography>
+          </CenteredElement>
+        )}
       </CenteredElement>
     </CenteredElement>
   );

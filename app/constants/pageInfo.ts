@@ -1,3 +1,4 @@
+import { Info } from "../types/Info";
 import Institucional0 from "../assets/images/pages/institucional/institucional-0.png";
 import Institucional1 from "../assets/images/pages/institucional/institucional-1.png";
 import Institucional2 from "../assets/images/pages/institucional/institucional-2.png";
@@ -6,7 +7,9 @@ import Corporativo1 from "../assets/images/pages/corporativo/corporativo-1.png";
 import Corporativo2 from "../assets/images/pages/corporativo/corporativo-2.png";
 import Corporativo3 from "../assets/images/pages/corporativo/corporativo-3.png";
 import Corporativo4 from "../assets/images/pages/corporativo/corporativo-4.jpeg";
-import { Info } from "../types/Info";
+import Promotion0 from "../assets/images/pages/promotions/promotion-0.png";
+import Promotion1 from "../assets/images/pages/promotions/promotion-1.png";
+import Promotion2 from "../assets/images/pages/promotions/promotion-2.png";
 
 export const institucionalInfo: Info[] = [
   {
@@ -29,7 +32,7 @@ export const institucionalInfo: Info[] = [
   },
 ]
 
-export const corporativoInfo = [
+export const corporativoInfo: Info[] = [
   {
     title: "Eventos empresariais",
     description: "Realize o evento da sua empresa de forma única, proporcionando uma experiência cinematográfica em uma de nossas salas exclusivas. Oferecemos o ambiente ideal para reuniões, palestras ou até sessões de cinema privadas para os seus colaboradores.",
@@ -59,5 +62,23 @@ export const corporativoInfo = [
     description: "Com o Preshow, sua marca ganha destaque nas telas do Cinesercla antes das sessões de cinema, proporcionando uma experiência publicitária envolvente e direcionada a um público altamente qualificado.",
     img: Corporativo4,
     btnLabel: "Veja mais",
+  },
+]
+
+export const promocoesInfo: Info[] = [
+  {
+    title: "Semana de Cinema com 50% OFF",
+    description: "De segunda a sexta-feira, aproveite 50% de desconto nos ingressos para qualquer sessão! Garanta o seu lugar e curta seu filme favorito pela metade do preço. Oferta válida exceto em feriados.",
+    img: Promotion0,
+  },
+  {
+    title: "Descontos Exclusivos na Bomboniere!",
+    description: "Além de curtir o filme, aproveite nossa promoção na bomboniere. Durante a semana, garanta snacks e bebidas com aquele desconto especial para completar sua sessão de cinema!",
+    img: Promotion1,
+  },
+  {
+    title: "Semana Imperdível de Cinema!",
+    description: "Até o dia 25, os ingressos estão por apenas R$ 10! Aproveite também a oferta de dois ingressos por R$ 18 e descontos especiais na bomboniere. Não perca essa oportunidade!",
+    img: Promotion2,
   },
 ]

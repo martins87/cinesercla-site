@@ -4,5 +4,5 @@ export type Info = {
   title: string;
   description: string;
   img: StaticImport;
-  btnLabel: string;
+  btnLabel?: string;
 }

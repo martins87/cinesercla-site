@@ -5,7 +5,7 @@ export const footerLinks: Link[] = [
   { src: "/corporativo", label: "Corporativo" },
   { src: "/cinemas", label: "Cinemas" },
   { src: "/contato", label: "Contato" },
-  { src: "/faq", label: "Perguntas Frequentes" },
+  { src: "/perguntas-frequentes", label: "Perguntas Frequentes" },
   { src: "/bomboniere", label: "Bomboniere" },
   { src: "/promocoes", label: "Promoções" },
   { src: "/leis", label: "Leis" },
