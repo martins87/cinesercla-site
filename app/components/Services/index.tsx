@@ -41,7 +41,6 @@ const Services = () => {
   return (
     <CenteredEl className="my-10" direction="col">
       <SectionHeader title="Nossos serviços" prevFn={previous} nextFn={next} />
-      {/* <CenteredEl className="grid grid-cols-3 gap-x-2"> */}
       <Slider
         className="w-full"
         ref={(slider) => {
@@ -55,7 +54,6 @@ const Services = () => {
           </div>
         ))}
       </Slider>
-      {/* </CenteredEl> */}
     </CenteredEl>
   );
 };
