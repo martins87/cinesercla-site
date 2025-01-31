@@ -6,7 +6,7 @@ import Slider from "react-slick";
 import Typography from "../Typography";
 import MovieCard from "./MovieCard";
 import { movies } from "../../constants/cards-movies";
-import Arrow from "../SectionHeader/SectionArrow";
+import Arrow from "../CarouselArrow";
 import CenteredEl from "../ui/CenteredElement";
 
 const Movies = () => {

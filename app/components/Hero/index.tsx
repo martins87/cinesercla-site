@@ -5,7 +5,7 @@ import Slider from "react-slick";
 import { movies } from "../../constants/movies";
 import Movie from "./Movie";
 import { useRef } from "react";
-import Arrow from "../SectionHeader/SectionArrow";
+import Arrow from "../CarouselArrow";
 import CenteredEl from "../ui/CenteredElement";
 
 const Hero = () => {
