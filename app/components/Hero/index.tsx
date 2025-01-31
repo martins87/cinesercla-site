@@ -1,12 +1,12 @@
 "use client";
 
+import { useRef } from "react";
 import Slider from "react-slick";
 
-import { movies } from "../../constants/movies";
 import Movie from "./Movie";
-import { useRef } from "react";
 import Arrow from "../CarouselArrow";
 import CenteredEl from "../ui/CenteredElement";
+import { movies } from "../../constants/movies";
 
 const Hero = () => {
   let sliderRef = useRef(null);
@@ -17,7 +17,6 @@ const Hero = () => {
 
   const settings = {
     dots: false,
-    // fade: true,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -25,7 +24,6 @@ const Hero = () => {
     autoplay: true,
     autoplaySpeed: 4000,
     arrows: false,
-    // arrows: true,
     pauseOnHover: false,
   };
 

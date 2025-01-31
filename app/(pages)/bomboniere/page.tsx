@@ -12,53 +12,36 @@ import CarouselArrow from "@/app/components/CarouselArrow";
 import { BomboniereItem, BomboniereItemType } from "@/app/types/BomboniereItem";
 import OfertasPromocionais from "./OfertasPromocionais";
 import Bg from "../../assets/images/backgrounds/bomboniere.png";
+import HeaderFilter from "./HeaderFilter";
+
+const filters: { label: string; filter: BomboniereItemType }[] = [
+  { label: "Tudo", filter: null },
+  { label: "Pipocas", filter: "pipoca" },
+  { label: "Bebidas", filter: "bebida" },
+  { label: "Doces", filter: "doce" },
+  { label: "Combos", filter: "combo" },
+];
 
 const Bomboniere = () => {
-  const [filterType, setFilterType] = useState<null | BomboniereItemType>(null);
+  const [filterType, setFilterType] = useState<BomboniereItemType>(null);
 
-  const handleFilter = (type: BomboniereItemType | null) => setFilterType(type);
+  const handleFilter = (type: BomboniereItemType) => setFilterType(type);
 
   return (
     <>
       <BgImageContainer img={Bg} title="Bomboniere" />
       <Container>
-        <CenteredEl className="mt-20 mb-10">
+        <CenteredEl className="mt-20 mb-6">
           <CenteredEl className="gap-x-4" justify="start">
-            <Typography
-              className="text-[32px] hover:cursor-pointer text-black hover:text-black/80"
-              weight="800"
-              onClick={() => handleFilter(null)}
-            >
-              Tudo
-            </Typography>
-            <Typography
-              className="text-[32px] hover:cursor-pointer text-black/40 hover:text-black/50"
-              weight="800"
-              onClick={() => handleFilter("pipoca")}
-            >
-              Pipocas
-            </Typography>
-            <Typography
-              className="text-[32px] hover:cursor-pointer text-black/40 hover:text-black/50"
-              weight="800"
-              onClick={() => handleFilter("bebida")}
-            >
-              Bebidas
-            </Typography>
-            <Typography
-              className="text-[32px] hover:cursor-pointer text-black/40 hover:text-black/50"
-              weight="800"
-              onClick={() => handleFilter("doce")}
-            >
-              Doces
-            </Typography>
-            <Typography
-              className="text-[32px] hover:cursor-pointer text-black/40 hover:text-black/50"
-              weight="800"
-              onClick={() => handleFilter("combo")}
-            >
-              Combos
-            </Typography>
+            {filters.map((filter) => (
+              <HeaderFilter
+                key={filter.label}
+                label={filter.label}
+                filter={filter.filter}
+                handleFilter={handleFilter}
+                active={filter.filter === filterType}
+              />
+            ))}
           </CenteredEl>
           <CenteredEl className="gap-x-2" justify="end">
             <CarouselArrow direction="left" onClick={() => {}} />

@@ -1,6 +1,6 @@
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
-export type BomboniereItemType = "pipoca" | "bebida" | "doce" | "combo";
+export type BomboniereItemType = "pipoca" | "bebida" | "doce" | "combo" | null;
 
 export type BomboniereItem = {
   id: string,
