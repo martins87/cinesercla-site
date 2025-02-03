@@ -12,8 +12,10 @@ import CenteredEl from "../ui/CenteredElement";
 const Movies = () => {
   let sliderRef = useRef(null);
 
+  // @ts-expect-error:next-line
   const previous = () => sliderRef.slickPrev();
 
+  // @ts-expect-error:next-line
   const next = () => sliderRef.slickNext();
 
   const settings = {
@@ -51,6 +53,7 @@ const Movies = () => {
       <Slider
         className="w-full"
         ref={(slider) => {
+          // @ts-expect-error:next-line
           sliderRef = slider;
         }}
         {...settings}

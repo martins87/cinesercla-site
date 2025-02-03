@@ -11,8 +11,10 @@ import { movies } from "../../constants/movies";
 const Hero = () => {
   let sliderRef = useRef(null);
 
+  // @ts-expect-error:next-line
   const next = () => sliderRef.slickNext();
 
+  // @ts-expect-error:next-line
   const previous = () => sliderRef.slickPrev();
 
   const settings = {
@@ -31,6 +33,7 @@ const Hero = () => {
     <div className="relative">
       <Slider
         ref={(slider) => {
+          // @ts-expect-error:next-line
           sliderRef = slider;
         }}
         {...settings}

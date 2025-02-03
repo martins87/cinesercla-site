@@ -26,8 +26,10 @@ const imgData = [
 const Promotions = () => {
   let sliderRef = useRef(null);
 
+  // @ts-expect-error:next-line
   const previous = () => sliderRef.slickPrev();
 
+  // @ts-expect-error:next-line
   const next = () => sliderRef.slickNext();
 
   const settings = {
@@ -39,7 +41,6 @@ const Promotions = () => {
     autoplay: false,
     autoplaySpeed: 3000,
     arrows: false,
-    // arrows: true,
     pauseOnHover: false,
   };
 
@@ -50,6 +51,7 @@ const Promotions = () => {
       <Slider
         className="w-full"
         ref={(slider) => {
+          // @ts-expect-error:next-line
           sliderRef = slider;
         }}
         {...settings}

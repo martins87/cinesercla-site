@@ -22,8 +22,10 @@ const imgData = [
 const Services = () => {
   let sliderRef = useRef(null);
 
+  // @ts-expect-error:next-line
   const previous = () => sliderRef.slickPrev();
 
+  // @ts-expect-error:next-line
   const next = () => sliderRef.slickNext();
 
   const settings = {
@@ -44,6 +46,7 @@ const Services = () => {
       <Slider
         className="w-full"
         ref={(slider) => {
+          // @ts-expect-error:next-line
           sliderRef = slider;
         }}
         {...settings}
