@@ -1,15 +1,13 @@
-"use client";
-
-import { useState } from "react";
-
-import User from "../../assets/images/user.png";
-import Image from "next/image";
+import Typography from "../Typography";
+import CenteredElement from "../ui/CenteredElement";
 
 const UserActionMenu = () => {
-  const [isLoggedIn] = useState<boolean>(true);
-
   return (
-    <div>{isLoggedIn && <Image src={User} alt="user mocked image" />}</div>
+    <CenteredElement className="w-[42px] aspect-square bg-[#980038] rounded-full">
+      <Typography className="text-2xl -mt-1" weight="700">
+        L
+      </Typography>
+    </CenteredElement>
   );
 };
 
