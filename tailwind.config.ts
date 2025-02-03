@@ -9,6 +9,10 @@ export default {
   theme: {
     extend: {
       colors: {},
+      screens: {
+        mobile: "512px",
+        tablet: "960px",
+      }
     },
   },
   plugins: [],
