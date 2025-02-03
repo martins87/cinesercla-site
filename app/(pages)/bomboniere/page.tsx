@@ -2,17 +2,16 @@
 
 import { useState } from "react";
 
+import { BomboniereItem, BomboniereItemType } from "@/app/types/BomboniereItem";
 import BgImageContainer from "@/app/components/ui/BgImageContainer";
 import BomboniereCard from "@/app/components/BomboniereCard";
 import Container from "@/app/components/ui/Container";
 import CenteredEl from "@/app/components/ui/CenteredElement";
 import { bomboniereItems } from "../../constants/bomboniere";
-import Typography from "@/app/components/Typography";
 import CarouselArrow from "@/app/components/CarouselArrow";
-import { BomboniereItem, BomboniereItemType } from "@/app/types/BomboniereItem";
 import OfertasPromocionais from "./OfertasPromocionais";
-import Bg from "../../assets/images/backgrounds/bomboniere.png";
 import HeaderFilter from "./HeaderFilter";
+import Bg from "../../assets/images/backgrounds/bomboniere.png";
 
 const filters: { label: string; filter: BomboniereItemType }[] = [
   { label: "Tudo", filter: null },
