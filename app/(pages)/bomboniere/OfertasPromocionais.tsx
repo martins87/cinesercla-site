@@ -25,8 +25,10 @@ const OfertasPromocionais = () => {
     pauseOnHover: false,
   };
 
+  // @ts-expect-error:next-line
   const previous = () => sliderRef.slickPrev();
 
+  // @ts-expect-error:next-line
   const next = () => sliderRef.slickNext();
 
   return (
@@ -39,6 +41,7 @@ const OfertasPromocionais = () => {
       <Slider
         className="w-full"
         ref={(slider) => {
+          // @ts-expect-error:next-line
           sliderRef = slider;
         }}
         {...settings}
