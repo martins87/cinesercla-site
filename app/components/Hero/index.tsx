@@ -43,11 +43,11 @@ const Hero = () => {
         ))}
       </Slider>
       <CenteredEl
-        className="w-fit absolute bottom-[25%] right-[5%] sm:right-[2.5%] lg:right-[10%] xl:right-[12.5%] gap-x-1 z-20"
+        className="hidden sm:flex w-fit absolute bottom-[25%] right-[5%] sm:right-[2.5%] lg:right-[10%] xl:right-[12.5%] gap-x-1 z-20"
         justify="end"
       >
-        <Arrow direction="left" onClick={previous} hero />
-        <Arrow direction="right" onClick={next} hero />
+        <Arrow direction="left" onClick={previous} />
+        <Arrow direction="right" onClick={next} />
       </CenteredEl>
     </div>
   );
