@@ -76,7 +76,7 @@ const Movies = () => {
             className="text-black/50 text-xl md:text-2xl tablet:text-3xl"
             weight="800"
           >
-            PréVenda
+            Pré-Venda
           </Typography>
         </div>
         <div className="hidden md:flex items-center justify-between gap-x-2">

@@ -13,7 +13,9 @@ const NewsletterForm = () => {
         <Input icon={Email} placeholder="Email" />
       </CenteredEl>
       <CenteredEl className="py-4 rounded-xl bg-[#980038]">
-        <Typography className="text-2xl">CADASTRE-SE</Typography>
+        <Typography className="text-2xl" font="gellix">
+          CADASTRE-SE
+        </Typography>
       </CenteredEl>
       <Capcha />
     </CenteredEl>

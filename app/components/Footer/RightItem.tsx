@@ -46,7 +46,9 @@ const RightItem = () => {
             />
           </CenteredEl>
           <CenteredEl className="w-fit px-8 py-4 rounded-2xl bg-[#980038]">
-            <Typography className="uppercase">Enviar</Typography>
+            <Typography className="uppercase" font="gellix">
+              Enviar
+            </Typography>
           </CenteredEl>
         </CenteredEl>
         <Typography

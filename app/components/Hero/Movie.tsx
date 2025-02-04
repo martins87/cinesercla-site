@@ -56,7 +56,10 @@ const Movie: FC<MovieProps> = ({ movie }) => {
               </div>
               <div className="flex items-center justify-start gap-x-2">
                 <div className="flex items-center justify-center gap-x-3 p-4 rounded-2xl bg-[#980038]">
-                  <Typography className="text-base tablet:text-lg tracking-wider">
+                  <Typography
+                    className="text-base tablet:text-lg tracking-wider"
+                    font="gellix"
+                  >
                     COMPRAR
                   </Typography>
                   <Image width={24} src={Ticket} alt="ticket logo" />

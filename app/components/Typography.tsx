@@ -24,7 +24,7 @@ const Typography: FC<TypographyProps> = ({
         "text-white",
         font === "proxima-nova"
           ? "font-[family-name:var(--font-proxima-nova)]"
-          : "",
+          : "font-[family-name:var(--font-gellix)]",
         weight === "700"
           ? "font-bold"
           : weight === "800"

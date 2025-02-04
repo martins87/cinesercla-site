@@ -43,7 +43,11 @@ const PageInfo: FC<PageInfoProps> = ({
         {/* Button */}
         {btnLabel && (
           <CenteredElement className="w-fit px-5 py-4 rounded-2xl bg-[#980038]">
-            <Typography className="text-white text-2xl uppercase" weight="800">
+            <Typography
+              className="text-white text-2xl uppercase"
+              weight="800"
+              font="gellix"
+            >
               {btnLabel}
             </Typography>
           </CenteredElement>

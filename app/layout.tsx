@@ -8,19 +8,29 @@ import Footer from "./components/Footer";
 const proximaNova = localFont({
   src: [
     {
-      path: "./assets/fonts/ProximaNova-Regular.otf",
+      path: "./assets/fonts/ProximaNova_Regular.ttf",
       weight: "400",
     },
     {
-      path: "./assets/fonts/ProximaNova-Bold.otf",
+      path: "./assets/fonts/ProximaNova_Bold.otf",
       weight: "700",
     },
     {
-      path: "./assets/fonts/ProximaNova-ExtraBold.otf",
+      path: "./assets/fonts/ProximaNova_ExtraBold.otf",
       weight: "800",
     },
   ],
   variable: "--font-proxima-nova",
+});
+
+const gellix = localFont({
+  src: [
+    {
+      path: "./assets/fonts/Gellix_ExtraBold.otf",
+      weight: "800",
+    },
+  ],
+  variable: "--font-gellix",
 });
 
 export const metadata: Metadata = {
@@ -36,7 +46,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${proximaNova.variable} antialiased bg-[#EAEAEA]`}>
+      <body
+        className={`${proximaNova.variable} ${gellix.variable} antialiased bg-[#EAEAEA]`}
+      >
         <Navbar />
         {children}
         <Footer />

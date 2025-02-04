@@ -19,7 +19,7 @@ const MovieCard: FC<MovieCardProps> = ({ movie }) => {
           src={movie.cover}
           alt="movie cover"
         />
-        <GlassCard label="Pre venda" />
+        <GlassCard label="Pré-venda" />
       </div>
       <div className="flex items-center justify-between">
         <div className="w-1/2 flex items-center">
