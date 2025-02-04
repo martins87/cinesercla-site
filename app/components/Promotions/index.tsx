@@ -42,6 +42,16 @@ const Promotions = () => {
     autoplaySpeed: 3000,
     arrows: false,
     pauseOnHover: false,
+    responsive: [
+      {
+        breakpoint: 512,
+        settings: {
+          dots: false,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
