@@ -9,6 +9,7 @@ import SearchBar from "../SearchBar";
 import UserActionMenu from "../UserActionMenu";
 import CitySelector from "./CitySelector";
 import { twMerge } from "tailwind-merge";
+import MobileMenuIcon from "./MobileMenuIcon";
 
 const Navbar = () => {
   const [isScrolling, setIsScrolling] = useState<boolean>(false);
@@ -34,13 +35,14 @@ const Navbar = () => {
   return (
     <div
       className={twMerge(
-        "w-full fixed top-0 h-24 z-50",
-        isScrolling ? "bg-[#EAEAEA]" : "inherit"
+        "w-full fixed top-0 h-14 lg:h-24 z-50",
+        isScrolling ? "bg-[#EAEAEA]" : ""
       )}
     >
-      <Container className="w-full flex flex-row items-center justify-between">
-        <Logo />
-        <div className="flex items-center justify-around gap-x-4">
+      <Container className="flex flex-row items-center justify-between">
+        <MobileMenuIcon />
+        <Logo className="mx-auto lg:mx-0" />
+        <div className="flex items-center lg:justify-around gap-x-4">
           <Links isOnTop={isScrolling} />
           <CitySelector isOnTop={isScrolling} />
         </div>

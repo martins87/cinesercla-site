@@ -5,6 +5,7 @@ import { links } from "../../constants/links";
 import { Link as PageLink } from "../../types/Link";
 import Typography from "../Typography";
 import { twMerge } from "tailwind-merge";
+import CenteredEl from "../ui/CenteredElement";
 
 type LinksProps = {
   isOnTop: boolean;
@@ -12,15 +13,14 @@ type LinksProps = {
 
 const Links: FC<LinksProps> = ({ isOnTop }) => {
   return (
-    // for responsive navbar
-    <div className="">
+    <CenteredEl className="hidden lg:flex">
       <ul className="flex items-center gap-x-6">
         {links.map((link: PageLink) => (
           <li key={link.src}>
             <Link href={link.src}>
               <Typography
                 className={twMerge(
-                  "text-base tracking-wide",
+                  "text-sm tracking-wide",
                   isOnTop ? "text-black" : "text-white"
                 )}
                 font="proxima-nova"
@@ -32,7 +32,7 @@ const Links: FC<LinksProps> = ({ isOnTop }) => {
           </li>
         ))}
       </ul>
-    </div>
+    </CenteredEl>
   );
 };
 

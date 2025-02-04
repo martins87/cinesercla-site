@@ -12,10 +12,10 @@ type CitySelectorProps = {
 
 const CitySelector: FC<CitySelectorProps> = ({ isOnTop }) => {
   return (
-    <div className="h-10 flex items-center gap-x-3">
+    <div className="h-10 hidden lg:flex items-center gap-x-3 -mb-1">
       <Image src={Pin} alt="pin icon" />
       <Typography
-        className={twMerge("text-base", isOnTop ? "text-black" : "text-white")}
+        className={twMerge("text-sm", isOnTop ? "text-black" : "text-white")}
         font="proxima-nova"
         weight="700"
       >

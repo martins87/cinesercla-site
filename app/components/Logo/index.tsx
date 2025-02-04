@@ -12,8 +12,12 @@ type LogoProps = {
 const Logo: FC<LogoProps> = ({ className, onClick }) => {
   return (
     <div className={className} onClick={onClick}>
-      <Link className="flex flex-col items-center" href="/">
-        <Image className="w-auto" src={CineserclaLogo} alt="Cinesercla logo" />
+      <Link href="/">
+        <Image
+          className="w-28 lg:w-32 2xl:w-44"
+          src={CineserclaLogo}
+          alt="Cinesercla logo"
+        />
       </Link>
     </div>
   );
