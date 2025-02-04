@@ -94,7 +94,7 @@ const Movies = () => {
         {...settings}
       >
         {movies.map((movie) => (
-          <div key={movie.id} className="px-1">
+          <div key={movie.id} className="mobile:px-1">
             <MovieCard movie={movie} />
           </div>
         ))}
