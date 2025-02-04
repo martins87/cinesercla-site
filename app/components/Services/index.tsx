@@ -38,6 +38,24 @@ const Services = () => {
     autoplaySpeed: 3000,
     arrows: false,
     pauseOnHover: false,
+    responsive: [
+      {
+        breakpoint: 960,
+        settings: {
+          dots: false,
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 512,
+        settings: {
+          dots: false,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
