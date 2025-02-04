@@ -9,6 +9,7 @@ import IMDBLogo from "../../assets/images/imdb-logo.png";
 import RTLogo from "../../assets/images/rotten-tomatoes-logo.png";
 import Ticket from "../../assets/icons/ticket.png";
 import Play from "../../assets/icons/play.png";
+import GradientOverlay from "../GradientOverlay";
 
 type MovieProps = {
   movie: M;
@@ -20,8 +21,9 @@ const Movie: FC<MovieProps> = ({ movie }) => {
       <DarkerBackground>
         <Image className="w-screen h-screen" src={movie.cover} alt="Image" />
       </DarkerBackground>
+      <GradientOverlay hero />
       <div className="absolute top-0 left-0 h-screen z-20">
-        <Container className="">
+        <Container>
           <div className="w-full flex flex-col">
             <div className="sm:w-1/2 flex flex-col gap-y-4">
               <Typography

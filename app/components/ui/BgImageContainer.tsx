@@ -4,6 +4,7 @@ import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 import DarkerBackground from "../Hero/DarkerBackground";
 import Typography from "../Typography";
+import GradientOverlay from "../GradientOverlay";
 
 type BgImageContainerProps = {
   img: StaticImport;
@@ -33,6 +34,7 @@ const BgImageContainer: FC<BgImageContainerProps> = ({
           </div>
         )}
       </DarkerBackground>
+      <GradientOverlay />
     </div>
   );
 };

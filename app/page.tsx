@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <main>
       <Hero />
-      <Container>
+      <Container className="-mt-10">
         <Movies />
         <Newsletter />
         <Services />

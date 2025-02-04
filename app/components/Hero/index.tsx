@@ -30,7 +30,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative mb-10">
       <Slider
         ref={(slider) => {
           // @ts-expect-error:next-line
