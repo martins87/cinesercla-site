@@ -14,8 +14,8 @@ const CenterItem = () => {
       justify="start"
     >
       <Typography
-        className="font-bold text-lg leading-[22px] tracking-[1.12px] text-black "
-        weight="700"
+        className="text-lg leading-[22px] text-black tracking-wide"
+        weight="800"
       >
         Navegue
       </Typography>
