@@ -9,7 +9,7 @@ import Container from "@/app/components/ui/Container";
 import CenteredEl from "@/app/components/ui/CenteredElement";
 import { bomboniereItems } from "../../constants/bomboniere";
 import CarouselArrow from "@/app/components/CarouselArrow";
-import OfertasPromocionais from "./OfertasPromocionais";
+// import OfertasPromocionais from "./OfertasPromocionais";
 import HeaderFilter from "./HeaderFilter";
 import Bg from "../../assets/images/backgrounds/bomboniere.png";
 
@@ -56,7 +56,7 @@ const Bomboniere = () => {
               <BomboniereCard key={item.id} item={item} />
             ))}
         </CenteredEl>
-        <OfertasPromocionais />
+        {/* <OfertasPromocionais /> */}
       </Container>
     </>
   );
