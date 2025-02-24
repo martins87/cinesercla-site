@@ -7,7 +7,7 @@ import MovieCard from "./MovieCard";
 import CenteredEl from "../ui/CenteredElement";
 import { movies } from "../../constants/cards-movies";
 import { MovieItemType } from "@/app/types/MovieItem";
-import HeaderFilter from "@/app/(pages)/bomboniere/HeaderFilter";
+import HeaderFilter from "@/app/components/HeaderFilter";
 import CarouselArrow from "../CarouselArrow";
 import { Filter } from "@/app/types/filter";
 

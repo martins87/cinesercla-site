@@ -8,7 +8,7 @@ import MagnifyingGlass from "../../assets/icons/magnifying-glass-white.png";
 import CinemaBox from "@/app/components/Cinema/CinemaBox";
 import { estados, cidades } from "@/app/constants/cep";
 import HorizontalLine from "@/app/components/Footer/HorizontalLine";
-import HeaderFilter from "../bomboniere/HeaderFilter";
+import HeaderFilter from "../../components/HeaderFilter";
 import { useState } from "react";
 
 export type CinemaFilter = "estado" | "cidade";
@@ -17,7 +17,7 @@ const Cinemas = () => {
   const [filter, setFilter] = useState<CinemaFilter>("estado");
 
   return (
-    <Container className="mt-14 lg:mt-40">
+    <Container className="mt-32 lg:mt-40">
       <Centered
         className="gap-y-6"
         items="start"

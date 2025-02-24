@@ -21,7 +21,7 @@ const HeaderFilter: FC<HeaderFilterProps> = ({
     <CenteredElement direction="col">
       <Typography
         className={twMerge(
-          "text-[32px] hover:cursor-pointer transition-all duration-300 ease-in-out",
+          "text-base tablet:text-3xl hover:cursor-pointer transition-all duration-300 ease-in-out",
           active
             ? "text-black hover:text-black/80"
             : "text-black/40 hover:text-black/60"

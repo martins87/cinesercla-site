@@ -10,7 +10,7 @@ import CenteredEl from "@/app/components/ui/CenteredElement";
 import { bomboniereItems } from "../../constants/bomboniere";
 import CarouselArrow from "@/app/components/CarouselArrow";
 // import OfertasPromocionais from "./OfertasPromocionais";
-import HeaderFilter from "./HeaderFilter";
+import HeaderFilter from "../../components/HeaderFilter";
 import Bg from "../../assets/images/backgrounds/bomboniere.png";
 import { Filter } from "@/app/types/filter";
 
@@ -31,7 +31,7 @@ const Bomboniere = () => {
     <>
       <BgImageContainer img={Bg} title="Bomboniere" />
       <Container>
-        <CenteredEl className="mt-20 mb-6">
+        <CenteredEl className="flex-col md:flex-row mt-20 mb-6">
           <CenteredEl className="gap-x-4" justify="start">
             {filters.map((filter) => (
               <HeaderFilter
@@ -48,7 +48,7 @@ const Bomboniere = () => {
             <CarouselArrow direction="right" onClick={() => {}} />
           </CenteredEl>
         </CenteredEl>
-        <CenteredEl className="grid grid-cols-4 gap-2">
+        <CenteredEl className="grid grid-cols-1 md:grid-cols-3 tablet:grid-cols-4 gap-2">
           {bomboniereItems
             .filter((item) => {
               return filterType === null ? true : item.type === filterType;
