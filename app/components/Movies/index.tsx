@@ -8,8 +8,8 @@ import CenteredEl from "../ui/CenteredElement";
 import { movies } from "../../constants/cards-movies";
 import { MovieItemType } from "@/app/types/MovieItem";
 import HeaderFilter from "@/app/(pages)/bomboniere/HeaderFilter";
-import { BomboniereItemType } from "@/app/types/BomboniereItem";
 import CarouselArrow from "../CarouselArrow";
+import { Filter } from "@/app/types/filter";
 
 const filters: { label: string; filter: MovieItemType }[] = [
   { label: "Em Cartaz", filter: "em-cartaz" },
@@ -19,12 +19,9 @@ const filters: { label: string; filter: MovieItemType }[] = [
 
 const Movies = () => {
   let sliderRef = useRef(null);
-  const [filterType, setFilterType] = useState<
-    MovieItemType | BomboniereItemType
-  >("em-cartaz");
+  const [filterType, setFilterType] = useState<Filter>("em-cartaz");
 
-  const handleFilter = (type: MovieItemType | BomboniereItemType) =>
-    setFilterType(type);
+  const handleFilter = (type: Filter) => setFilterType(type);
 
   // @ts-expect-error:next-line
   const previous = () => sliderRef.slickPrev();

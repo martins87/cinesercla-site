@@ -1,6 +1,6 @@
 import Typography from "../Typography";
 import CenteredEl from "../ui/CenteredElement";
-import Input from "./Input";
+import Input from "../Input";
 import User from "../../assets/icons/user.svg";
 import Email from "../../assets/icons/email.svg";
 import Capcha from "../Capcha";

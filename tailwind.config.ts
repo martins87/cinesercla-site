@@ -12,7 +12,16 @@ export default {
       screens: {
         mobile: "512px",
         tablet: "960px",
-      }
+      },
+      animation: {
+        fadeIn: "fadeIn .75s ease-in-out",
+      },
+      keyframes: {
+        fadeIn: {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+      },
     },
   },
   plugins: [],
