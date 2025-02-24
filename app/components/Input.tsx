@@ -11,6 +11,7 @@ type InputProps = {
   icon?: StaticImport;
   className?: string;
   inputClassName?: string;
+  big?: boolean;
 };
 
 const Input: FC<InputProps> = ({
@@ -18,6 +19,7 @@ const Input: FC<InputProps> = ({
   icon,
   className,
   inputClassName,
+  big,
 }) => {
   const [value, setValue] = useState<string>("");
 
@@ -28,6 +30,7 @@ const Input: FC<InputProps> = ({
     <CenteredEl
       className={twMerge(
         "px-4 gap-x-0 gap-y-1 rounded-xl bg-[#7F7F7F]",
+        big ? "bg-[#A3A3A3] px-7 py-2 rounded-2xl" : "",
         className
       )}
       justify="start"
@@ -37,6 +40,9 @@ const Input: FC<InputProps> = ({
         className={twMerge(
           "w-full -mt-[2px] py-4 px-4 outline-none text-base text-white bg-inherit",
           "placeholder:text-white",
+          big
+            ? "text-2xl font-bold font-[family-name:var(--font-proxima-nova)] placeholder:text-2xl placeholder:font-bold placeholder:font-[family-name:var(--font-proxima-nova)] px-5"
+            : "",
           inputClassName
         )}
         type="text"

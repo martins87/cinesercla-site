@@ -1,15 +1,16 @@
 "use client";
 
+import { useState } from "react";
+
 import Input from "@/app/components/Input";
 import Typography from "@/app/components/Typography";
 import Centered from "@/app/components/ui/CenteredElement";
 import Container from "@/app/components/ui/Container";
-import MagnifyingGlass from "../../assets/icons/magnifying-glass-white.png";
 import CinemaBox from "@/app/components/Cinema/CinemaBox";
-import { estados, cidades } from "@/app/constants/cep";
 import HorizontalLine from "@/app/components/Footer/HorizontalLine";
 import HeaderFilter from "../../components/HeaderFilter";
-import { useState } from "react";
+import { estados, cidades } from "@/app/constants/cep";
+import MagnifyingGlass from "../../assets/icons/magnifying-glass-white.png";
 
 export type CinemaFilter = "estado" | "cidade";
 
@@ -31,10 +32,9 @@ const Cinemas = () => {
           Encontre um cinema
         </Typography>
         <Input
-          className="bg-[#A3A3A3] px-7 py-2 rounded-2xl"
-          inputClassName="text-2xl font-bold font-[family-name:var(--font-proxima-nova)] placeholder:text-2xl placeholder:font-bold placeholder:font-[family-name:var(--font-proxima-nova)] px-5"
           placeholder="Procure por Cidade, Cinema ou Shopping"
           icon={MagnifyingGlass}
+          big
         />
       </Centered>
       <Centered className="flex-col md:flex-row mt-14 items-start justify-between gap-y-4">
