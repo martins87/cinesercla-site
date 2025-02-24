@@ -24,7 +24,10 @@ const Cinemas = () => {
         justify="start"
         direction="col"
       >
-        <Typography className="text-4xl text-black/90" weight="800">
+        <Typography
+          className="text-2xl md:text-3xl tablet:text-4xl text-black/90"
+          weight="800"
+        >
           Encontre um cinema
         </Typography>
         <Input
@@ -35,7 +38,10 @@ const Cinemas = () => {
         />
       </Centered>
       <Centered className="flex-col md:flex-row mt-14 items-start justify-between gap-y-4">
-        <Typography className="text-4xl text-black/90" weight="800">
+        <Typography
+          className="text-2xl md:text-3xl tablet:text-4xl text-black/90"
+          weight="800"
+        >
           Todos os cinemas
         </Typography>
         <Centered className="w-fit gap-x-4">
