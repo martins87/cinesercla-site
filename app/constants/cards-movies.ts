@@ -17,6 +17,7 @@ export const movies: Movie[] = [
     genre: "Animação",
     imdbRate: "5.6",
     rating: "L",
+    status: "em-cartaz",
   },
   {
     id: "15f3189a-51db-4547-966b-2122f9a55f76",
@@ -25,6 +26,7 @@ export const movies: Movie[] = [
     genre: "Animação",
     imdbRate: "5.6",
     rating: "L",
+    status: "em-cartaz",
   },
   {
     id: "b5e164c5-06ad-4267-8ade-735b48227787",
@@ -33,6 +35,7 @@ export const movies: Movie[] = [
     genre: "Drama",
     imdbRate: "5.2",
     rating: "16",
+    status: "em-breve",
   },
   {
     id: "7046d8ec-992c-44ce-8cad-848c15ce60d9",
@@ -41,6 +44,7 @@ export const movies: Movie[] = [
     genre: "Drama",
     imdbRate: "7.4",
     rating: "10",
+    status: "pre-venda",
   },
   {
     id: "90ac9647-8093-48ea-88ab-b70d697ce45f",
@@ -49,6 +53,7 @@ export const movies: Movie[] = [
     genre: "Animação",
     imdbRate: "7.9",
     rating: "10",
+    status: "em-breve",
   },
   {
     id: "e0ac9647-8093-48ea-88ab-b70d697ce45f",
@@ -57,6 +62,7 @@ export const movies: Movie[] = [
     genre: "Ação",
     imdbRate: "8.0",
     rating: "18",
+    status: "em-cartaz",
   },
   {
     id: "a0ac9f47-8093-49ea-88ab-b70d697ce45f",
@@ -65,6 +71,7 @@ export const movies: Movie[] = [
     genre: "Comédia",
     imdbRate: "5.6",
     rating: "14",
+    status: "pre-venda",
   },
   {
     id: "r0ac9f47-8093-49ea-88ab-b70d697ce45f",
@@ -73,6 +80,7 @@ export const movies: Movie[] = [
     genre: "Drama",
     imdbRate: "6.7",
     rating: "14",
+    status: "em-breve",
   },
   {
     id: "r0ac9f47-8093-49ea-88ab-b70d697ce45f",
@@ -81,5 +89,6 @@ export const movies: Movie[] = [
     genre: "Terror",
     imdbRate: "7.2",
     rating: "18",
+    status: "em-cartaz",
   },
-]
+];

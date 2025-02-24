@@ -1,22 +1,30 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Slider from "react-slick";
 
-import Typography from "../Typography";
 import MovieCard from "./MovieCard";
-import Arrow from "../CarouselArrow";
 import CenteredEl from "../ui/CenteredElement";
 import { movies } from "../../constants/cards-movies";
+import { MovieItemType } from "@/app/types/MovieItem";
+import HeaderFilter from "@/app/(pages)/bomboniere/HeaderFilter";
+import { BomboniereItemType } from "@/app/types/BomboniereItem";
+import CarouselArrow from "../CarouselArrow";
+
+const filters: { label: string; filter: MovieItemType }[] = [
+  { label: "Em Cartaz", filter: "em-cartaz" },
+  { label: "Em Breve", filter: "em-breve" },
+  { label: "Pré-Venda", filter: "pre-venda" },
+];
 
 const Movies = () => {
   let sliderRef = useRef(null);
+  const [filterType, setFilterType] = useState<
+    MovieItemType | BomboniereItemType
+  >("em-cartaz");
 
-  // @ts-expect-error:next-line
-  const previous = () => sliderRef.slickPrev();
-
-  // @ts-expect-error:next-line
-  const next = () => sliderRef.slickNext();
+  const handleFilter = (type: MovieItemType | BomboniereItemType) =>
+    setFilterType(type);
 
   const settings = {
     dots: false,
@@ -58,33 +66,23 @@ const Movies = () => {
 
   return (
     <CenteredEl className="my-10" direction="col">
-      <div className="w-full flex items-center mb-4">
-        <div className="flex flex-1 justify-between mobile:justify-normal gap-x-6">
-          <Typography
-            className="text-black text-xl md:text-2xl tablet:text-3xl"
-            weight="800"
-          >
-            Em Cartaz
-          </Typography>
-          <Typography
-            className="text-black/50 text-xl md:text-2xl tablet:text-3xl"
-            weight="800"
-          >
-            Em Breve
-          </Typography>
-          <Typography
-            className="text-black/50 text-xl md:text-2xl tablet:text-3xl"
-            weight="800"
-          >
-            Pré-Venda
-          </Typography>
-        </div>
-        <div className="hidden md:flex items-center justify-between gap-x-2">
-          <Arrow direction="left" onClick={previous} />
-          <Arrow direction="right" onClick={next} />
-        </div>
-      </div>
-
+      <CenteredEl className="mt-20 mb-6">
+        <CenteredEl className="gap-x-4" justify="start">
+          {filters.map((filter) => (
+            <HeaderFilter
+              key={filter.label}
+              label={filter.label}
+              filter={filter.filter}
+              handleFilter={handleFilter}
+              active={filter.filter === filterType}
+            />
+          ))}
+        </CenteredEl>
+        <CenteredEl className="gap-x-2" justify="end">
+          <CarouselArrow direction="left" onClick={() => {}} />
+          <CarouselArrow direction="right" onClick={() => {}} />
+        </CenteredEl>
+      </CenteredEl>
       <Slider
         className="w-full"
         ref={(slider) => {
@@ -93,11 +91,15 @@ const Movies = () => {
         }}
         {...settings}
       >
-        {movies.map((movie) => (
-          <div key={movie.id} className="mobile:px-1">
-            <MovieCard movie={movie} />
-          </div>
-        ))}
+        {movies
+          .filter((item) => {
+            return filterType === null ? true : item.status === filterType;
+          })
+          .map((movie) => (
+            <div key={movie.id} className="mobile:px-1">
+              <MovieCard movie={movie} />
+            </div>
+          ))}
       </Slider>
     </CenteredEl>
   );

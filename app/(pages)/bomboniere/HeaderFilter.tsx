@@ -1,13 +1,14 @@
 import Typography from "@/app/components/Typography";
 import CenteredElement from "@/app/components/ui/CenteredElement";
 import { BomboniereItemType } from "@/app/types/BomboniereItem";
+import { MovieItemType } from "@/app/types/MovieItem";
 import { FC } from "react";
 import { twMerge } from "tailwind-merge";
 
 type HeaderFilterProps = {
   label: string;
-  filter: BomboniereItemType;
-  handleFilter: (type: BomboniereItemType) => void;
+  filter: BomboniereItemType | MovieItemType;
+  handleFilter: (type: BomboniereItemType | MovieItemType) => void;
   active: boolean;
 };
 

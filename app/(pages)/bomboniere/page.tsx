@@ -12,6 +12,7 @@ import CarouselArrow from "@/app/components/CarouselArrow";
 // import OfertasPromocionais from "./OfertasPromocionais";
 import HeaderFilter from "./HeaderFilter";
 import Bg from "../../assets/images/backgrounds/bomboniere.png";
+import { MovieItemType } from "@/app/types/MovieItem";
 
 const filters: { label: string; filter: BomboniereItemType }[] = [
   { label: "Tudo", filter: null },
@@ -22,9 +23,12 @@ const filters: { label: string; filter: BomboniereItemType }[] = [
 ];
 
 const Bomboniere = () => {
-  const [filterType, setFilterType] = useState<BomboniereItemType>(null);
+  const [filterType, setFilterType] = useState<
+    BomboniereItemType | MovieItemType
+  >(null);
 
-  const handleFilter = (type: BomboniereItemType) => setFilterType(type);
+  const handleFilter = (type: BomboniereItemType | MovieItemType) =>
+    setFilterType(type);
 
   return (
     <>
