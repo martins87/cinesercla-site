@@ -8,7 +8,9 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {},
+      colors: {
+        main_bordeaux: "#980038",
+      },
       screens: {
         mobile: "512px",
         tablet: "960px",
