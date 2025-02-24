@@ -34,7 +34,7 @@ const Cinemas = () => {
           icon={MagnifyingGlass}
         />
       </Centered>
-      <Centered className="mt-14" justify="between">
+      <Centered className="flex-col md:flex-row mt-14 items-start justify-between gap-y-4">
         <Typography className="text-4xl text-black/90" weight="800">
           Todos os cinemas
         </Typography>
