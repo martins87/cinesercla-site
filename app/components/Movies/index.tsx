@@ -26,6 +26,12 @@ const Movies = () => {
   const handleFilter = (type: MovieItemType | BomboniereItemType) =>
     setFilterType(type);
 
+  // @ts-expect-error:next-line
+  const previous = () => sliderRef.slickPrev();
+
+  // @ts-expect-error:next-line
+  const next = () => sliderRef.slickNext();
+
   const settings = {
     dots: false,
     infinite: true,
@@ -79,8 +85,8 @@ const Movies = () => {
           ))}
         </CenteredEl>
         <CenteredEl className="gap-x-2" justify="end">
-          <CarouselArrow direction="left" onClick={() => {}} />
-          <CarouselArrow direction="right" onClick={() => {}} />
+          <CarouselArrow direction="left" onClick={previous} />
+          <CarouselArrow direction="right" onClick={next} />
         </CenteredEl>
       </CenteredEl>
       <Slider
