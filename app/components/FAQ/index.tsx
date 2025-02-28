@@ -13,7 +13,7 @@ import { FAQItem } from "@/app/types/FAQItem";
 import { FAQData } from "@/app/constants/faq";
 
 const FAQ = () => {
-  const ismobile = useMediaQuery({ query: "(max-width: 640px)" });
+  const ismobile = useMediaQuery({ query: "(max-width: 768px)" });
   const [itemIndex, setItemIndex] = useState<number>(-1);
   const faq = FAQData.filter((question) => question.mostAsked);
 
