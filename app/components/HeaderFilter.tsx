@@ -32,7 +32,7 @@ const HeaderFilter: FC<HeaderFilterProps> = ({
         {label}
       </Typography>
       {active && (
-        <div className="w-4/5 h-1 rounded-full bg-[#980038] -mt-1 animate-fadeIn" />
+        <div className="w-[75%] h-1 rounded-full bg-[#980038] -mt-1 animate-fadeIn" />
       )}
     </CenteredElement>
   );
