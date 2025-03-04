@@ -1,3 +1,5 @@
+import { AccordionData } from "./AccordionData";
+
 export type FAQCategory =
   | "ingressos"
   | "meia-entrada"
@@ -9,9 +11,7 @@ export type FAQCategory =
   | "aplicativo"
   | "fidelidade";
 
-export type FAQItem = {
-  question: string;
-  answer: string;
+export type FAQItem = AccordionData & {
   mostAsked?: boolean;
   category: FAQCategory;
 };

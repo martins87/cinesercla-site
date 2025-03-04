@@ -1,27 +1,27 @@
 import React, { FC } from "react";
 
-import { FAQItem } from "@/app/types/FAQ";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { AccordionData } from "@/app/types/AccordionData";
 
-type FAQListProps = {
-  faqArray: FAQItem[];
+type AccordionListProps = {
+  list: AccordionData[];
   itemIndex: number;
   secondColumn?: boolean;
   handleClick: (index: number) => void;
 };
 
-const FAQList: FC<FAQListProps> = ({
-  faqArray,
+const AccordionList: FC<AccordionListProps> = ({
+  list,
   itemIndex,
   secondColumn,
   handleClick,
 }) => {
-  const value = secondColumn ? faqArray.length / 2 : 0;
+  const value = secondColumn ? list.length / 2 : 0;
 
   return (
     <Accordion
@@ -30,18 +30,18 @@ const FAQList: FC<FAQListProps> = ({
       collapsible
       value={`item-${itemIndex}`}
     >
-      {faqArray.map((item: FAQItem, index: number) => (
+      {list.map((item: AccordionData, index: number) => (
         <AccordionItem
           key={index}
           value={`item-${index + value}`}
           onClick={() => handleClick(index + value)}
         >
-          <AccordionTrigger>{item.question}</AccordionTrigger>
-          <AccordionContent>{item.answer}</AccordionContent>
+          <AccordionTrigger>{item.title}</AccordionTrigger>
+          <AccordionContent>{item.content}</AccordionContent>
         </AccordionItem>
       ))}
     </Accordion>
   );
 };
 
-export default FAQList;
+export default AccordionList;

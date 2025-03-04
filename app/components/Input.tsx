@@ -29,7 +29,7 @@ const Input: FC<InputProps> = ({
   return (
     <CenteredEl
       className={twMerge(
-        "px-4 gap-x-0 gap-y-1 rounded-xl bg-[#7F7F7F]",
+        "px-2 py-1 gap-x-0 gap-y-1 rounded-xl bg-[#7F7F7F]",
         big ? "bg-[#A3A3A3] px-7 py-2 rounded-2xl" : "",
         className
       )}
@@ -39,7 +39,7 @@ const Input: FC<InputProps> = ({
       <input
         className={twMerge(
           "w-full -mt-[2px] py-4 px-4 outline-none text-base text-white bg-inherit",
-          "placeholder:text-white",
+          "placeholder:text-white/50",
           big
             ? "text-2xl font-bold font-[family-name:var(--font-proxima-nova)] placeholder:text-2xl placeholder:font-bold placeholder:font-[family-name:var(--font-proxima-nova)] px-5"
             : "",

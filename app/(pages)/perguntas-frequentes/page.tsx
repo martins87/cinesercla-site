@@ -10,7 +10,7 @@ import Typography from "@/app/components/Typography";
 import Centered from "@/app/components/ui/CenteredElement";
 import FAQBox from "@/app/components/FAQ/FAQBox";
 import Button from "@/app/components/ui/Button";
-import FAQ from "@/app/components/FAQ";
+import Accordion from "@/app/components/Accordion";
 import { FAQData, topics } from "@/app/constants/faq";
 import Bg from "../../assets/images/backgrounds/perguntas-frequentes.png";
 import { FAQCategory } from "@/app/types/FAQ";
@@ -70,7 +70,7 @@ const PerguntasFrequentes = () => {
               Cinesercla, você encontra tudo aqui.
             </Typography>
           )}
-          <FAQ faqList={faq} />
+          <Accordion list={faq} />
           <Centered className="gap-y-4" direction="col">
             <Typography className="text-2xl text-black/90">
               Precisa de mais ajuda?

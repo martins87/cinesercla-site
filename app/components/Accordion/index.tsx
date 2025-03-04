@@ -3,14 +3,12 @@
 import React, { FC, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 
-import FAQList from "./FAQList";
-import { FAQItem } from "@/app/types/FAQ";
+import AccordionList from "./AccordionList";
+import { AccordionData } from "@/app/types/AccordionData";
 
-type FAQProps = {
-  faqList: FAQItem[];
-};
+type AccordionProps = { list: AccordionData[] };
 
-const FAQ: FC<FAQProps> = ({ faqList }) => {
+const Accordion: FC<AccordionProps> = ({ list }) => {
   const ismobile = useMediaQuery({ query: "(max-width: 768px)" });
   const [itemIndex, setItemIndex] = useState<number>(-1);
 
@@ -23,20 +21,20 @@ const FAQ: FC<FAQProps> = ({ faqList }) => {
   return (
     <div className="w-full flex gap-x-4">
       {ismobile ? (
-        <FAQList
-          faqArray={faqList}
+        <AccordionList
+          list={list}
           handleClick={handleClick}
           itemIndex={itemIndex}
         />
       ) : (
         <>
-          <FAQList
-            faqArray={faqList.slice(0, faqList.length / 2)}
+          <AccordionList
+            list={list.slice(0, list.length / 2)}
             handleClick={handleClick}
             itemIndex={itemIndex}
           />
-          <FAQList
-            faqArray={faqList.slice(faqList.length / 2, faqList.length)}
+          <AccordionList
+            list={list.slice(list.length / 2, list.length)}
             handleClick={handleClick}
             itemIndex={itemIndex}
             secondColumn
@@ -47,4 +45,4 @@ const FAQ: FC<FAQProps> = ({ faqList }) => {
   );
 };
 
-export default FAQ;
+export default Accordion;

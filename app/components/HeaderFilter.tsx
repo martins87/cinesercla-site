@@ -2,7 +2,7 @@ import Typography from "@/app/components/Typography";
 import CenteredElement from "@/app/components/ui/CenteredElement";
 import { FC } from "react";
 import { twMerge } from "tailwind-merge";
-import { Filter } from "@/app/types/filter";
+import { Filter } from "@/app/types/Filter";
 
 type HeaderFilterProps = {
   label: string;
