@@ -1,15 +1,15 @@
-import { FAQItem } from "../types/FAQItem";
+import { FAQItem, Topic } from "../types/FAQ";
 
-export const topics = [
-  "Ingressos",
-  "Meia-Entrada",
-  "Filmes e Sessões",
-  "Promoções e Benefícios",
-  "Bomboniere",
-  "Salas e Tecnologias",
-  "Formas de Pagamento",
-  "Aplicativo",
-  "Fidelidade",
+export const topics: Topic[] = [
+  { label: "Ingressos", category: "ingressos" },
+  { label: "Meia-Entrada", category: "meia-entrada" },
+  { label: "Filmes e Sessões", category: "filmes-e-sessoes" },
+  { label: "Promoções e Benefícios", category: "promocoes-e-beneficios" },
+  { label: "Bomboniere", category: "bomboniere" },
+  { label: "Salas e Tecnologias", category: "salas-e-tecnologias" },
+  { label: "Formas de Pagamento", category: "formas-de-pagamento" },
+  { label: "Aplicativo", category: "aplicativo" },
+  { label: "Fidelidade", category: "fidelidade" },
 ];
 
 export const FAQData: FAQItem[] = [

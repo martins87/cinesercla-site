@@ -7,6 +7,7 @@ type CenteredElementProps = {
   items?: "center" | "start" | "end";
   direction?: "row" | "col";
   justify?: "center" | "start" | "end" | "between" | "around";
+  onClick?: () => void;
 };
 
 const CenteredElement: FC<CenteredElementProps> = ({
@@ -15,6 +16,7 @@ const CenteredElement: FC<CenteredElementProps> = ({
   items,
   direction,
   justify,
+  onClick,
 }) => {
   return (
     <div
@@ -37,6 +39,7 @@ const CenteredElement: FC<CenteredElementProps> = ({
           : "justify-center",
         className
       )}
+      onClick={onClick}
     >
       {children}
     </div>

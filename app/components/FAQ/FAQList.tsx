@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import { FAQItem } from "@/app/types/FAQItem";
+import { FAQItem } from "@/app/types/FAQ";
 import {
   Accordion,
   AccordionContent,
@@ -21,7 +21,7 @@ const FAQList: FC<FAQListProps> = ({
   secondColumn,
   handleClick,
 }) => {
-  const value = secondColumn ? 4 : 0;
+  const value = secondColumn ? faqArray.length / 2 : 0;
 
   return (
     <Accordion
