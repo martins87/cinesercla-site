@@ -12,7 +12,7 @@ import CarouselArrow from "@/app/components/CarouselArrow";
 // import OfertasPromocionais from "./OfertasPromocionais";
 import HeaderFilter from "../../components/HeaderFilter";
 import Bg from "../../assets/images/backgrounds/bomboniere.png";
-import { Filter } from "../../types/Filter";
+import Filter from "../../types/Filter";
 
 const filters: { label: string; filter: BomboniereItemType }[] = [
   { label: "Tudo", filter: null },
