@@ -5,9 +5,20 @@ import Typography from "@/app/components/Typography";
 import Button from "@/app/components/ui/Button";
 import Accordion from "@/app/components/Accordion";
 import { leis } from "../../constants/leis";
+import {
+  AlimentosNaoSimilares,
+  ClassificacaoIndicativa,
+  CriancasAte2Anos,
+  LeiDaMeiaEntrada,
+} from "./AccordionContent";
 import Bg from "../../assets/images/backgrounds/leis.png";
 
 const Leis = () => {
+  leis[0].content = <ClassificacaoIndicativa />;
+  leis[1].content = <CriancasAte2Anos />;
+  leis[2].content = <LeiDaMeiaEntrada />;
+  leis[3].content = <AlimentosNaoSimilares />;
+
   return (
     <>
       <BgImageContainer img={Bg} title="Leis" />
