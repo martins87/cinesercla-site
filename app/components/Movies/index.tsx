@@ -9,7 +9,7 @@ import { movies } from "../../constants/cards-movies";
 import { MovieItemType } from "@/app/types/MovieItem";
 import HeaderFilter from "@/app/components/HeaderFilter";
 import CarouselArrow from "../CarouselArrow";
-import { Filter } from "@/app/types/Filter";
+import { Filter } from "@/app/types/Filtro";
 
 const filters: { label: string; filter: MovieItemType }[] = [
   { label: "Em Cartaz", filter: "em-cartaz" },
