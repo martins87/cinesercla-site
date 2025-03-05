@@ -18,7 +18,7 @@ const AccordionItem = forwardRef<
   <AccordionPrimitive.Item
     ref={ref}
     className={cn(
-      "min-h-[104px] px-7 py-5 my-4 bg-[#7F7F7F] rounded-2xl hover:cursor-pointer",
+      "min-h-[104px] px-7 py-5 my-4 bg-[#7F7F7F] hover:bg-[#7F7F7F]/90 transition-colors ease-in-out duration-200 rounded-2xl hover:cursor-pointer",
       className
     )}
     {...props}
