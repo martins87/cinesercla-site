@@ -22,22 +22,25 @@ const PageInfo: FC<PageInfoProps> = ({
   orderInverted,
 }) => {
   return (
-    <CenteredElement className="mt-10 gap-x-12">
-      <CenteredElement className="h-[512px] rounded-2xl overflow-hidden">
-        <Image className="w-full h-[512px]" src={img} alt="cover" />
+    <CenteredElement className="flex-col md:flex-row gap-y-8 mt-10 mb-16 md:mb-0 gap-x-20">
+      <CenteredElement className="h-96 tablet:h-[512px] rounded-2xl overflow-hidden">
+        <Image className="w-full h-full" src={img} alt="cover" />
       </CenteredElement>
       <CenteredElement
         className={twMerge(
           "h-max rounded-lg gap-y-4",
-          orderInverted ? "order-first" : ""
+          orderInverted ? "md:order-first" : ""
         )}
         items="start"
         direction="col"
       >
-        <Typography className="text-[40px] text-black uppercase" weight="800">
+        <Typography
+          className="text-3xl tablet:text-4xl text-black uppercase"
+          weight="800"
+        >
           {title}
         </Typography>
-        <Typography className="text-2xl text-black" weight="400">
+        <Typography className="text-xl tablet:text-2xl text-black" weight="400">
           {description}
         </Typography>
         {/* Button */}
