@@ -21,7 +21,7 @@ const AccordionList: FC<AccordionListProps> = ({
   secondColumn,
   handleClick,
 }) => {
-  const value = secondColumn ? list.length / 2 : 0;
+  const value = secondColumn ? list.length / 2 + 1 : 0;
 
   return (
     <Accordion
