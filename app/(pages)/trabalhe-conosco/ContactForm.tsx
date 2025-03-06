@@ -16,7 +16,7 @@ const ContactForm = () => {
         <Input {...className} placeholder="Adicionar currículo*" />
         <Input {...className} placeholder="Sua mensagem" />
       </Centered>
-      <Button className="w-full py-[18px]" label="ENVIAR" primary />
+      <Button className="w-full py-[18px]" label="ENVIAR" />
     </Centered>
   );
 };

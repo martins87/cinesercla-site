@@ -44,7 +44,7 @@ const PageInfo: FC<PageInfoProps> = ({
         <Typography className="text-xl tablet:text-2xl text-black" weight="400">
           {description}
         </Typography>
-        {btnLabel && <Button label={btnLabel} primary />}
+        {btnLabel && <Button label={btnLabel} />}
       </CenteredElement>
     </CenteredElement>
   );

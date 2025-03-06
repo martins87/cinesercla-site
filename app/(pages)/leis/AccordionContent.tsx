@@ -14,7 +14,7 @@ const ClassificacaoIndicativa = () => {
         classificado como inapropriado.
       </Typography>
       <CenteredElement className="gap-x-4" justify="start">
-        <Button label="VEJA MAIS" primary />
+        <Button label="VEJA MAIS" />
         <Button label="IMPRIMIR" secondary />
       </CenteredElement>
     </CenteredElement>
@@ -32,7 +32,7 @@ const CriancasAte2Anos = () => {
         responsável. Crianças que já completaram 3 anos pagam meia entrada.
       </Typography>
       <CenteredElement className="gap-x-4" justify="start">
-        <Button label="VEJA MAIS" primary />
+        <Button label="VEJA MAIS" />
         <Button label="IMPRIMIR" secondary />
       </CenteredElement>
     </CenteredElement>

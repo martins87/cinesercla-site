@@ -75,7 +75,7 @@ const PerguntasFrequentes = () => {
             <Typography className="text-2xl text-black/90">
               Precisa de mais ajuda?
             </Typography>
-            <Button label="ENTRE EM CONTATO" onClick={handleClick} primary />
+            <Button label="ENTRE EM CONTATO" onClick={handleClick} />
           </Centered>
         </Centered>
       </Container>

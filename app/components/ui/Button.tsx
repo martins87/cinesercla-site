@@ -15,7 +15,7 @@ type ButtonProps = {
 
 const Button: FC<ButtonProps> = ({
   label,
-  primary,
+  primary = true,
   secondary,
   className,
   icon,

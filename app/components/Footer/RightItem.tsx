@@ -46,7 +46,7 @@ const RightItem = () => {
               placeholder="Insira seu email"
             />
           </CenteredEl>
-          <Button label="ENVIAR" primary />
+          <Button label="ENVIAR" />
         </CenteredEl>
         <Typography
           className="font-normal text-xs leading-5 text-black/70 mr-auto"
