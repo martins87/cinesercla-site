@@ -1,4 +1,5 @@
 import Typography from "@/app/components/Typography";
+import Button from "@/app/components/ui/Button";
 import CenteredElement from "@/app/components/ui/CenteredElement";
 import Link from "next/link";
 
@@ -12,9 +13,9 @@ const ClassificacaoIndicativa = () => {
         desejam permitir o acesso de crianças e adolescentes ao conteúdo
         classificado como inapropriado.
       </Typography>
-      <CenteredElement className="gap-x-4">
-        <Typography>Veja Mais</Typography>
-        <Typography>Imprimir</Typography>
+      <CenteredElement className="gap-x-4" justify="start">
+        <Button label="VEJA MAIS" primary />
+        <Button label="IMPRIMIR" secondary />
       </CenteredElement>
     </CenteredElement>
   );
@@ -30,9 +31,9 @@ const CriancasAte2Anos = () => {
         responsável. Limitado a uma criança com entrada gratuita por
         responsável. Crianças que já completaram 3 anos pagam meia entrada.
       </Typography>
-      <CenteredElement className="gap-x-4">
-        <Typography>Veja Mais</Typography>
-        <Typography>Imprimir</Typography>
+      <CenteredElement className="gap-x-4" justify="start">
+        <Button label="VEJA MAIS" primary />
+        <Button label="IMPRIMIR" secondary />
       </CenteredElement>
     </CenteredElement>
   );
@@ -66,9 +67,9 @@ const LeiDaMeiaEntrada = () => {
         e esportivos, e revoga a Medida Provisória no 2.208, de 17 de agosto de
         2001.
       </Typography>
-      <CenteredElement className="gap-x-4">
-        <Typography>Veja Mais</Typography>
-        <Typography>Imprimir</Typography>
+      <CenteredElement className="gap-x-4" justify="start">
+        <Button label="VEJA MAIS" primary />
+        <Button label="IMPRIMIR" secondary />
       </CenteredElement>
     </CenteredElement>
   );
@@ -111,9 +112,9 @@ const AlimentosNaoSimilares = () => {
           CÓDIGO DE DEFESA DO CONSUMIDOR
         </Typography>
       </Link>
-      <CenteredElement className="gap-x-4">
-        <Typography>Veja Mais</Typography>
-        <Typography>Imprimir</Typography>
+      <CenteredElement className="gap-x-4" justify="start">
+        <Button label="VEJA MAIS" primary />
+        <Button label="IMPRIMIR" secondary />
       </CenteredElement>
     </CenteredElement>
   );

@@ -24,7 +24,7 @@ const Leis = () => {
       <BgImageContainer img={Bg} title="Leis" />
       <Container className="h-fit bg-[#EAEAEA] mt-16">
         <Accordion list={leis} />
-        <Centered className="gap-y-4" direction="col">
+        <Centered className="gap-y-4 mt-16" direction="col">
           <Typography className="text-2xl text-black/90">
             Precisa de mais ajuda?
           </Typography>

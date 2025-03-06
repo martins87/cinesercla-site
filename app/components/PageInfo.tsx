@@ -5,6 +5,7 @@ import Image from "next/image";
 import CenteredElement from "@/app/components/ui/CenteredElement";
 import Typography from "@/app/components/Typography";
 import { twMerge } from "tailwind-merge";
+import Button from "./ui/Button";
 
 type PageInfoProps = {
   title: string;
@@ -43,18 +44,7 @@ const PageInfo: FC<PageInfoProps> = ({
         <Typography className="text-xl tablet:text-2xl text-black" weight="400">
           {description}
         </Typography>
-        {/* Button */}
-        {btnLabel && (
-          <CenteredElement className="w-fit px-5 py-4 rounded-2xl bg-[#980038]">
-            <Typography
-              className="text-white text-2xl uppercase"
-              weight="800"
-              font="gellix"
-            >
-              {btnLabel}
-            </Typography>
-          </CenteredElement>
-        )}
+        {btnLabel && <Button label={btnLabel} primary />}
       </CenteredElement>
     </CenteredElement>
   );

@@ -5,6 +5,7 @@ import { ChangeEvent, useState } from "react";
 import Typography from "../Typography";
 import CenteredEl from "../ui/CenteredElement";
 import Captcha from "../Capcha";
+import Button from "../ui/Button";
 
 const RightItem = () => {
   const [value, setValue] = useState<string>("");
@@ -45,11 +46,7 @@ const RightItem = () => {
               placeholder="Insira seu email"
             />
           </CenteredEl>
-          <CenteredEl className="w-fit px-8 py-4 rounded-2xl bg-[#980038]">
-            <Typography className="uppercase" font="gellix">
-              Enviar
-            </Typography>
-          </CenteredEl>
+          <Button label="ENVIAR" primary />
         </CenteredEl>
         <Typography
           className="font-normal text-xs leading-5 text-black/70 mr-auto"
