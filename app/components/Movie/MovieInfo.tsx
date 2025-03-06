@@ -1,15 +1,21 @@
+import { FC } from "react";
 import Image from "next/image";
 
 import CenteredElement from "../ui/CenteredElement";
 import Typography from "../Typography";
 import like from "@/app/assets/icons/like.svg";
+import { Movie } from "@/app/types/Movie";
 
-const MovieInfo = () => {
+type MovieInfoProps = {
+  movie: Movie;
+};
+
+const MovieInfo: FC<MovieInfoProps> = ({ movie }) => {
   return (
     <CenteredElement className="gap-y-8" direction="col">
       <CenteredElement className="flex-col md:flex-row items-start md:items-between justify-between">
         <Typography className="md:w-1/2 text-3xl text-black/90" weight="800">
-          Deadpool & Wolverine
+          {movie.title}
         </Typography>
         <CenteredElement className="md:w-1/2 gap-x-2 justify-start md:justify-end">
           <Typography className="text-lg text-black/90" weight="700">
@@ -25,16 +31,16 @@ const MovieInfo = () => {
           items="start"
         >
           <Typography className="text-lg text-black/65" weight="400">
-            Duração: 2h 7min{" "}
+            Duração: {movie.duration}
           </Typography>
           <Typography className="text-lg text-black/65" weight="400">
-            Gênero: Ação, Comédia
+            Gênero: {movie.genre}
           </Typography>
           <Typography className="text-lg text-black/65" weight="400">
-            Data de Lançamento: 25/07/2024
+            Data de Lançamento: {movie.launchDate}
           </Typography>
-          <Typography className="text-lg text-black/65" weight="400">
-            Elenco: Ryan Reynolds, Hugh Jackman, Morena Baccarin, Emma Corrin
+          <Typography className="w-[75%] text-lg text-black/65" weight="400">
+            Elenco: {movie.cast}
           </Typography>
           <Typography className="text-lg text-black/65" weight="400">
             IMDB
@@ -42,11 +48,7 @@ const MovieInfo = () => {
         </CenteredElement>
         <CenteredElement className="tablet:w-1/2">
           <Typography className="text-xl text-black/90" weight="400">
-            Deadpool & Wolverine reúne Wade Wilson e Wolverine em uma aventura
-            cheia de ação e humor. Após momentos de tranquilidade, seus destinos
-            se cruzam, formando uma improvável aliança para enfrentar um inimigo
-            comum. Repleta de reviravoltas, essa jornada promete ser uma
-            experiência épica com referências aos quadrinhos.
+            {movie.description}
           </Typography>
         </CenteredElement>
       </CenteredElement>

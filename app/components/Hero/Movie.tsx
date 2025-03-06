@@ -19,7 +19,11 @@ const Movie: FC<MovieProps> = ({ movie }) => {
   return (
     <div className="relative h-screen">
       <DarkerBackground>
-        <Image className="w-screen h-screen" src={movie.cover} alt="Image" />
+        <Image
+          className="w-screen h-screen object-cover tablet:object-fill"
+          src={movie.cover!}
+          alt="Image"
+        />
       </DarkerBackground>
       <GradientOverlay hero />
       <div className="absolute top-0 left-0 h-screen z-20">
