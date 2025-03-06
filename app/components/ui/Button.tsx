@@ -15,7 +15,7 @@ type ButtonProps = {
 
 const Button: FC<ButtonProps> = ({
   label,
-  primary = true,
+  primary,
   secondary,
   className,
   icon,
@@ -29,7 +29,7 @@ const Button: FC<ButtonProps> = ({
           ? "bg-main_bordeaux hover:bg-main_bordeaux/90"
           : secondary
           ? "bg-white hover:bg-white/90"
-          : "",
+          : "bg-main_bordeaux hover:bg-main_bordeaux/90",
         className
       )}
       onClick={onClick}

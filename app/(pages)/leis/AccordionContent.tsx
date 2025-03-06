@@ -68,7 +68,7 @@ const LeiDaMeiaEntrada = () => {
         2001.
       </Typography>
       <CenteredElement className="gap-x-4" justify="start">
-        <Button label="VEJA MAIS" primary />
+        <Button label="VEJA MAIS" />
         <Button label="IMPRIMIR" secondary />
       </CenteredElement>
     </CenteredElement>
@@ -113,7 +113,7 @@ const AlimentosNaoSimilares = () => {
         </Typography>
       </Link>
       <CenteredElement className="gap-x-4" justify="start">
-        <Button label="VEJA MAIS" primary />
+        <Button label="VEJA MAIS" />
         <Button label="IMPRIMIR" secondary />
       </CenteredElement>
     </CenteredElement>
