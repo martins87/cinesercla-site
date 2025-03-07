@@ -22,7 +22,7 @@ const MovieTrailer: FC<MovieTrailerProps> = ({ trailer }) => {
         src={trailer.videoThumb}
         alt="moviethumbnail"
       />
-      <Typography className="text-xl text-black/90" weight="700">
+      <Typography className="text-xl text-black/90 leading-6" weight="700">
         {trailer.videoTitle}
       </Typography>
       <Typography className="text-xl text-black/65" weight="400">
