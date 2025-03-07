@@ -4,6 +4,7 @@ import Movie1 from "../assets/images/movie-1.png";
 import Movie2 from "../assets/images/movie-2.png";
 import Movie3 from "../assets/images/movie-3.png";
 import wolverine_cover from "@/app/assets/images/movies/covers/wolverine.png";
+import wolverine_card from "@/app/assets/images/movies/movie-5.png";
 
 export const movies: Movie[] = [
   {
@@ -64,4 +65,5 @@ export const movie: Movie = {
   imdbRate: "8.0",
   rtRate: "78%",
   cover: wolverine_cover,
+  card: wolverine_card,
 };

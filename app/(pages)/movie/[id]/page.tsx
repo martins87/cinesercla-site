@@ -22,9 +22,9 @@ const MoviePage = async ({ params }) => {
         />
         <GradientOverlay hero />
       </div>
-      <Container className="mt-10">
+      <Container className="mt-10 gap-y-10">
         <MovieInfo movie={movie} />
-        <MovieSession />
+        <MovieSession movie={movie} />
         <MovieTrailers />
       </Container>
     </>

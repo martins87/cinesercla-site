@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import Typography from "../Typography";
 import Pin from "../../assets/icons/pin.png";
-import ArrowDown from "../../assets/icons/arrow-down.png";
+import ArrowDown from "../../assets/icons/arrow-down-red.svg";
 import { twMerge } from "tailwind-merge";
 
 type CitySelectorProps = {

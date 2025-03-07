@@ -4,6 +4,7 @@ import { MovieItemType } from "./MovieItem";
 export type Movie = {
   id?: string;
   cover?: StaticImport;
+  card?: StaticImport;
   title: string;
   description?: string;
   genre?: string;
