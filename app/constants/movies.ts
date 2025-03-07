@@ -5,6 +5,8 @@ import Movie2 from "../assets/images/movie-2.png";
 import Movie3 from "../assets/images/movie-3.png";
 import wolverine_cover from "@/app/assets/images/movies/covers/wolverine.png";
 import wolverine_card from "@/app/assets/images/movies/movie-5.png";
+import trailer1 from "@/app/assets/images/movies/trailers/thumb1.png";
+import trailer2 from "@/app/assets/images/movies/trailers/thumb2.png";
 
 export const movies: Movie[] = [
   {
@@ -66,4 +68,18 @@ export const movie: Movie = {
   rtRate: "78%",
   cover: wolverine_cover,
   card: wolverine_card,
+  trailers: [
+    {
+      videoThumb: trailer1,
+      videoTitle: "Deadpool & Wolverine | Teaser Oficial Dublado",
+      videoDuration: "2:25",
+      timestamp: "6 Meses Atrás",
+    },
+    {
+      videoThumb: trailer2,
+      videoTitle: "Deadpool & Wolverine | Trailer 3 Oficial Legendado",
+      videoDuration: "2:02",
+      timestamp: "1 Mês Atrás",
+    },
+  ],
 };

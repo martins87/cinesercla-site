@@ -1,6 +1,13 @@
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { MovieItemType } from "./MovieItem";
 
+export type Trailer = {
+  videoThumb: StaticImport;
+  videoTitle: string;
+  videoDuration: string;
+  timestamp: string;
+};
+
 export type Movie = {
   id?: string;
   cover?: StaticImport;
@@ -15,4 +22,5 @@ export type Movie = {
   status?: MovieItemType;
   launchDate?: string;
   cast?: string;
+  trailers?: Trailer[];
 };

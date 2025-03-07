@@ -25,7 +25,7 @@ const MoviePage = async ({ params }) => {
       <Container className="mt-10 gap-y-10">
         <MovieInfo movie={movie} />
         <MovieSession movie={movie} />
-        <MovieTrailers />
+        <MovieTrailers movie={movie} />
       </Container>
     </>
   );
