@@ -24,7 +24,7 @@ const Button: FC<ButtonProps> = ({
   return (
     <button
       className={twMerge(
-        "group flex items-center justify-center gap-x-3 px-5 py-3 rounded-2xl transition-all duration-200",
+        "group flex items-center justify-center gap-x-3 px-5 py-3 rounded-xl transition-all duration-200",
         primary
           ? "bg-main_bordeaux hover:bg-main_bordeaux/90"
           : secondary

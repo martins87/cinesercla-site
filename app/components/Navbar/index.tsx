@@ -35,7 +35,7 @@ const Navbar = () => {
   return (
     <div
       className={twMerge(
-        "w-full fixed top-0 h-14 lg:h-24 z-50",
+        "w-full fixed top-0 h-14 lg:h-24 z-20",
         isScrolling ? "bg-[#EAEAEA]" : ""
       )}
     >

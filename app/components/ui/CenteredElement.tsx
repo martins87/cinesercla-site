@@ -13,8 +13,8 @@ type CenteredElementProps = {
 const CenteredElement: FC<CenteredElementProps> = ({
   children,
   className,
-  items,
   direction,
+  items,
   justify,
   onClick,
 }) => {
