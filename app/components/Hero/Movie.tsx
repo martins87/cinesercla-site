@@ -8,7 +8,7 @@ import Container from "../ui/Container";
 import IMDBLogo from "../../assets/images/imdb-logo.png";
 import RTLogo from "../../assets/images/rotten-tomatoes-logo.png";
 import Ticket from "../../assets/icons/ticket.png";
-import Play from "../../assets/icons/play.png";
+import Play from "../../assets/icons/play.svg";
 import GradientOverlay from "../GradientOverlay";
 
 type MovieProps = {

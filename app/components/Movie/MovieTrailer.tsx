@@ -1,9 +1,10 @@
 import { FC } from "react";
+import Image from "next/image";
 
 import { Trailer } from "@/app/types/Movie";
 import CenteredElement from "../ui/CenteredElement";
-import Image from "next/image";
 import Typography from "../Typography";
+import play from "@/app/assets/icons/play.svg";
 
 type MovieTrailerProps = {
   trailer: Trailer;
@@ -17,11 +18,18 @@ const MovieTrailer: FC<MovieTrailerProps> = ({ trailer }) => {
       justify="start"
       direction="col"
     >
-      <Image
-        className="w-fit rounded-2xl"
-        src={trailer.videoThumb}
-        alt="moviethumbnail"
-      />
+      <CenteredElement className="relative">
+        <Image
+          className="w-full h-full rounded-2xl"
+          src={trailer.videoThumb}
+          alt="moviethumbnail"
+        />
+        <Image
+          className="absolute grid place-items-center opacity-75"
+          src={play}
+          alt="play icon"
+        />
+      </CenteredElement>
       <Typography className="text-xl text-black/90 leading-6" weight="700">
         {trailer.videoTitle}
       </Typography>
