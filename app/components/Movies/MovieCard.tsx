@@ -16,7 +16,7 @@ const MovieCard: FC<MovieCardProps> = ({ movie }) => {
       <div className="relative min-h-72 max-h-72 lg:min-h-80 lg:max-h-80 xl:min-h-96 xl:max-h-96 flex flex-1 object-center">
         <Image
           className="w-full rounded-xl object-cover"
-          src={movie.cover}
+          src={movie.cover!}
           alt="movie cover"
         />
         <GlassCard label={movie.status} />
