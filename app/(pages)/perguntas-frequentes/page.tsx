@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 import BgImageContainer from "@/app/components/ui/BgImageContainer";
 import Container from "@/app/components/ui/Container";
@@ -12,8 +13,10 @@ import FAQBox from "@/app/components/FAQ/FAQBox";
 import Button from "@/app/components/ui/Button";
 import Accordion from "@/app/components/Accordion";
 import { FAQData, topics } from "@/app/constants/faq";
-import Bg from "../../assets/images/backgrounds/perguntas-frequentes.png";
 import { FAQCategory } from "@/app/types/FAQ";
+import CenteredElement from "@/app/components/ui/CenteredElement";
+import Bg from "../../assets/images/backgrounds/perguntas-frequentes.png";
+import close from "@/app/assets/icons/close.svg";
 
 const PerguntasFrequentes = () => {
   const router = useRouter();
@@ -23,12 +26,16 @@ const PerguntasFrequentes = () => {
   );
 
   useEffect(() => {
-    if (category) {
-      setFaq(FAQData.filter((question) => question.category === category));
-    }
+    setFaq(
+      FAQData.filter((question) => {
+        return category ? question.category === category : question.mostAsked;
+      })
+    );
   }, [category]);
 
   const handleClick = () => router.push("/contato");
+
+  const closeFn = () => setCategory(null);
 
   return (
     <>
@@ -52,23 +59,35 @@ const PerguntasFrequentes = () => {
               />
             ))}
           </Centered>
-          <Typography
-            className="text-3xl text-black/90 mt-6 mr-auto"
-            weight="800"
-          >
-            {category === null
-              ? "Principais dúvidas"
-              : topics.filter((topic) => topic.category === category)[0].label}
-          </Typography>
-          {category === null && (
-            <Typography
-              className="text-2xl text-black/90 -mt-6 mr-auto"
-              weight="400"
-            >
-              O que acontece depois dos créditos? Quem realmente deixou a rocha
-              no lugar de Excalibur? Ainda não temos essas respostas mas sobre o
-              Cinesercla, você encontra tudo aqui.
-            </Typography>
+          {category === null ? (
+            <>
+              <Typography
+                className="text-3xl text-black/90 mt-6 mr-auto"
+                weight="800"
+              >
+                Principais dúvidas
+              </Typography>
+              <Typography
+                className="text-2xl text-black/90 -my-6 mr-auto"
+                weight="400"
+              >
+                O que acontece depois dos créditos? Quem realmente deixou a
+                rocha no lugar de Excalibur? Ainda não temos essas respostas mas
+                sobre o Cinesercla, você encontra tudo aqui.
+              </Typography>
+            </>
+          ) : (
+            <CenteredElement className="mt-6 -mb-6" justify="between">
+              <Typography className="text-3xl text-black/90" weight="800">
+                {topics.filter((topic) => topic.category === category)[0].label}
+              </Typography>
+              <Image
+                className="hover:cursor-pointer hover:scale-110 transition-all duration-200 ease-in-out"
+                src={close}
+                alt="close icon"
+                onClick={closeFn}
+              />
+            </CenteredElement>
           )}
           <Accordion list={faq} />
           <Centered className="gap-y-4" direction="col">
