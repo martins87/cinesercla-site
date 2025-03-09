@@ -1,10 +1,12 @@
+"use client";
+
 import Image from "next/image";
 
 import Typography from "../Typography";
 import CenteredElement from "./CenteredElement";
 import close from "@/app/assets/icons/close.svg";
 import Button from "./Button";
-import { Dispatch, FC, SetStateAction } from "react";
+import { Dispatch, FC, SetStateAction, useEffect } from "react";
 import Dot from "../Dot";
 import PocketGuideMovieList from "../PocketGuide/PocketGuideMovieList";
 
@@ -14,6 +16,18 @@ type ModalProps = {
 
 const Modal: FC<ModalProps> = ({ setModalOpen }) => {
   const closeFn = () => setModalOpen(false);
+
+  useEffect(() => {
+    const closeModal = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setModalOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", closeModal);
+
+    return () => window.removeEventListener("keydown", closeModal);
+  }, [setModalOpen]);
 
   return (
     <>
