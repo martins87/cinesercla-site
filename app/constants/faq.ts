@@ -8,8 +8,8 @@ export const topics: Topic[] = [
   { label: "Bomboniere", category: "bomboniere" },
   { label: "Salas e Tecnologias", category: "salas-e-tecnologias" },
   { label: "Formas de Pagamento", category: "formas-de-pagamento" },
-  { label: "Aplicativo", category: "aplicativo" },
-  { label: "Fidelidade", category: "fidelidade" },
+  // { label: "Aplicativo", category: "aplicativo" },
+  // { label: "Fidelidade", category: "fidelidade" },
 ];
 
 export const FAQData: FAQItem[] = [
@@ -25,7 +25,7 @@ export const FAQData: FAQItem[] = [
     content:
       "Não é permitido alterar o horário do filme comprado. Deverá solicitar o estorno e efetuar uma nova compra. Estorno de ingressos comprados na web => através de um e-mail enviado a ingressos@ingressoplus.com.br Estorno de ingressos comprados na bilheteria e ATM => presencialmente no cinema",
     mostAsked: true,
-    category: "filmes-e-sessoes",
+    category: "ingressos",
   },
   {
     title:
@@ -37,6 +37,13 @@ export const FAQData: FAQItem[] = [
     category: "ingressos",
   },
   {
+    title: "Como funciona a venda de ingresso na Web?",
+    content:
+      "O serviço de venda de ingressos na web é de inteira responsabilidade da empresa INGRESSO PLUS, a qual cobra uma taxa de serviço pela venda. As regras e forma de utilização estão disponiveis no campo ATENDIMENTO do link abaixo: www.ingressoplus.com.br/site/",
+    mostAsked: true,
+    category: "ingressos",
+  },
+  {
     title: "Quem tem direito a meia entrada?",
     content: `
       Estudantes, idosos, pessoas com deficiência (incluindo seu acompanhante) e jovens de 15 a 29 anos comprovadamente carentes.
@@ -44,13 +51,6 @@ export const FAQData: FAQItem[] = [
     `,
     mostAsked: true,
     category: "meia-entrada",
-  },
-  {
-    title: "Como funciona a venda de ingresso na Web?",
-    content:
-      "O serviço de venda de ingressos na web é de inteira responsabilidade da empresa INGRESSO PLUS, a qual cobra uma taxa de serviço pela venda. As regras e forma de utilização estão disponiveis no campo ATENDIMENTO do link abaixo: www.ingressoplus.com.br/site/",
-    mostAsked: true,
-    category: "ingressos",
   },
   {
     title:
@@ -67,7 +67,7 @@ export const FAQData: FAQItem[] = [
     content: `
       Temos valores e ingressos diferenciados para cada unidade. Caso tenha interesse, informe a unidade e solicite os valores pelo e-mail: marketing@cinesercla.com.br 
     `,
-    category: "ingressos",
+    category: "promocoes-e-beneficios",
   },
   {
     title:
@@ -78,14 +78,14 @@ export const FAQData: FAQItem[] = [
       Para filmes de classificação indicativa de 18 anos, jovens de 16 e 17 anos de idade podem entrar na sessão desde que o responsável legal o acompanhe e assine o tal termo de responsabilidade.
       Mais informações: http://www.cinesercla.com.br/Home/Leis
     `,
-    category: "promocoes-e-beneficios",
+    category: "filmes-e-sessoes",
   },
   {
     title: "Crianças até 2 anos de idade pagam ingresso?",
     content: `
       Apesar de não haver legislação que garanta aos bebês a gratuidade, na Rede Cinesercla, criança até 2 anos de idade (2 anos, 11 meses e 30 dias) não paga entrada desde que assista ao filme sentada no colo do responsável. Limitado a uma criança com entrada gratuita por responsável. Crianças que já completaram 3 anos pagam meia entrada.
     `,
-    category: "promocoes-e-beneficios",
+    category: "filmes-e-sessoes",
   },
   {
     title:
@@ -95,7 +95,7 @@ export const FAQData: FAQItem[] = [
       Não permitimos bandeja de comida, marmitas, pizzas, sanduíches, sorvetes, milk shakes, batatas frita, chips, bebidas alcoólicas, entre outros.
       Mais informações: http://www.cinesercla.com.br/Home/Leis
     `,
-    category: "salas-e-tecnologias",
+    category: "bomboniere",
   },
   {
     title: "Por que um filme é lançado em uma unidade e em outra não?",
@@ -138,11 +138,11 @@ export const FAQData: FAQItem[] = [
   },
   {
     title:
-      "Por que a programação da unidade que frequento foi alterada sem aviso prévio?",
+      "Por que a programação da unidade que frequento foi alterada sem prévio aviso?",
     content: `
       Infelizmente, imprevistos acontecem e isso pode provocar cancelamentos de ingresso e mudanças na programação. Como temos acordos comerciais com as distribuidoras ou quando há uma grande demanda por um longa, mudanças na programação são feitas sem prévio aviso para que determinado filme não deixe de ser exibido.
     `,
-    category: "salas-e-tecnologias",
+    category: "filmes-e-sessoes",
   },
   {
     title: "Os óculos 3D são higienizados?",

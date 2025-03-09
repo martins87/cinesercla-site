@@ -20,7 +20,7 @@ const Accordion: FC<AccordionProps> = ({ list }) => {
 
   return (
     <div className="w-full flex gap-x-4">
-      {ismobile ? (
+      {ismobile || list.length === 1 ? (
         <AccordionList
           list={list}
           handleClick={handleClick}
