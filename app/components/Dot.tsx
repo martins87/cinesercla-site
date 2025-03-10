@@ -1,12 +1,15 @@
-import Image from "next/image";
-
 import CenteredElement from "./ui/CenteredElement";
-import ellipse from "@/app/assets/icons/ellipse.svg";
+import Typography from "./Typography";
+import { FC } from "react";
 
-const Dot = () => {
+type DotProps = {
+  className: string;
+};
+
+const Dot: FC<DotProps> = ({ className }) => {
   return (
     <CenteredElement className="w-fit mx-2">
-      <Image src={ellipse} alt="ellipse" />
+      <Typography className={className}>&bull;</Typography>
     </CenteredElement>
   );
 };

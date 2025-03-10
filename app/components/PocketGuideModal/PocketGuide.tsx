@@ -8,6 +8,8 @@ import PocketGuideMovieList from "./PocketGuideMovieList";
 import Button from "../ui/Button";
 import close from "@/app/assets/icons/close.svg";
 
+const subtitleClass = "w-fit text-base tablet:text-lg text-black/65";
+
 type PocketGuideProps = {
   closeFn: () => void;
 };
@@ -30,15 +32,15 @@ const PocketGuide: FC<PocketGuideProps> = ({ closeFn }) => {
         />
       </CenteredElement>
       <CenteredElement justify="start">
-        <Typography className="w-fit text-lg text-black/65" weight="400">
+        <Typography className={subtitleClass} weight="400">
           Shopping Norte
         </Typography>
-        <Dot />
-        <Typography className="w-fit text-lg text-black/65" weight="400">
+        <Dot className={subtitleClass} />
+        <Typography className={subtitleClass} weight="400">
           Belo Horizonte
         </Typography>
-        <Dot />
-        <Typography className="w-fit text-lg text-black/65" weight="400">
+        <Dot className={subtitleClass} />
+        <Typography className={subtitleClass} weight="400">
           Minas Gerais
         </Typography>
       </CenteredElement>

@@ -8,6 +8,8 @@ import close from "@/app/assets/icons/close.svg";
 import { Movie } from "@/app/types/Movie";
 import PriceDetailList from "./PriceDetailList";
 
+const subtitleClass = "w-fit text-base tablet:text-lg text-black/65";
+
 type PricesProps = {
   closeFn: () => void;
   movie: Movie;
@@ -31,16 +33,16 @@ const Prices: FC<PricesProps> = ({ closeFn, movie }) => {
         />
       </CenteredElement>
       <CenteredElement className="gap-y-4 overflow-y-scroll" direction="col">
-        <CenteredElement className="mt-20" justify="start">
-          <Typography className="w-fit text-lg text-black/65" weight="400">
+        <CenteredElement className="mt-16 tablet:mt-40" justify="start">
+          <Typography className={subtitleClass} weight="400">
             Shopping Norte
           </Typography>
-          <Dot />
-          <Typography className="w-fit text-lg text-black/65" weight="400">
+          <Dot className={subtitleClass} />
+          <Typography className={subtitleClass} weight="400">
             Belo Horizonte
           </Typography>
-          <Dot />
-          <Typography className="w-fit text-lg text-black/65" weight="400">
+          <Dot className={subtitleClass} />
+          <Typography className={subtitleClass} weight="400">
             Minas Gerais
           </Typography>
         </CenteredElement>
@@ -68,11 +70,11 @@ const Prices: FC<PricesProps> = ({ closeFn, movie }) => {
           <Typography className="w-fit text-lg text-black/65" weight="400">
             2D
           </Typography>
-          <Dot />
+          <Dot className="text-lg text-black/65" />
           <Typography className="w-fit text-lg text-black/65" weight="400">
             Dublado
           </Typography>
-          <Dot />
+          <Dot className="text-lg text-black/65" />
           <Typography className="w-fit text-lg text-black/65" weight="400">
             Sala 4
           </Typography>
