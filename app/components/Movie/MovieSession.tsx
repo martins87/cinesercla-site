@@ -10,24 +10,36 @@ import Button from "../ui/Button";
 import arrow_down from "@/app/assets/icons/arrow-down-red.svg";
 import Auditorium from "./Auditorium";
 import Modal from "../ui/Modal";
-import PocketGuide from "../PocketGuide/PocketGuide";
+import PocketGuide from "../PocketGuideModal/PocketGuide";
+import Prices from "../PricesModal/Prices";
 
 type MovieSessionProps = {
   movie: Movie;
 };
 
 const MovieSession: FC<MovieSessionProps> = ({ movie }) => {
-  const [modalOpen, setModalOpen] = useState<boolean>(false);
+  const [pocketGuideModalOpen, setPocketGuideModalOpen] =
+    useState<boolean>(false);
+  const [pricesModalOpen, setPricesModalOpen] = useState<boolean>(false);
 
-  const openModal = () => setModalOpen(true);
+  const openPocketGuideModal = () => setPocketGuideModalOpen(true);
 
-  const closeModal = () => setModalOpen(false);
+  const closePocketGuideModal = () => setPocketGuideModalOpen(false);
+
+  const openPricesModal = () => setPricesModalOpen(true);
+
+  const closePricesModal = () => setPricesModalOpen(false);
 
   return (
     <>
-      {modalOpen && (
-        <Modal setModalOpen={setModalOpen}>
-          <PocketGuide closeFn={closeModal} />
+      {pocketGuideModalOpen && (
+        <Modal setModalOpen={setPocketGuideModalOpen}>
+          <PocketGuide closeFn={closePocketGuideModal} />
+        </Modal>
+      )}
+      {pricesModalOpen && (
+        <Modal setModalOpen={setPricesModalOpen}>
+          <Prices movie={movie} closeFn={closePricesModal} />
         </Modal>
       )}
       <CenteredElement
@@ -69,9 +81,14 @@ const MovieSession: FC<MovieSessionProps> = ({ movie }) => {
               <Button
                 className="rounded-lg"
                 label="GUIA DE BOLSO"
-                onClick={openModal}
+                onClick={openPocketGuideModal}
               />
-              <Button className="rounded-lg" label="PREÇOS" secondary />
+              <Button
+                className="rounded-lg"
+                label="PREÇOS"
+                onClick={openPricesModal}
+                secondary
+              />
             </CenteredElement>
           </CenteredElement>
           <CenteredElement
@@ -81,9 +98,14 @@ const MovieSession: FC<MovieSessionProps> = ({ movie }) => {
             <Button
               className="rounded-lg"
               label="GUIA DE BOLSO"
-              onClick={openModal}
+              onClick={openPocketGuideModal}
             />
-            <Button className="rounded-lg" label="PREÇOS" secondary />
+            <Button
+              className="rounded-lg"
+              label="PREÇOS"
+              onClick={openPricesModal}
+              secondary
+            />
           </CenteredElement>
           <Typography className="">Calendar</Typography>
           <Typography className="">Hoje, 26 de Setembro</Typography>

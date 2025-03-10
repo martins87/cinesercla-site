@@ -1,3 +1,4 @@
+import { FC } from "react";
 import Image from "next/image";
 
 import Typography from "../Typography";
@@ -6,7 +7,6 @@ import Dot from "../Dot";
 import PocketGuideMovieList from "./PocketGuideMovieList";
 import Button from "../ui/Button";
 import close from "@/app/assets/icons/close.svg";
-import { FC } from "react";
 
 type PocketGuideProps = {
   closeFn: () => void;
