@@ -1,22 +1,14 @@
 "use client";
 
-import Image from "next/image";
-
-import Typography from "../Typography";
 import CenteredElement from "./CenteredElement";
-import close from "@/app/assets/icons/close.svg";
-import Button from "./Button";
-import { Dispatch, FC, SetStateAction, useEffect } from "react";
-import Dot from "../Dot";
-import PocketGuideMovieList from "../PocketGuide/PocketGuideMovieList";
+import { Dispatch, FC, ReactNode, SetStateAction, useEffect } from "react";
 
 type ModalProps = {
   setModalOpen: Dispatch<SetStateAction<boolean>>;
+  children: ReactNode;
 };
 
-const Modal: FC<ModalProps> = ({ setModalOpen }) => {
-  const closeFn = () => setModalOpen(false);
-
+const Modal: FC<ModalProps> = ({ setModalOpen, children }) => {
   useEffect(() => {
     const closeModal = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -30,45 +22,15 @@ const Modal: FC<ModalProps> = ({ setModalOpen }) => {
   }, [setModalOpen]);
 
   return (
-    <>
-      <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-black/65 z-30">
-        <CenteredElement
-          className="w-[50vw] min-h-[65vh] gap-y-4 max-h-[80vh] p-6 rounded-2xl bg-white z-50"
-          direction="col"
-          justify="between"
-        >
-          <CenteredElement justify="between">
-            <Typography className="text-2xl text-black/65" weight="700">
-              Guia de Bolso para hoje, 26 de Setembro
-            </Typography>
-            <Image
-              className="hover:cursor-pointer"
-              src={close}
-              alt="close icon"
-              onClick={closeFn}
-            />
-          </CenteredElement>
-          <CenteredElement justify="start">
-            <Typography className="w-fit text-lg text-black/65" weight="400">
-              Shopping Norte
-            </Typography>
-            <Dot />
-            <Typography className="w-fit text-lg text-black/65" weight="400">
-              Belo Horizonte
-            </Typography>
-            <Dot />
-            <Typography className="w-fit text-lg text-black/65" weight="400">
-              Minas Gerais
-            </Typography>
-          </CenteredElement>
-          <PocketGuideMovieList />
-          <CenteredElement className="gap-x-2" justify="end">
-            <Button label="FECHAR" onClick={closeFn} />
-            <Button label="IMPRIMIR" />
-          </CenteredElement>
-        </CenteredElement>
-      </div>
-    </>
+    <div className="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-black/65 z-30">
+      <CenteredElement
+        className="w-screen md:w-[80vw] lg:w-[75vw] xl:w-[50vw] h-screen md:min-h-[65vh] md:max-h-[80vh] gap-y-4  p-6 md:rounded-2xl bg-white z-50"
+        direction="col"
+        justify="between"
+      >
+        {children}
+      </CenteredElement>
+    </div>
   );
 };
 

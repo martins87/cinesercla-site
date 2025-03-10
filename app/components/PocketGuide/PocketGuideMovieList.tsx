@@ -3,7 +3,10 @@ import PocketGuideMovieDetail from "./PocketGuideMovieDetail";
 
 const PocketGuideMovieList = () => {
   return (
-    <CenteredElement className="gap-y-2 overflow-y-scroll" direction="col">
+    <CenteredElement
+      className="max-h-[75vh] gap-y-2 overflow-y-scroll"
+      direction="col"
+    >
       <PocketGuideMovieDetail />
       <PocketGuideMovieDetail />
       <PocketGuideMovieDetail />

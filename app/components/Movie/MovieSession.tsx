@@ -10,6 +10,7 @@ import Button from "../ui/Button";
 import arrow_down from "@/app/assets/icons/arrow-down-red.svg";
 import Auditorium from "./Auditorium";
 import Modal from "../ui/Modal";
+import PocketGuide from "../PocketGuide/PocketGuide";
 
 type MovieSessionProps = {
   movie: Movie;
@@ -18,11 +19,17 @@ type MovieSessionProps = {
 const MovieSession: FC<MovieSessionProps> = ({ movie }) => {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
 
-  const handleClick = () => setModalOpen(true);
+  const openModal = () => setModalOpen(true);
+
+  const closeModal = () => setModalOpen(false);
 
   return (
     <>
-      {modalOpen && <Modal setModalOpen={setModalOpen} />}
+      {modalOpen && (
+        <Modal setModalOpen={setModalOpen}>
+          <PocketGuide closeFn={closeModal} />
+        </Modal>
+      )}
       <CenteredElement
         className="flex-col md:flex-row gap-x-4 gap-y-4 p-4 bg-[#3B3B3B] rounded-2xl"
         items="start"
@@ -62,7 +69,7 @@ const MovieSession: FC<MovieSessionProps> = ({ movie }) => {
               <Button
                 className="rounded-lg"
                 label="GUIA DE BOLSO"
-                onClick={handleClick}
+                onClick={openModal}
               />
               <Button className="rounded-lg" label="PREÇOS" secondary />
             </CenteredElement>
@@ -71,7 +78,11 @@ const MovieSession: FC<MovieSessionProps> = ({ movie }) => {
             className="flex tablet:hidden gap-x-2"
             justify="start"
           >
-            <Button className="rounded-lg" label="GUIA DE BOLSO" />
+            <Button
+              className="rounded-lg"
+              label="GUIA DE BOLSO"
+              onClick={openModal}
+            />
             <Button className="rounded-lg" label="PREÇOS" secondary />
           </CenteredElement>
           <Typography className="">Calendar</Typography>
