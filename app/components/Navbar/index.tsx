@@ -6,7 +6,7 @@ import Container from "../ui/Container";
 import Links from "../Links";
 import Logo from "../Logo";
 import SearchBar from "../SearchBar";
-import UserActionMenu from "../UserActionMenu";
+// import UserActionMenu from "../UserActionMenu";
 import CitySelector from "./CitySelector";
 import { twMerge } from "tailwind-merge";
 import MobileMenuIcon from "./MobileMenuIcon";
@@ -47,7 +47,7 @@ const Navbar = () => {
           <CitySelector isOnTop={isScrolling} />
         </div>
         <SearchBar />
-        <UserActionMenu />
+        {/* <UserActionMenu /> */}
       </Container>
     </div>
   );
