@@ -16,15 +16,18 @@ const Newsletter = () => {
         />
         <CenteredElement className="flex-col tablet:flex-row gap-y-10 text-white z-10">
           <CenteredElement
-            className="items-center tablet:items-start tablet:w-1/2"
+            className="items-center tablet:items-start tablet:w-1/2 leading-10"
             direction="col"
             justify="around"
           >
-            <Typography className="text-[32px] tablet:text-5xl" weight="800">
+            <Typography
+              className="text-[32px] md:text-4xl tablet:text-5xl"
+              weight="800"
+            >
               RECEBA NOSSA
             </Typography>
             <Typography
-              className="text-[32px] tablet:text-5xl text-[#D61E43]"
+              className="text-[32px] md:text-4xl tablet:text-5xl text-[#D61E43]"
               weight="800"
             >
               PROGRAMAÇÃO
