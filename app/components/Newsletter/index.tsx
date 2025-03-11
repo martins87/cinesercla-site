@@ -20,11 +20,11 @@ const Newsletter = () => {
             direction="col"
             justify="around"
           >
-            <Typography className="text-4xl tablet:text-5xl" weight="800">
+            <Typography className="text-[32px] tablet:text-5xl" weight="800">
               RECEBA NOSSA
             </Typography>
             <Typography
-              className="text-4xl tablet:text-5xl text-[#D61E43]"
+              className="text-[32px] tablet:text-5xl text-[#D61E43]"
               weight="800"
             >
               PROGRAMAÇÃO
