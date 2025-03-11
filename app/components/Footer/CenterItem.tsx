@@ -20,7 +20,7 @@ const CenterItem = () => {
         Navegue
       </Typography>
       <CenteredEl className="gap-x-4">
-        <CenteredEl className="gap-y-4" direction="col" items="start">
+        <CenteredEl className="gap-y-4 mb-auto" direction="col" items="start">
           {footerLinks.slice(0, footerLinks.length / 2).map((footerLink) => (
             <Link key={footerLink.src} href={footerLink.src}>
               <Typography
@@ -32,7 +32,7 @@ const CenterItem = () => {
             </Link>
           ))}
         </CenteredEl>
-        <CenteredEl className="gap-y-4" direction="col" items="start">
+        <CenteredEl className="gap-y-4 mb-auto" direction="col" items="start">
           {footerLinks
             .slice(footerLinks.length / 2, footerLinks.length)
             .map((footerLink) => (
