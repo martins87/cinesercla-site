@@ -30,9 +30,7 @@ const Newsletter = () => {
               PROGRAMAÇÃO
             </Typography>
           </CenteredElement>
-          <CenteredElement className="tablet:w-1/2" direction="col">
-            <NewsletterForm />
-          </CenteredElement>
+          <NewsletterForm />
         </CenteredElement>
       </CenteredElement>
     </CenteredElement>
