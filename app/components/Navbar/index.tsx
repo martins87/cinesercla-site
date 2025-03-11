@@ -10,6 +10,7 @@ import SearchBar from "../SearchBar";
 import CitySelector from "./CitySelector";
 import { twMerge } from "tailwind-merge";
 import MobileMenuIcon from "./MobileMenuIcon";
+import NavbarDropdown from "./NavbarDropdown";
 
 const Navbar = () => {
   const [isScrolling, setIsScrolling] = useState<boolean>(false);
@@ -43,6 +44,14 @@ const Navbar = () => {
         <MobileMenuIcon />
         <Logo className="mx-auto lg:mx-0" />
         <div className="flex items-center lg:justify-around gap-x-4">
+          <NavbarDropdown
+            title="PROGRAMAÇÃO"
+            items={[
+              { label: "EM CARTAZ", href: "#" },
+              { label: "EM BREVE", href: "#" },
+              { label: "PRÉ-VENDA", href: "#" },
+            ]}
+          />
           <Links isOnTop={isScrolling} />
           <CitySelector isOnTop={isScrolling} />
         </div>

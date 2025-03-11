@@ -23,7 +23,6 @@ const Links: FC<LinksProps> = ({ isOnTop }) => {
                   "text-sm tracking-wide",
                   isOnTop ? "text-black" : "text-white"
                 )}
-                font="proxima-nova"
                 weight="700"
               >
                 {link.label}
