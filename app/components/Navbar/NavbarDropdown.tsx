@@ -8,13 +8,15 @@ import Typography from "../Typography";
 import CenteredElement from "../ui/CenteredElement";
 import arrowDown from "@/app/assets/icons/arrow-down.svg";
 import arrowUp from "@/app/assets/icons/arrow-up.svg";
+import { twMerge } from "tailwind-merge";
 
 type NavbarDropdownProps = {
   title: string;
   items: { label: string; href: string }[];
+  isOnTop: boolean;
 };
 
-const NavbarDropdown: FC<NavbarDropdownProps> = ({ title, items }) => {
+const NavbarDropdown: FC<NavbarDropdownProps> = ({ title, items, isOnTop }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const hasItems = items && items.length > 0;
@@ -52,12 +54,18 @@ const NavbarDropdown: FC<NavbarDropdownProps> = ({ title, items }) => {
 
   return (
     <div
-      className="relative inline-block rounded-lg  items-center justify-center hover:cursor-pointer p-4 pr-8 mt-1"
+      className="relative rounded-lg items-center justify-center hover:cursor-pointer p-4 mt-1"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       <CenteredElement className="gap-x-4" justify="between">
-        <Typography className="text-sm tracking-wider" weight="700">
+        <Typography
+          className={twMerge(
+            "text-sm tracking-wider",
+            isOnTop ? "text-black" : "text-white"
+          )}
+          weight="700"
+        >
           {title}
         </Typography>
         <Image className="w-4 aspect-auto" src={arrowDown} alt="arrow down" />

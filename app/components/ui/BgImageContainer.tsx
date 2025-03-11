@@ -24,7 +24,6 @@ const BgImageContainer: FC<BgImageContainerProps> = ({
         <div className="absolute bottom-24 left-[5%] sm:left-[2.5%] lg:left-[10%] xl:left-[12.5%] z-20">
           <Typography
             className="text-3xl md:text-5xl tablet:text-7xl"
-            font="proxima-nova"
             weight="800"
           >
             {title}
@@ -34,7 +33,6 @@ const BgImageContainer: FC<BgImageContainerProps> = ({
           <div className="absolute bottom-12 left-[5%] sm:left-[2.5%] lg:left-[10%] xl:left-[12.5%] z-20">
             <Typography
               className="text-base md:text-xl tablet:text-2xl"
-              font="proxima-nova"
               weight="400"
             >
               {subtitle}
