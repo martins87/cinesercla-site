@@ -18,7 +18,7 @@ const HeaderFilter: FC<HeaderFilterProps> = ({
   active,
 }) => {
   return (
-    <CenteredElement direction="col">
+    <CenteredElement className="w-fit" direction="col" items="start">
       <Typography
         className={twMerge(
           "relative text-base md:text-xl tablet:text-3xl hover:cursor-pointer transition-all duration-300 ease-in-out",

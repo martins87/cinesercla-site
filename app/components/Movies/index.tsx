@@ -70,7 +70,7 @@ const Movies = () => {
   return (
     <CenteredEl className="my-10" direction="col">
       <CenteredEl className="mt-20 mb-6">
-        <CenteredEl className="gap-x-4" justify="start">
+        <CenteredEl className="w-4/5 gap-x-6 tablet:gap-x-10" justify="start">
           {filters.map((filter) => (
             <HeaderFilter
               key={filter.label}
@@ -81,7 +81,7 @@ const Movies = () => {
             />
           ))}
         </CenteredEl>
-        <CenteredEl className="gap-x-2" justify="end">
+        <CenteredEl className="w-1/5 gap-x-2" justify="end">
           <CarouselArrow direction="left" onClick={previous} />
           <CarouselArrow direction="right" onClick={next} />
         </CenteredEl>

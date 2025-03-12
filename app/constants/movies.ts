@@ -15,10 +15,9 @@ export const movies: Movie[] = [
     title: "Transformers O Início",
     description:
       "A história de origem de Optimus Prime e Megatron, os maiores rivais da franquia, mas que um dia foram amigos tão ligados quanto irmãos e que mudaram o destino de Cybertron para sempre.",
-    imdbRate: "7.9",
-    rtRate: "89%",
     rating: "10",
     duration: "1h50min",
+    genre: "Animação",
   },
   {
     id: "90ac9647-8093-48ea-88ab-b70d697ce45f",
@@ -26,10 +25,9 @@ export const movies: Movie[] = [
     title: "É Assim Que Acaba",
     description:
       "Lily acredita que encontrou o amor verdadeiro com Ryle, mas quando um incidente doloroso desencadeia um trauma do passado, ela deve decidir se apenas o amor pode levar seu casamento adiante. As coisas ficam complicadas quando seu primeiro amor retorna à sua vida.",
-    imdbRate: "6.7",
-    rtRate: "57%",
     rating: "14",
     duration: "2h03min",
+    genre: "Romance",
   },
   {
     id: "15f3189a-51db-4547-966b-2122f9a55f26",
@@ -37,10 +35,9 @@ export const movies: Movie[] = [
     title: "A Menina e o Dragão",
     description:
       "Na China antiga, dragões eram aliados dos homens, mas a cobiça e o desejo de poder dos humanos destruíram essa união. Anos depois, Ping, uma jovem escrava, forma uma amizade com Long Danzi, o último dragão imperial. Juntos, fogem do cativeiro e viajam pelo Império, aprendendo o poder do Qi e sendo perseguidos.",
-    imdbRate: "5.6",
-    rtRate: "71%",
     rating: "L",
     duration: "1h38min",
+    genre: "Animação",
   },
   {
     id: "b5e164c5-06ad-4267-8ade-735b48227787",
@@ -48,10 +45,9 @@ export const movies: Movie[] = [
     title: "Coringa: Delírio A Dois",
     description:
       "Em Coringa 2, seguimos Arthur Fleck após os eventos do primeiro filme. Agora, desempregado e marcado por sua complexa condição mental e origem familiar difícil, ele se transforma em Coringa, o maior símbolo de uma revolta popular contra a elite de Gotham City.",
-    imdbRate: "5.2",
-    rtRate: "31%",
     rating: "16",
     duration: "2h18min",
+    genre: "Drama",
   },
 ];
 
@@ -64,8 +60,6 @@ export const movie: Movie = {
   genre: "Ação, Comédia",
   launchDate: "25/07/2024",
   cast: "Ryan Reynolds, Hugh Jackman, Morena Baccarin, Emma Corrin",
-  imdbRate: "8.0",
-  rtRate: "78%",
   cover: wolverine_cover,
   card: wolverine_card,
   trailers: [

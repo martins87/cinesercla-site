@@ -15,8 +15,6 @@ export type Movie = {
   title: string;
   description?: string;
   genre?: string;
-  imdbRate: string;
-  rtRate?: string;
   rating?: string;
   duration?: string;
   status?: MovieItemType;
