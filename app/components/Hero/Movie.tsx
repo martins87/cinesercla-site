@@ -5,11 +5,13 @@ import { Movie as M } from "@/app/types/Movie";
 import Typography from "../Typography";
 import DarkerBackground from "./DarkerBackground";
 import Container from "../ui/Container";
-import IMDBLogo from "../../assets/images/imdb-logo.png";
-import RTLogo from "../../assets/images/rotten-tomatoes-logo.png";
-import Ticket from "../../assets/icons/ticket.png";
 import Play from "../../assets/icons/play.svg";
 import GradientOverlay from "../GradientOverlay";
+import Dot from "../Dot";
+// import Ticket from "../../assets/icons/ticket.png";
+import CenteredElement from "../ui/CenteredElement";
+import { twMerge } from "tailwind-merge";
+import Button from "../ui/Button";
 
 type MovieProps = {
   movie: M;
@@ -36,30 +38,42 @@ const Movie: FC<MovieProps> = ({ movie }) => {
               >
                 {movie.title}
               </Typography>
+              <div className="w-full flex items-center justify-start gap-x-1 ">
+                <Typography className="text-base tablet:text-lg">
+                  {movie.genre}
+                </Typography>
+                <Dot className="text-base tablet:text-lg" />
+                <CenteredElement
+                  className={twMerge(
+                    "w-8 aspect-square rounded-md",
+                    movie.rating === "L"
+                      ? "bg-[#008000]"
+                      : movie.rating === "10"
+                      ? "bg-[#0000FF]"
+                      : movie.rating === "14"
+                      ? "bg-[#FFA500]"
+                      : movie.rating === "16"
+                      ? "bg-[#FF0000]"
+                      : "bg-[#000000]"
+                  )}
+                >
+                  <Typography className="text-base tablet:text-lg">
+                    {movie.rating}
+                  </Typography>
+                </CenteredElement>
+                <Dot className="text-base tablet:text-lg" />
+                <Typography className="text-base tablet:text-lg">
+                  {movie.duration}
+                </Typography>
+              </div>
               <Typography
                 className="text-base tablet:text-xl opacity-85"
                 weight="400"
               >
                 {movie.description}
               </Typography>
-              <div className="w-full flex items-center justify-start gap-x-2 ">
-                <Image width={44} src={IMDBLogo} alt="imdb logo" />
-                <Typography className="text-base tablet:text-lg">
-                  {movie.imdbRate}
-                </Typography>
-                <Image width={24} src={RTLogo} alt="rotten tomatoes logo" />
-                <Typography className="text-base tablet:text-lg">
-                  {movie.rtRate}
-                </Typography>
-                <Typography className="text-base tablet:text-lg">
-                  {movie.rating}
-                </Typography>
-                <Typography className="text-base tablet:text-lg">
-                  {`| ${movie.duration}`}
-                </Typography>
-              </div>
               <div className="flex items-center justify-start gap-x-2">
-                <div className="flex items-center justify-center gap-x-3 p-4 rounded-2xl bg-[#980038]">
+                {/* <div className="flex items-center justify-center gap-x-3 p-4 rounded-2xl bg-[#980038]">
                   <Typography
                     className="text-base tablet:text-lg tracking-wider"
                     font="gellix"
@@ -67,7 +81,8 @@ const Movie: FC<MovieProps> = ({ movie }) => {
                     COMPRAR
                   </Typography>
                   <Image width={24} src={Ticket} alt="ticket logo" />
-                </div>
+                </div> */}
+                <Button label="COMPRAR" />
                 <Image width={48} src={Play} alt="play icon" />
               </div>
             </div>

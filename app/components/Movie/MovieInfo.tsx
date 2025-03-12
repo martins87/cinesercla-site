@@ -1,9 +1,9 @@
 import { FC } from "react";
-import Image from "next/image";
+// import Image from "next/image";
 
 import CenteredElement from "../ui/CenteredElement";
 import Typography from "../Typography";
-import like from "@/app/assets/icons/like.svg";
+// import like from "@/app/assets/icons/like.svg";
 import { Movie } from "@/app/types/Movie";
 
 type MovieInfoProps = {
@@ -17,12 +17,12 @@ const MovieInfo: FC<MovieInfoProps> = ({ movie }) => {
         <Typography className="md:w-1/2 text-3xl text-black/90" weight="800">
           {movie.title}
         </Typography>
-        <CenteredElement className="md:w-1/2 gap-x-2 justify-start md:justify-end">
+        {/* <CenteredElement className="md:w-1/2 gap-x-2 justify-start md:justify-end">
           <Typography className="text-lg text-black/90" weight="700">
             Em Seus Favoritos
           </Typography>
           <Image className="scale-[70%]" src={like} alt="like icon" />
-        </CenteredElement>
+        </CenteredElement> */}
       </CenteredElement>
       <CenteredElement className="flex-col md:flex-row gap-y-10 items-start justify-between">
         <CenteredElement
