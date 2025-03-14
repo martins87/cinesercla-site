@@ -6,12 +6,12 @@ import Container from "../ui/Container";
 import Links from "../Links";
 import Logo from "../Logo";
 import SearchBar from "../SearchBar";
-// import UserActionMenu from "../UserActionMenu";
 import CitySelector from "./CitySelector";
 import { twMerge } from "tailwind-merge";
 import MobileMenuIcon from "./MobileMenuIcon";
 import NavbarDropdown from "./NavbarDropdown";
 import CenteredElement from "../ui/CenteredElement";
+import ThemeToggle from "../ThemeToggle";
 
 const Navbar = () => {
   const [isScrolling, setIsScrolling] = useState<boolean>(false);
@@ -38,7 +38,8 @@ const Navbar = () => {
     <div
       className={twMerge(
         "w-full fixed top-0 h-14 lg:h-24 z-20",
-        isScrolling ? "bg-[#EAEAEA]" : ""
+        // isScrolling ? "bg-[#EAEAEA]" : ""
+        isScrolling ? "bg-[var(--header-bg)]" : ""
       )}
     >
       <Container className="flex flex-row items-center justify-between">
@@ -58,7 +59,7 @@ const Navbar = () => {
           <CitySelector isOnTop={isScrolling} />
         </CenteredElement>
         <SearchBar />
-        {/* <UserActionMenu /> */}
+        <ThemeToggle />
       </Container>
     </div>
   );
