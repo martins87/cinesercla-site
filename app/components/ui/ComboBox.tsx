@@ -9,9 +9,10 @@ type ComboBoxProps = {
   list: { value: string; label: string }[];
   value: string;
   setValue: Dispatch<SetStateAction<string>>;
+  label: string;
 };
 
-const ComboBox: FC<ComboBoxProps> = ({ list, value, setValue }) => {
+const ComboBox: FC<ComboBoxProps> = ({ list, value, setValue, label }) => {
   const [show, setShow] = useState(false);
 
   return (
@@ -26,17 +27,17 @@ const ComboBox: FC<ComboBoxProps> = ({ list, value, setValue }) => {
           justify="between"
         >
           <Typography className="text-xl uppercase" weight="700">
-            {show ? list[0].label : value}
+            {show ? label : value}
           </Typography>
           <Image src={arrowDown} alt="arrow down" />
         </CenteredElement>
         {show && (
           <ul className="absolute top-20 w-full py-2 flex flex-col items-start justify-start bg-[#bfbfbf] rounded-xl z-20">
-            {list.slice(1).map((item, index) => (
+            {list.map((item, index) => (
               <li
                 key={index}
                 className="w-full px-6 py-3 hover:bg-[#A3A3A3]/25 hover:cursor-pointer"
-                onClick={() => setValue(item.value)}
+                onClick={() => setValue(item.label)}
               >
                 <Typography className="text-xl uppercase" weight="700">
                   {item.label}

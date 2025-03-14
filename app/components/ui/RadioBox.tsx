@@ -7,15 +7,21 @@ import CenteredElement from "./CenteredElement";
 
 type RadioBoxProps = {
   label: string;
+  onClick?: () => void;
 };
 
-const RadioBox: FC<RadioBoxProps> = ({ label }) => {
+const RadioBox: FC<RadioBoxProps> = ({ label, onClick }) => {
   const [clicked, setClicked] = useState(false);
+
+  const handleClick = () => {
+    setClicked(!clicked);
+    onClick!();
+  };
 
   return (
     <CenteredElement
       className="h-20 px-6 py-4 hover:cursor-pointer bg-[#A3A3A3] hover:bg-[#A3A3A3]/90 rounded-xl"
-      onClick={() => setClicked(!clicked)}
+      onClick={handleClick}
       items="center"
       justify="between"
     >
