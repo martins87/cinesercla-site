@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { ThemeProvider } from "./contexts/ThemeContext";
 
 const proximaNova = localFont({
   src: [
@@ -49,9 +50,11 @@ export default function RootLayout({
       <body
         className={`${proximaNova.variable} ${gellix.variable} antialiased bg-[#EAEAEA]`}
       >
-        <Navbar />
-        {children}
-        <Footer />
+        <ThemeProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
