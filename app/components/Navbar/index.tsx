@@ -23,15 +23,9 @@ const Navbar = () => {
   const closeCinemaModal = () => setCinemaModalOpen(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
+    const handleScroll = () => setIsScrolling(window.scrollY > 0);
 
-      if (scrollTop > 0) {
-        setIsScrolling(true);
-      } else {
-        setIsScrolling(false);
-      }
-    };
+    handleScroll();
 
     window.addEventListener("scroll", handleScroll);
 
@@ -51,7 +45,7 @@ const Navbar = () => {
       )}
       <div
         className={twMerge(
-          "w-full fixed top-0 h-14 lg:h-24 z-20",
+          "w-full fixed top-0 h-14 lg:h-24 z-30",
           isScrolling ? "bg-[#EAEAEA]" : ""
         )}
       >
