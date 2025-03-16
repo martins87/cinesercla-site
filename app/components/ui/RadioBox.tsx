@@ -1,22 +1,18 @@
 "use client";
 
-import { FC, useState } from "react";
+import { Dispatch, FC, SetStateAction } from "react";
 
 import Typography from "../Typography";
 import CenteredElement from "./CenteredElement";
 
 type RadioBoxProps = {
   label: string;
-  onClick?: () => void;
+  selected: string;
+  setSelected: Dispatch<SetStateAction<string>>;
 };
 
-const RadioBox: FC<RadioBoxProps> = ({ label, onClick }) => {
-  const [clicked, setClicked] = useState(false);
-
-  const handleClick = () => {
-    setClicked(!clicked);
-    onClick!();
-  };
+const RadioBox: FC<RadioBoxProps> = ({ label, selected, setSelected }) => {
+  const handleClick = () => setSelected(label);
 
   return (
     <CenteredElement
@@ -28,7 +24,7 @@ const RadioBox: FC<RadioBoxProps> = ({ label, onClick }) => {
       <Typography className="text-xl uppercase" weight="700">
         {label}
       </Typography>
-      {!clicked ? (
+      {label !== selected ? (
         <div className="w-4 aspect-square border-2 border-white rounded-full mr-2" />
       ) : (
         <CenteredElement className="w-fit p-2 bg-[#980038]/25 rounded-full">

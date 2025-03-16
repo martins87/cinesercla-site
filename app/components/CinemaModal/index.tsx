@@ -49,6 +49,10 @@ const CinemaModal: FC<CinemaModalProps> = ({ closeFn }) => {
     if (cinemas.length > 0) setCinemaList(cinemas);
   }, [cidade]);
 
+  useEffect(() => {
+    if (step === Steps.CinemaSelected) closeFn();
+  }, [step, closeFn]);
+
   return (
     <CenteredElement className="flex-1 justify-start gap-y-4" direction="col">
       <CinemaModalHeader closeFn={closeFn} />
@@ -60,12 +64,20 @@ const CinemaModal: FC<CinemaModalProps> = ({ closeFn }) => {
         />
       )}
       {step === Steps.StateSelected && (
-        <CitySelection list={cidadeList} setCidade={setCidade} />
+        <CitySelection
+          list={cidadeList}
+          cidade={cidade}
+          setCidade={setCidade}
+        />
       )}
       {step === Steps.CitySelected && (
         <>
           <PlaceSelected estado={estado} cidade={cidade} />
-          <CinemaSelection list={cinemaList} setCinema={setCinema} />
+          <CinemaSelection
+            list={cinemaList}
+            cinema={cinema}
+            setCinema={setCinema}
+          />
         </>
       )}
       {step === Steps.Initial && estado !== INITIAL_LABEL ? (
