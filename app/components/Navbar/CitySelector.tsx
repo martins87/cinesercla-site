@@ -8,11 +8,15 @@ import { twMerge } from "tailwind-merge";
 
 type CitySelectorProps = {
   isOnTop: boolean;
+  onClick?: () => void;
 };
 
-const CitySelector: FC<CitySelectorProps> = ({ isOnTop }) => {
+const CitySelector: FC<CitySelectorProps> = ({ isOnTop, onClick }) => {
   return (
-    <div className="h-10 hidden lg:flex items-center gap-x-3 -mb-1 ml-4">
+    <div
+      className="h-10 hidden lg:flex items-center gap-x-3 -mb-1 ml-4 hover:cursor-pointer hover:scale-105 transition-all duration-200 ease-in-out"
+      onClick={onClick}
+    >
       <Image src={Pin} alt="pin icon" />
       <Typography
         className={twMerge("text-sm", isOnTop ? "text-black" : "text-white")}

@@ -1,20 +1,26 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { twMerge } from "tailwind-merge";
 
 import Container from "../ui/Container";
-import Links from "../Links";
 import Logo from "../Logo";
 import SearchBar from "../SearchBar";
 // import UserActionMenu from "../UserActionMenu";
 import CitySelector from "./CitySelector";
-import { twMerge } from "tailwind-merge";
 import MobileMenuIcon from "./MobileMenuIcon";
 import NavbarDropdown from "./NavbarDropdown";
 import CenteredElement from "../ui/CenteredElement";
+import Modal from "../ui/Modal";
+import CinemaModal from "../CinemaModal";
+import Link from "next/link";
+import Typography from "../Typography";
 
 const Navbar = () => {
   const [isScrolling, setIsScrolling] = useState<boolean>(false);
+  const [cinemaModalOpen, setCinemaModalOpen] = useState<boolean>(false);
+
+  const closeCinemaModal = () => setCinemaModalOpen(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,33 +40,71 @@ const Navbar = () => {
     };
   }, []);
 
+  const openCinemaModal = () => setCinemaModalOpen(true);
+
   return (
-    <div
-      className={twMerge(
-        "w-full fixed top-0 h-14 lg:h-24 z-20",
-        isScrolling ? "bg-[#EAEAEA]" : ""
+    <>
+      {cinemaModalOpen && (
+        <Modal setModalOpen={setCinemaModalOpen}>
+          <CinemaModal closeFn={closeCinemaModal} />
+        </Modal>
       )}
-    >
-      <Container className="flex flex-row items-center justify-between">
-        <MobileMenuIcon />
-        <Logo className="mx-auto lg:mx-0" />
-        <CenteredElement className="hidden lg:flex gap-x-4">
-          <NavbarDropdown
-            title="PROGRAMAÇÃO"
-            items={[
-              { label: "EM CARTAZ", href: "/programacao" },
-              { label: "EM BREVE", href: "/programacao" },
-              { label: "PRÉ-VENDA", href: "/programacao" },
-            ]}
-            isOnTop={isScrolling}
-          />
-          <Links isOnTop={isScrolling} />
-          <CitySelector isOnTop={isScrolling} />
-        </CenteredElement>
-        <SearchBar />
-        {/* <UserActionMenu /> */}
-      </Container>
-    </div>
+      <div
+        className={twMerge(
+          "w-full fixed top-0 h-14 lg:h-24 z-20",
+          isScrolling ? "bg-[#EAEAEA]" : ""
+        )}
+      >
+        <Container className="flex flex-row items-center justify-between">
+          <MobileMenuIcon />
+          <Logo className="mx-auto lg:mx-0" />
+          <CenteredElement className="hidden lg:flex gap-x-4">
+            <NavbarDropdown
+              title="PROGRAMAÇÃO"
+              items={[
+                { label: "EM CARTAZ", href: "/programacao" },
+                { label: "EM BREVE", href: "/programacao" },
+                { label: "PRÉ-VENDA", href: "/programacao" },
+              ]}
+              isOnTop={isScrolling}
+            />
+            <Link href="/cinemas">
+              <Typography
+                className={twMerge(
+                  "text-sm tracking-wide",
+                  isScrolling ? "text-black" : "text-white"
+                )}
+                weight="700"
+              >
+                CINEMAS
+              </Typography>
+            </Link>
+            <NavbarDropdown
+              title="PROMOÇÕES"
+              items={[
+                { label: "BILHETERIA", href: "/programacao" },
+                { label: "BOMBONIERE", href: "/bomboniere" },
+              ]}
+              isOnTop={isScrolling}
+            />
+            <Link href="/corporativo">
+              <Typography
+                className={twMerge(
+                  "text-sm tracking-wide",
+                  isScrolling ? "text-black" : "text-white"
+                )}
+                weight="700"
+              >
+                CORPORATIVO
+              </Typography>
+            </Link>
+            <CitySelector isOnTop={isScrolling} onClick={openCinemaModal} />
+          </CenteredElement>
+          <SearchBar />
+          {/* <UserActionMenu /> */}
+        </Container>
+      </div>
+    </>
   );
 };
 
