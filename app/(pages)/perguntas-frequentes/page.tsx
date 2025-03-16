@@ -40,14 +40,17 @@ const PerguntasFrequentes = () => {
   return (
     <>
       <BgImageContainer img={Bg} title="Perguntas Frequentes" />
-      <Container className="h-fit bg-[#EAEAEA] mt-16">
+      <Container className="h-fit bg-inherit mt-16">
         <Centered className="gap-y-10" direction="col">
           <Input
             placeholder="Procure por tópicos"
             big
             inputClassName="placeholder:text-white/70"
           />
-          <Typography className="text-2xl text-black/90 mr-auto" weight="400">
+          <Typography
+            className="text-2xl text-black/90 dark:text-white mr-auto"
+            weight="400"
+          >
             Aqui estão as perguntas que mais recebemos:
           </Typography>
           <Centered className="grid grid-cols-1 md:grid-cols-3 tablet:grid-cols-4 gap-2">
@@ -62,13 +65,13 @@ const PerguntasFrequentes = () => {
           {category === null ? (
             <>
               <Typography
-                className="text-3xl text-black/90 mt-6 mr-auto"
+                className="text-3xl text-black/90 dark:text-white mt-6 mr-auto"
                 weight="800"
               >
                 Principais dúvidas
               </Typography>
               <Typography
-                className="text-2xl text-black/90 -my-6 mr-auto"
+                className="text-2xl text-black/90 dark:text-white -my-6 mr-auto"
                 weight="400"
               >
                 O que acontece depois dos créditos? Quem realmente deixou a
@@ -78,7 +81,10 @@ const PerguntasFrequentes = () => {
             </>
           ) : (
             <CenteredElement className="mt-6 -mb-6" justify="between">
-              <Typography className="text-3xl text-black/90" weight="800">
+              <Typography
+                className="text-3xl text-black/90 dark:text-white"
+                weight="800"
+              >
                 {topics.filter((topic) => topic.category === category)[0].label}
               </Typography>
               <Image
@@ -91,7 +97,7 @@ const PerguntasFrequentes = () => {
           )}
           <Accordion list={faq} />
           <Centered className="gap-y-4" direction="col">
-            <Typography className="text-2xl text-black/90">
+            <Typography className="text-2xl text-black/90 dark:text-white">
               Precisa de mais ajuda?
             </Typography>
             <Button label="ENTRE EM CONTATO" onClick={handleClick} />
