@@ -36,12 +36,15 @@ const PageInfo: FC<PageInfoProps> = ({
         direction="col"
       >
         <Typography
-          className="text-3xl tablet:text-4xl text-black uppercase"
+          className="text-3xl tablet:text-4xl text-black dark:text-white uppercase"
           weight="800"
         >
           {title}
         </Typography>
-        <Typography className="text-xl tablet:text-2xl text-black" weight="400">
+        <Typography
+          className="text-xl tablet:text-2xl text-black dark:text-white"
+          weight="400"
+        >
           {description}
         </Typography>
         {btnLabel && <Button label={btnLabel} />}

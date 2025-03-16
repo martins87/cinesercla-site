@@ -21,14 +21,14 @@ const RightItem = () => {
       justify="start"
     >
       <Typography
-        className="text-lg leading-[22px] tracking-wide text-black "
+        className="text-lg leading-[22px] tracking-wide text-black dark:text-white"
         weight="800"
       >
         Newsletter
       </Typography>
       <CenteredEl className="gap-y-4" direction="col">
         <Typography
-          className="font-normal text-base leading-6 text-black/70 mr-auto"
+          className="font-normal text-base leading-6 text-black/70 dark:text-white mr-auto"
           weight="400"
         >
           Receba a Programação Semanal
@@ -39,7 +39,7 @@ const RightItem = () => {
             justify="start"
           >
             <input
-              className="w-full px-2 py-4 outline-none text-base text-black bg-inherit placeholder:text-black/50"
+              className="w-full px-2 py-4 outline-none text-base text-black dark:text-white bg-inherit placeholder:text-black/50"
               type="text"
               value={value}
               onChange={handleInputChange}
@@ -49,7 +49,7 @@ const RightItem = () => {
           <Button label="ENVIAR" />
         </CenteredEl>
         <Typography
-          className="font-normal text-xs leading-5 text-black/70 mr-auto"
+          className="font-normal text-xs leading-5 text-black/70 dark:text-white mr-auto"
           weight="400"
         >
           Ao se inscrever, você concorda com nossos Termos de Uso e dá

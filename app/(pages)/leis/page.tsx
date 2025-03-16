@@ -22,13 +22,13 @@ const Leis = () => {
   return (
     <>
       <BgImageContainer img={Bg} title="Leis" />
-      <Container className="h-fit bg-[#EAEAEA] mt-16">
+      <Container className="h-fit bg-inherit mt-16">
         <Accordion list={leis} />
         <Centered className="gap-y-4 mt-16" direction="col">
-          <Typography className="text-2xl text-black/90">
+          <Typography className="text-2xl text-black/90 dark:text-white">
             Precisa de mais ajuda?
           </Typography>
-          <Button label="ENTRE EM CONTATO" />
+          <Button className="px-8 h-16" label="ENTRE EM CONTATO" />
         </Centered>
       </Container>
     </>

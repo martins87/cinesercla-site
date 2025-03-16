@@ -62,7 +62,7 @@ const NavbarDropdown: FC<NavbarDropdownProps> = ({ title, items, isOnTop }) => {
         <Typography
           className={twMerge(
             "text-sm tracking-wider",
-            isOnTop ? "text-black" : "text-white"
+            isOnTop ? "text-black dark:text-white" : "text-white"
           )}
           weight="700"
         >

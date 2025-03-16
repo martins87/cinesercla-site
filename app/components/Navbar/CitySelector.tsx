@@ -19,7 +19,10 @@ const CitySelector: FC<CitySelectorProps> = ({ isOnTop, onClick }) => {
     >
       <Image src={Pin} alt="pin icon" />
       <Typography
-        className={twMerge("text-sm", isOnTop ? "text-black" : "text-white")}
+        className={twMerge(
+          "text-sm",
+          isOnTop ? "text-black dark:text-white" : "text-white"
+        )}
         weight="700"
       >
         BELO HORIZONTE

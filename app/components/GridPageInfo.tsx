@@ -10,7 +10,7 @@ type GridPageInfoProps = {
 
 const GridPageInfo: FC<GridPageInfoProps> = ({ pageInfo }) => {
   return (
-    <Container className="h-fit bg-[#EAEAEA] mt-10">
+    <Container className="h-fit bg-inherit mt-10">
       {pageInfo.map((info, index) => (
         <PageInfo
           key={info.title}

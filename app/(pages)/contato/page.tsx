@@ -13,24 +13,39 @@ const ContactPage = () => {
           items="start"
           justify="start"
         >
-          <Typography className="text-4xl text-black/90" weight="800">
+          <Typography
+            className="text-4xl text-black/90 dark:text-white"
+            weight="800"
+          >
             Contato
           </Typography>
           <Centered className="flex-col sm:flex-row tablet:flex-col gap-x-6 gap-y-6">
             <Centered>
-              <Typography className="text-lg text-black" weight="400">
+              <Typography
+                className="text-lg text-black dark:text-white"
+                weight="400"
+              >
                 Tem dúvidas? Estamos aqui para ajudar. Entre em contato com
                 nossa equipe e descubra mais sobre nossos filmes e serviços!
               </Typography>
             </Centered>
             <Centered direction="col" items="start">
-              <Typography className="text-xl text-black" weight="400">
+              <Typography
+                className="text-xl text-black dark:text-white"
+                weight="400"
+              >
                 Assistência Rápida
               </Typography>
-              <Typography className="text-xl text-black" weight="400">
+              <Typography
+                className="text-xl text-black dark:text-white"
+                weight="400"
+              >
                 Serviço Multicanal
               </Typography>
-              <Typography className="text-xl text-black" weight="400">
+              <Typography
+                className="text-xl text-black dark:text-white"
+                weight="400"
+              >
                 Informações sobre Parcerias e Promoções
               </Typography>
             </Centered>

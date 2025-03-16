@@ -23,8 +23,8 @@ const HeaderFilter: FC<HeaderFilterProps> = ({
         className={twMerge(
           "relative text-base md:text-xl tablet:text-3xl hover:cursor-pointer transition-all duration-300 ease-in-out",
           active
-            ? "text-black hover:text-black/80"
-            : "text-black/40 hover:text-black/60"
+            ? "text-black dark:text-white hover:text-black/80"
+            : "text-black/40 dark:text-white/50 hover:text-black/60 dark:hover:text-white/70"
         )}
         weight="800"
         onClick={handleFilter && (() => handleFilter(filter))}
