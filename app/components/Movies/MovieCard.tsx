@@ -5,6 +5,7 @@ import { Movie } from "@/app/types/Movie";
 import GlassCard from "./GlassCard";
 import Typography from "../Typography";
 import CenteredElement from "../ui/CenteredElement";
+import Rating from "../Rating";
 
 type MovieCardProps = {
   movie: Movie;
@@ -20,6 +21,7 @@ const MovieCard: FC<MovieCardProps> = ({ movie }) => {
           alt="movie cover"
         />
         <GlassCard label={movie.status} />
+        <Rating className="absolute top-3 right-3" rating={movie.rating} />
       </div>
       <CenteredElement className="min-h-12" items="start">
         <CenteredElement className="w-1/2" justify="start">

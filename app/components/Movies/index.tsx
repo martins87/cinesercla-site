@@ -3,13 +3,13 @@
 import { useRef, useState } from "react";
 import Slider from "react-slick";
 
-import MovieCard from "./MovieCard";
-import CenteredEl from "../ui/CenteredElement";
-import { movies } from "../../constants/cards-movies";
 import { MovieItemType } from "@/app/types/MovieItem";
+import { Filter } from "@/app/types/Filter";
+import CenteredEl from "../ui/CenteredElement";
+import MovieCard from "./MovieCard";
 import HeaderFilter from "@/app/components/HeaderFilter";
 import CarouselArrow from "../CarouselArrow";
-import { Filter } from "@/app/types/Filter";
+import { movies } from "../../constants/cards-movies";
 
 const filters: { label: string; filter: MovieItemType }[] = [
   { label: "Em Cartaz", filter: "em-cartaz" },

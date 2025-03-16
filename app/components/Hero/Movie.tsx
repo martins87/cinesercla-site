@@ -9,9 +9,8 @@ import Play from "../../assets/icons/play.svg";
 import GradientOverlay from "../GradientOverlay";
 import Dot from "../Dot";
 // import Ticket from "../../assets/icons/ticket.png";
-import CenteredElement from "../ui/CenteredElement";
-import { twMerge } from "tailwind-merge";
 import Button from "../ui/Button";
+import Rating from "../Rating";
 
 type MovieProps = {
   movie: M;
@@ -43,24 +42,7 @@ const Movie: FC<MovieProps> = ({ movie }) => {
                   {movie.genre}
                 </Typography>
                 <Dot className="text-base tablet:text-lg" />
-                <CenteredElement
-                  className={twMerge(
-                    "w-8 aspect-square rounded-md",
-                    movie.rating === "L"
-                      ? "bg-[#008000]"
-                      : movie.rating === "10"
-                      ? "bg-[#0000FF]"
-                      : movie.rating === "14"
-                      ? "bg-[#FFA500]"
-                      : movie.rating === "16"
-                      ? "bg-[#FF0000]"
-                      : "bg-[#000000]"
-                  )}
-                >
-                  <Typography className="text-base tablet:text-lg">
-                    {movie.rating}
-                  </Typography>
-                </CenteredElement>
+                <Rating rating={movie.rating} />
                 <Dot className="text-base tablet:text-lg" />
                 <Typography className="text-base tablet:text-lg">
                   {movie.duration}
