@@ -39,7 +39,7 @@ const Input: FC<InputProps> = ({
       <input
         className={twMerge(
           "w-full -mt-[2px] py-4 px-4 outline-none text-base text-white bg-inherit",
-          "placeholder:text-white/50",
+          "placeholder:text-white/80",
           big
             ? "text-2xl font-bold font-[family-name:var(--font-proxima-nova)] placeholder:text-2xl placeholder:font-bold placeholder:font-[family-name:var(--font-proxima-nova)] px-5"
             : "",

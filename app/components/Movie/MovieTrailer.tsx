@@ -30,10 +30,16 @@ const MovieTrailer: FC<MovieTrailerProps> = ({ trailer }) => {
           alt="play icon"
         />
       </CenteredElement>
-      <Typography className="text-xl text-black/90 leading-6" weight="700">
+      <Typography
+        className="text-xl text-black/90 dark:text-white leading-6"
+        weight="700"
+      >
         {trailer.videoTitle}
       </Typography>
-      <Typography className="text-xl text-black/65" weight="400">
+      <Typography
+        className="text-xl text-black/65 dark:text-white"
+        weight="400"
+      >
         {`${trailer.videoDuration} ${trailer.timestamp}`}
       </Typography>
     </CenteredElement>

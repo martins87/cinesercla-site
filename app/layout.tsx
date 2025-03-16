@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { ThemeProvider } from "next-themes";
 
 import "./globals.css";
 import Navbar from "./components/Navbar";
@@ -46,13 +47,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${proximaNova.variable} ${gellix.variable} antialiased bg-[#EAEAEA]`}
-      >
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
+      <ThemeProvider attribute="class">
+        <body
+          className={`${proximaNova.variable} ${gellix.variable} antialiased bg-[#EAEAEA] dark:bg-[#10141c] transition-colors duration-200 easy-in-out`}
+        >
+          <Navbar />
+          {children}
+          <Footer />
+        </body>
+      </ThemeProvider>
     </html>
   );
 }

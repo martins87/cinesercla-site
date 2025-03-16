@@ -11,7 +11,7 @@ const LeftItem = () => (
   <CenteredEl className="h-full gap-y-6" direction="col" justify="start">
     <Logo className="mr-auto" />
     <Typography
-      className="font-normal text-sm leading-[22px] tracking-[1.12px] text-black/80"
+      className="font-normal text-sm leading-[22px] tracking-[1.12px] text-black/80 dark:text-white/50"
       weight="400"
     >
       CINESERCLA é um dos mais tradicionais grupos de cinemas do Brasil e mantém
@@ -20,7 +20,7 @@ const LeftItem = () => (
     </Typography>
     <CenteredEl className="gap-y-2" direction="col">
       <Typography
-        className="text-lg leading-[22px] text-black tracking-wide mr-auto"
+        className="text-lg leading-[22px] text-black dark:text-white tracking-wide mr-auto"
         weight="800"
       >
         Redes sociais

@@ -14,7 +14,7 @@ const CenterItem = () => {
       justify="start"
     >
       <Typography
-        className="text-lg leading-[22px] text-black tracking-wide"
+        className="text-lg leading-[22px] text-black dark:text-white tracking-wide"
         weight="800"
       >
         Navegue
@@ -24,7 +24,7 @@ const CenterItem = () => {
           {footerLinks.slice(0, footerLinks.length / 2).map((footerLink) => (
             <Link key={footerLink.src} href={footerLink.src}>
               <Typography
-                className="font-normal text-lg leading-6 text-black"
+                className="font-normal text-lg leading-6 text-black dark:text-white"
                 weight="400"
               >
                 {footerLink.label}
@@ -38,7 +38,7 @@ const CenterItem = () => {
             .map((footerLink) => (
               <Link key={footerLink.src} href={footerLink.src}>
                 <Typography
-                  className="font-normal text-lg leading-6 text-black"
+                  className="font-normal text-lg leading-6 text-black dark:text-white"
                   weight="400"
                 >
                   {footerLink.label}

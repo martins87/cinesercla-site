@@ -15,6 +15,7 @@ import Modal from "../ui/Modal";
 import CinemaModal from "../CinemaModal";
 import Link from "next/link";
 import Typography from "../Typography";
+import Switch from "../Switch";
 
 const Navbar = () => {
   const [isScrolling, setIsScrolling] = useState<boolean>(false);
@@ -46,10 +47,10 @@ const Navbar = () => {
       <div
         className={twMerge(
           "w-full fixed top-0 h-14 lg:h-24 z-30",
-          isScrolling ? "bg-[#EAEAEA]" : ""
+          isScrolling ? "bg-[#EAEAEA] dark:bg-[#10141c]" : ""
         )}
       >
-        <Container className="flex flex-row items-center justify-between">
+        <Container className="flex flex-row items-center justify-between gap-x-10">
           <MobileMenuIcon />
           <Logo className="mx-auto lg:mx-0" />
           <CenteredElement className="hidden lg:flex gap-x-4">
@@ -66,7 +67,7 @@ const Navbar = () => {
               <Typography
                 className={twMerge(
                   "text-sm tracking-wide",
-                  isScrolling ? "text-black" : "text-white"
+                  isScrolling ? "text-black dark:text-white" : "text-white"
                 )}
                 weight="700"
               >
@@ -85,7 +86,7 @@ const Navbar = () => {
               <Typography
                 className={twMerge(
                   "text-sm tracking-wide",
-                  isScrolling ? "text-black" : "text-white"
+                  isScrolling ? "text-black dark:text-white" : "text-white"
                 )}
                 weight="700"
               >
@@ -96,6 +97,7 @@ const Navbar = () => {
           </CenteredElement>
           <SearchBar />
           {/* <UserActionMenu /> */}
+          <Switch />
         </Container>
       </div>
     </>

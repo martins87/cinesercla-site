@@ -26,7 +26,7 @@ const Cinemas = () => {
         direction="col"
       >
         <Typography
-          className="text-2xl md:text-3xl tablet:text-4xl text-black/90"
+          className="text-2xl md:text-3xl tablet:text-4xl text-black/90 dark:text-white"
           weight="800"
         >
           Encontre um cinema
@@ -39,7 +39,7 @@ const Cinemas = () => {
       </Centered>
       <Centered className="flex-col md:flex-row mt-14 items-start justify-between gap-y-4">
         <Typography
-          className="text-2xl md:text-3xl tablet:text-4xl text-black/90"
+          className="text-2xl md:text-3xl tablet:text-4xl text-black/90 dark:text-white"
           weight="800"
         >
           Todos os cinemas

@@ -13,24 +13,39 @@ const ContactPage = () => {
           items="start"
           justify="start"
         >
-          <Typography className="text-4xl text-black/90" weight="800">
+          <Typography
+            className="text-4xl text-black/90 dark:text-white"
+            weight="800"
+          >
             Trabalhe Conosco
           </Typography>
           <Centered className="flex-col sm:flex-row tablet:flex-col gap-x-6 gap-y-6">
-            <Centered>
-              <Typography className="text-lg text-black" weight="400">
+            <Centered justify="start">
+              <Typography
+                className="text-lg text-black dark:text-white"
+                weight="400"
+              >
                 Apaixonado por cinema? Candidate-se agora e venha crescer com a
                 gente!
               </Typography>
             </Centered>
             <Centered direction="col" items="start">
-              <Typography className="text-xl text-black" weight="400">
+              <Typography
+                className="text-xl text-black dark:text-white"
+                weight="400"
+              >
                 Colabore em um ambiente inovador
               </Typography>
-              <Typography className="text-xl text-black" weight="400">
+              <Typography
+                className="text-xl text-black dark:text-white"
+                weight="400"
+              >
                 Desenvolva-se em um ambiente dinâmico
               </Typography>
-              <Typography className="text-xl text-black" weight="400">
+              <Typography
+                className="text-xl text-black dark:text-white"
+                weight="400"
+              >
                 Trabalhe com paixão pelo cinema
               </Typography>
             </Centered>
