@@ -13,7 +13,7 @@ const CinemaModalHeader: FC<CinemaModalHeaderProps> = ({ closeFn }) => {
   return (
     <CenteredElement justify="between">
       <Typography
-        className="uppercase text-3xl text-black/90 text-center"
+        className="uppercase text-3xl text-black/90 dark:text-white text-center"
         weight="800"
       >
         Por favor, selecione um cinema abaixo:

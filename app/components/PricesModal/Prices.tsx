@@ -8,7 +8,8 @@ import close from "@/app/assets/icons/close.svg";
 import { Movie } from "@/app/types/Movie";
 import PriceDetailList from "./PriceDetailList";
 
-const subtitleClass = "w-fit text-base tablet:text-lg text-black/65";
+const subtitleClass =
+  "w-fit text-base tablet:text-lg text-black/65 dark:text-white";
 
 type PricesProps = {
   closeFn: () => void;
@@ -20,7 +21,7 @@ const Prices: FC<PricesProps> = ({ closeFn, movie }) => {
     <>
       <CenteredElement justify="between">
         <Typography
-          className="max-w-[75%] md:w-auto text-2xl text-black/90 leading-7"
+          className="max-w-[75%] md:w-auto text-2xl text-black/90 dark:text-white leading-7"
           weight="700"
         >
           Preços para hoje, 26 de Setembro
@@ -55,32 +56,53 @@ const Prices: FC<PricesProps> = ({ closeFn, movie }) => {
             />
           </CenteredElement>
           <CenteredElement direction="col" items="start">
-            <Typography className="text-3xl text-black/90" weight="700">
+            <Typography
+              className="text-3xl text-black/90 dark:text-white"
+              weight="700"
+            >
               Deadpool & Wolverine
             </Typography>
-            <Typography className="text-lg text-black/90" weight="400">
+            <Typography
+              className="text-lg text-black/90 dark:text-white"
+              weight="400"
+            >
               Ação, Comédia
             </Typography>
-            <Typography className="text-lg text-black/90" weight="400">
+            <Typography
+              className="text-lg text-black/90 dark:text-white"
+              weight="400"
+            >
               2h 7min
             </Typography>
           </CenteredElement>
         </CenteredElement>
         <CenteredElement justify="start">
-          <Typography className="w-fit text-lg text-black/65" weight="400">
+          <Typography
+            className="w-fit text-lg text-black/65 dark:text-white"
+            weight="400"
+          >
             2D
           </Typography>
-          <Dot className="text-lg text-black/65" />
-          <Typography className="w-fit text-lg text-black/65" weight="400">
+          <Dot className="text-lg text-black/65 dark:text-white" />
+          <Typography
+            className="w-fit text-lg text-black/65 dark:text-white"
+            weight="400"
+          >
             Dublado
           </Typography>
-          <Dot className="text-lg text-black/65" />
-          <Typography className="w-fit text-lg text-black/65" weight="400">
+          <Dot className="text-lg text-black/65 dark:text-white" />
+          <Typography
+            className="w-fit text-lg text-black/65 dark:text-white"
+            weight="400"
+          >
             Sala 4
           </Typography>
         </CenteredElement>
         <PriceDetailList />
-        <Typography className="text-lg text-black/75 leading-6" weight="400">
+        <Typography
+          className="text-lg text-black/75 dark:text-white leading-6"
+          weight="400"
+        >
           * Os valores dos ingressos variam de acordo com a sala, tecnologia,
           dia e horário da sessão, unidade e pré-estreias. Taxa de serviço
           cobrada em compras online.

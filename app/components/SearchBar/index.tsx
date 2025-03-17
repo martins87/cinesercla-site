@@ -1,6 +1,5 @@
 import Image from "next/image";
 
-// import MagnifyingGlass from "../../assets/icons/magnifying-glass.png";
 import MagnifyingGlass from "../../assets/icons/magnifying-glass-light.svg";
 import CenteredEl from "../ui/CenteredElement";
 

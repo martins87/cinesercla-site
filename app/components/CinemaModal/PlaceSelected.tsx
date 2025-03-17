@@ -10,7 +10,10 @@ type PlaceSelectedProps = {
 const PlaceSelected: FC<PlaceSelectedProps> = ({ estado, cidade }) => {
   return (
     <CenteredElement className="gap-y-4" direction="col" items="start">
-      <Typography className="uppercase text-2xl text-black/90" weight="800">
+      <Typography
+        className="uppercase text-2xl text-black/90 dark:text-white"
+        weight="800"
+      >
         local escolhido
       </Typography>
       <CenteredElement

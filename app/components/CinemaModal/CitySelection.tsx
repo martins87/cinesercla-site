@@ -16,7 +16,10 @@ type CitySelectionProps = {
 const CitySelection: FC<CitySelectionProps> = ({ list, cidade, setCidade }) => {
   return (
     <CenteredElement className="gap-y-4" direction="col" items="start">
-      <Typography className="uppercase text-2xl text-black/90" weight="800">
+      <Typography
+        className="uppercase text-2xl text-black/90 dark:text-white"
+        weight="800"
+      >
         selecionar cidade
       </Typography>
       <CenteredElement direction="col" className="gap-y-2">

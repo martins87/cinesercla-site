@@ -8,7 +8,8 @@ import PocketGuideMovieList from "./PocketGuideMovieList";
 import Button from "../ui/Button";
 import close from "@/app/assets/icons/close.svg";
 
-const subtitleClass = "w-fit text-base tablet:text-lg text-black/65";
+const subtitleClass =
+  "w-fit text-base tablet:text-lg text-black/65 dark:text-white";
 
 type PocketGuideProps = {
   closeFn: () => void;
@@ -19,7 +20,7 @@ const PocketGuide: FC<PocketGuideProps> = ({ closeFn }) => {
     <>
       <CenteredElement justify="between">
         <Typography
-          className="max-w-[75%] md:w-auto text-2xl text-black/90 leading-7"
+          className="max-w-[75%] md:w-auto text-2xl text-black/90 dark:text-white leading-7"
           weight="700"
         >
           Guia de Bolso para hoje, 26 de Setembro

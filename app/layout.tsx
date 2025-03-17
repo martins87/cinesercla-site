@@ -49,7 +49,7 @@ export default function RootLayout({
     <html lang="en">
       <ThemeProvider attribute="class">
         <body
-          className={`${proximaNova.variable} ${gellix.variable} antialiased bg-[#EAEAEA] dark:bg-[#10141c] transition-colors duration-200 easy-in-out`}
+          className={`${proximaNova.variable} ${gellix.variable} antialiased bg-[#EAEAEA] dark:bg-[#0f1619] transition-colors duration-200 easy-in-out`}
         >
           <Navbar />
           {children}
