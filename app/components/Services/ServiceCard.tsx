@@ -1,20 +1,28 @@
+"use client";
+
 import { FC } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+
 import Typography from "../Typography";
 import CenteredEl from "../ui/CenteredElement";
 import OuterLinkArrow from "./OuterLinkArrow";
-import Link from "next/link";
+import CarouselItem from "../Carousel/CarouselItem";
 
 type ServiceCardProps = {
   imgData: { label: string; img: StaticImport };
 };
 
 const ServiceCard: FC<ServiceCardProps> = ({ imgData }) => {
+  const router = useRouter();
   const { label, img } = imgData;
+
+  const handleClick = () => router.push("/corporativo");
+
   return (
-    <Link href={"/corporativo"}>
-      <div className="group w-full h-[500px] relative object-center rounded-xl overflow-hidden hover:cursor-pointer">
+    <CarouselItem onClick={handleClick}>
+      <div className="group w-full h-[500px] relative object-center rounded-xl overflow-hidden">
         <Image
           className="absolute inset-0 object-cover h-full group-hover:scale-[103%] transition-all ease-in-out duration-300"
           src={img}
@@ -27,7 +35,7 @@ const ServiceCard: FC<ServiceCardProps> = ({ imgData }) => {
           </CenteredEl>
         </CenteredEl>
       </div>
-    </Link>
+    </CarouselItem>
   );
 };
 
