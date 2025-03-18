@@ -24,7 +24,7 @@ const CenterItem = () => {
           {footerLinks.slice(0, footerLinks.length / 2).map((footerLink) => (
             <Link key={footerLink.src} href={footerLink.src}>
               <Typography
-                className="font-normal text-lg leading-6 text-black dark:text-white"
+                className="font-normal text-lg leading-6 text-black dark:text-white hover:text-main_bordeaux dark:hover:text-main_bordeaux"
                 weight="400"
               >
                 {footerLink.label}
@@ -38,7 +38,7 @@ const CenterItem = () => {
             .map((footerLink) => (
               <Link key={footerLink.src} href={footerLink.src}>
                 <Typography
-                  className="font-normal text-lg leading-6 text-black dark:text-white"
+                  className="font-normal text-lg leading-6 text-black dark:text-white hover:text-main_bordeaux dark:hover:text-main_bordeaux"
                   weight="400"
                 >
                   {footerLink.label}
