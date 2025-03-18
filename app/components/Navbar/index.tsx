@@ -6,7 +6,6 @@ import { twMerge } from "tailwind-merge";
 import Container from "../ui/Container";
 import Logo from "../Logo";
 import SearchBar from "../SearchBar";
-// import UserActionMenu from "../UserActionMenu";
 import CitySelector from "./CitySelector";
 import MobileMenuIcon from "./MobileMenuIcon";
 import NavbarDropdown from "./NavbarDropdown";
@@ -20,6 +19,7 @@ import Switch from "../Switch";
 const Navbar = () => {
   const [isScrolling, setIsScrolling] = useState<boolean>(false);
   const [cinemaModalOpen, setCinemaModalOpen] = useState<boolean>(false);
+  const [isSearchActive, setIsSearchActive] = useState<boolean>(false);
 
   const closeCinemaModal = () => setCinemaModalOpen(false);
 
@@ -50,10 +50,10 @@ const Navbar = () => {
           isScrolling ? "bg-[#EAEAEA] dark:bg-[#0f1619]" : ""
         )}
       >
-        <Container className="flex flex-row items-center justify-between gap-x-10">
+        <Container className="relative flex flex-row items-center justify-between gap-x-10">
           <MobileMenuIcon />
           <Logo className="mx-auto lg:mx-0" />
-          <CenteredElement className="hidden lg:flex gap-x-4">
+          <CenteredElement className="hidden lg:flex gap-x-3">
             <NavbarDropdown
               title="PROGRAMAÇÃO"
               items={[
@@ -95,8 +95,10 @@ const Navbar = () => {
             </Link>
             <CitySelector isOnTop={isScrolling} onClick={openCinemaModal} />
           </CenteredElement>
-          <SearchBar />
-          {/* <UserActionMenu /> */}
+          <SearchBar
+            isSearchActive={isSearchActive}
+            setIsSearchActive={setIsSearchActive}
+          />
           <Switch />
         </Container>
       </div>

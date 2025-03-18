@@ -22,7 +22,7 @@ const Switch = () => {
 
   return (
     <div
-      className="flex items-center justify-between rounded-full bg-[#222222] px-5 py-4 min-w-[100px] tablet:min-w-28 relative transition-all hover:cursor-pointer hover:bg-[#222222]/80"
+      className="flex items-center justify-between rounded-full bg-[#222222] px-5 h-14 min-w-[100px] tablet:min-w-28 relative transition-all hover:cursor-pointer hover:bg-[#222222]/80"
       onClick={() => setTheme(isDark ? "light" : "dark")}
     >
       <div
