@@ -6,6 +6,7 @@ import CenteredElement from "../ui/CenteredElement";
 import Typography from "../Typography";
 import RadioBox from "../ui/RadioBox";
 import { Cinema } from "@/app/types/Cinema";
+import CinemaData from "./CinemaData";
 
 type CinemaSelectionProps = {
   list: Cinema[];
@@ -33,6 +34,7 @@ const CinemaSelection: FC<CinemaSelectionProps> = ({
             label={c.cinema}
             selected={cinema}
             setSelected={setCinema}
+            data={<CinemaData title={c.cinema} address={c.address} />}
           />
         ))}
       </CenteredElement>

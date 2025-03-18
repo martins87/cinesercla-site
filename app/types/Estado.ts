@@ -4,4 +4,5 @@ export type Estado = {
   id: string;
   estado: string;
   cidades: Cidade[];
+  preposition: string;
 };
