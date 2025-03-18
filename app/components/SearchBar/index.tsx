@@ -59,7 +59,7 @@ const SearchBar: FC<SearchBarProps> = ({
           "w-3/5 h-1/2 flex flex-1 bg-inherit outline-none font-[family-name:var(--font-proxima-nova)] text-base font-bold text-white placeholder:uppercase",
           isSearchActive
             ? "transition-all transform duration-0 opacity-100 placeholder:text-white/50"
-            : "transition-all transform duration-200 opacity-0"
+            : "transition-all transform duration-0 opacity-0"
         )}
         type="text"
         ref={inputref}
