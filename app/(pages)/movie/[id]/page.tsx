@@ -21,10 +21,13 @@ const MoviePage = () => {
   return (
     <>
       {playing ? (
-        <TrailerVideo
-          src="https://www.youtube.com/embed/AFEaeuyOUBw?si=xW3npUSlt_YNgjKX&autoplay=1"
-          setPlaying={setPlaying}
-        />
+        <CenteredElement className="relative">
+          <TrailerVideo
+            src="https://www.youtube.com/embed/AFEaeuyOUBw?si=xW3npUSlt_YNgjKX&autoplay=1"
+            setPlaying={setPlaying}
+          />
+          <GradientOverlay hero />
+        </CenteredElement>
       ) : (
         <CenteredElement className="relative h-screen">
           <Image
