@@ -92,7 +92,7 @@ const NavbarDropdown: FC<NavbarDropdownProps> = ({ title, items, isOnTop }) => {
             variants={itemVariants}
           >
             <Typography
-              className="text-xs tracking-wider text-white/50"
+              className="text-xs tracking-wider text-white/50 hover:text-white transition-colors duration-300 ease-in-out"
               weight="700"
             >
               {item.label}
