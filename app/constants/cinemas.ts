@@ -9,6 +9,7 @@ export const cinemaData: Estado[] = [
       {
         id: "feira-de-santana",
         cidade: "Feira de Santana",
+        preposition: "em",
         cinemas: [
           {
             id: "cinesercla-america-outlet",
@@ -34,6 +35,7 @@ export const cinemaData: Estado[] = [
       {
         id: "salvador",
         cidade: "Salvador",
+        preposition: "em",
         cinemas: [
           {
             id: "cinesercla-cajazeiras",
@@ -49,6 +51,7 @@ export const cinemaData: Estado[] = [
       {
         id: "teixeira-de-freitas",
         cidade: "Teixeira de Freitas",
+        preposition: "em",
         cinemas: [
           {
             id: "cinesercla-teixeira-de-freitas",
@@ -71,6 +74,7 @@ export const cinemaData: Estado[] = [
       {
         id: "linhares",
         cidade: "Linhares",
+        preposition: "em",
         cinemas: [
           {
             id: "cinesercla-linhares",
@@ -86,6 +90,7 @@ export const cinemaData: Estado[] = [
       {
         id: "serra",
         cidade: "Serra",
+        preposition: "na",
         cinemas: [
           {
             id: "cinesercla-montserrat",
@@ -108,6 +113,7 @@ export const cinemaData: Estado[] = [
       {
         id: "belo-horizonte",
         cidade: "Belo Horizonte",
+        preposition: "em",
         cinemas: [
           {
             id: "cinesercla-norte",
@@ -123,6 +129,7 @@ export const cinemaData: Estado[] = [
       {
         id: "contagem",
         cidade: "Contagem",
+        preposition: "em",
         cinemas: [
           {
             id: "cinesercla-big",
@@ -138,6 +145,7 @@ export const cinemaData: Estado[] = [
       {
         id: "governador-valadares",
         cidade: "Governador Valadares",
+        preposition: "em",
         cinemas: [
           {
             id: "cinesercla-gv",
@@ -153,6 +161,7 @@ export const cinemaData: Estado[] = [
       {
         id: "ribeirao-das-neves",
         cidade: "Ribeirão das Neves",
+        preposition: "em",
         cinemas: [
           {
             id: "cinesercla-justinopolis",
@@ -175,6 +184,7 @@ export const cinemaData: Estado[] = [
       {
         id: "campina-grande",
         cidade: "Campina Grande",
+        preposition: "em",
         cinemas: [
           {
             id: "cinesercla-campina-grande",
@@ -190,6 +200,7 @@ export const cinemaData: Estado[] = [
       {
         id: "joao-pessoa",
         cidade: "João Pessoa",
+        preposition: "em",
         cinemas: [
           {
             id: "cinesercla-tambia",
@@ -212,6 +223,7 @@ export const cinemaData: Estado[] = [
       {
         id: "itaguai",
         cidade: "Itaguaí",
+        preposition: "em",
         cinemas: [
           {
             id: "cinesercla-itaguai",
@@ -227,6 +239,7 @@ export const cinemaData: Estado[] = [
       {
         id: "nilopolis",
         cidade: "Nilópolis",
+        preposition: "em",
         cinemas: [
           {
             id: "cinesercla-nilopolis",
@@ -249,6 +262,7 @@ export const cinemaData: Estado[] = [
       {
         id: "osasco",
         cidade: "Osasco",
+        preposition: "em",
         cinemas: [
           {
             id: "cinesercla-osasco",
@@ -271,6 +285,7 @@ export const cinemaData: Estado[] = [
       {
         id: "aracaju",
         cidade: "Aracaju",
+        preposition: "em",
         cinemas: [
           {
             id: "cinesercla-aracaju",
@@ -286,6 +301,7 @@ export const cinemaData: Estado[] = [
       {
         id: "nossa-senhora-do-socorro",
         cidade: "Nossa Senhora do Socorro",
+        preposition: "em",
         cinemas: [
           {
             id: "cinesercla-premio",
