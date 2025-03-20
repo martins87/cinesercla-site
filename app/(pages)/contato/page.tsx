@@ -14,7 +14,7 @@ const ContactPage = () => {
           justify="start"
         >
           <Typography
-            className="text-4xl text-black/90 dark:text-white"
+            className="text-3xl md:text-5xl text-black/90 dark:text-white"
             weight="800"
           >
             Contato
