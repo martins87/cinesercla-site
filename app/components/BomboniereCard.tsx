@@ -4,7 +4,7 @@ import Image from "next/image";
 import CenteredEl from "./ui/CenteredElement";
 import Typography from "./Typography";
 import { BomboniereItem } from "../types/BomboniereItem";
-import Plus from "../assets/icons/plus.svg";
+// import Plus from "../assets/icons/plus.svg";
 
 type BomboniereCardProps = {
   item: BomboniereItem;
@@ -26,9 +26,9 @@ const BomboniereCard: FC<BomboniereCardProps> = ({ item }) => {
           {item.price}
         </Typography>
       </CenteredEl>
-      <CenteredEl className="absolute bottom-4 right-[7.5%] w-12 aspect-square rounded-full transition-all ease-in-out duration-300 bg-[#980038] hover:scale-110 hover:cursor-pointer">
+      {/* <CenteredEl className="absolute bottom-4 right-[7.5%] w-12 aspect-square rounded-full transition-all ease-in-out duration-300 bg-[#980038] hover:scale-110 hover:cursor-pointer">
         <Image src={Plus} alt="plus icon" />
-      </CenteredEl>
+      </CenteredEl> */}
     </CenteredEl>
   );
 };
