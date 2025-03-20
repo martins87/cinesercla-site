@@ -6,7 +6,7 @@ import { Estado } from "@/app/types/Estado";
 import { Cidade } from "@/app/types/Cidade";
 import { Cinema } from "@/app/types/Cinema";
 import { cinemaData } from "@/app/constants/cinemas";
-import { getCidadesByEstado, getCinemasByCidade } from "@/lib/utils";
+import { getCidadesByState, getCinemasByCity } from "@/lib/utils";
 import CenteredElement from "../ui/CenteredElement";
 import Button from "../ui/Button";
 import CinemaModalHeader from "./CinemaModalHeader";
@@ -40,12 +40,12 @@ const CinemaModal: FC<CinemaModalProps> = ({ closeFn }) => {
   const [cinemaList, setCinemaList] = useState<Cinema[]>([]);
 
   useEffect(() => {
-    const cities = getCidadesByEstado(estado);
+    const cities = getCidadesByState(estado);
     if (cities.length > 0) setCidadeList(cities);
   }, [estado]);
 
   useEffect(() => {
-    const cinemas = getCinemasByCidade(cidade);
+    const cinemas = getCinemasByCity(cidade);
     if (cinemas.length > 0) setCinemaList(cinemas);
   }, [cidade]);
 
