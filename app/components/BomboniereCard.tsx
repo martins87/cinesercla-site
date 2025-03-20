@@ -15,11 +15,12 @@ const BomboniereCard: FC<BomboniereCardProps> = ({ item }) => {
     <CenteredEl className="relative h-80 p-4 rounded-[32px] transition-all ease-in-out duration-300 bg-[#3B3B3B] hover:bg-[#3B3B3B]/90">
       <Image className="h-56" src={item.img} alt="bomboniere item" />
       <CenteredEl
-        className="absolute w-4/5 bottom-6 p-3 rounded-2xl bg-[#D9D9D9]"
+        className="absolute w-4/5 h-[84px] bottom-6 px-4 py-2 rounded-2xl bg-[#D9D9D9]"
         direction="col"
         items="start"
+        justify="between"
       >
-        <Typography className="text-lg text-black" weight="700">
+        <Typography className="text-lg text-black leading-5" weight="700">
           {item.description}
         </Typography>
         <Typography className="text-black" weight="400">
