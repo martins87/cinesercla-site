@@ -17,7 +17,7 @@ const Footer = () => {
       </CenteredEl>
       <HorizontalLine />
       <Typography
-        className="text-black/50 dark:text-white font-normal text-xs my-4"
+        className="text-black/50 dark:text-white/50 font-normal text-xs my-4"
         weight="400"
       >
         © 2024 Cinesercla. All Rights Reserved
