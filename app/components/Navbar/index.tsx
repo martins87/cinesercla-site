@@ -77,7 +77,7 @@ const Navbar = () => {
             <NavbarDropdown
               title="PROMOÇÕES"
               items={[
-                { label: "BILHETERIA", href: "/programacao" },
+                { label: "BILHETERIA", href: "/promocoes" },
                 { label: "BOMBONIERE", href: "/bomboniere" },
               ]}
               isOnTop={isScrolling}
