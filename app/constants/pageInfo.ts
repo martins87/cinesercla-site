@@ -55,7 +55,7 @@ export const corporativoInfo: Info[] = [
     description:
       "Exiba sua marca para o público certo nas telas do Cinesercla. Aproveite a visibilidade nas nossas salas de cinema para impactar milhares de espectadores com sua campanha publicitária.",
     img: Corporativo2,
-    btnLabel: "VEJA MAIS",
+    btnLabel: "ENTRE EM CONTATO",
   },
   {
     title: "Aniversário",
