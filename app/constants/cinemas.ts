@@ -13,7 +13,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-america-outlet",
-            cinema: "CINESERCLA AMÉRICA OUTLET",
+            cinema: "AMÉRICA OUTLET",
             address:
               "Av. Deputado Luis Eduardo Magalhães, s/n - BR 324 - Limoeiro, Feira de Santana - BA, CEP: 44135-00",
             capacity: "5 salas - FECHADO",
@@ -22,7 +22,7 @@ export const cinemaData: Estado[] = [
           },
           {
             id: "cinesercla-shopping-avenida",
-            cinema: "CINESERCLA SHOPPING AVENIDA",
+            cinema: "SHOPPING AVENIDA",
             address:
               "Avenida Nóide Ferreira De Cerqueira, 5710 - Feira De Santana/BA CEP:44085-052",
             capacity:
@@ -39,7 +39,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-cajazeiras",
-            cinema: "CINESERCLA CAJAZEIRAS",
+            cinema: "SHOPPING CAJAZEIRAS",
             address:
               "Estrada do Coqueiro Grande s/n, loja 229 - Bairro Cajazeiras - Salvador-BA - CEP: 41.343-855",
             capacity: "4 salas - 516 lugares numerados",
@@ -55,7 +55,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-teixeira-de-freitas",
-            cinema: "CINESERCLA TEIXEIRA DE FREITAS",
+            cinema: "PÁTIOMIX TEIXEIRA DE FREITAS",
             address:
               "Avenida São Paulo, nº 2575, Loja 1024 - Bairro Vila Verde, Teixeira de Freitas/BA - CEP 45.990-678",
             capacity: "4 salas - 645 lugares numerados",
@@ -78,7 +78,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-linhares",
-            cinema: "CINESERCLA LINHARES",
+            cinema: "SHOPPING PÁTIOMIX LINHARES",
             address:
               "Shopping Pátio Mix Linhares - Avenida Cerejeiras, 300 - Bairro Movelar - Linhares - ES",
             capacity: "4 salas - 640 lugares numerados",
@@ -94,7 +94,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-montserrat",
-            cinema: "CINESERCLA MONTSERRAT",
+            cinema: "SHOPPING MONTSERRAT",
             address:
               "Avenida Eldes Scherrer de Souza, 2162 - Bairro Colina de Laranjeiras - Serra - ES",
             capacity: "5 salas - 977 lugares numerados",
@@ -117,7 +117,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-norte",
-            cinema: "CINESERCLA NORTE",
+            cinema: "SHOPPING NORTE",
             address:
               "Av. Vilarinho, 1300 - Lojas 88-89-90 - Venda Nova - Belo Horizonte - MG - CEP 31615-250",
             capacity: "5 salas - 629 lugares numerados",
@@ -133,7 +133,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-big",
-            cinema: "CINESERCLA BIG",
+            cinema: "BIG SHOPPING",
             address:
               "Av. João César de Oliveira, 1275 - Loja 227 - Jardim Eldorado - Contagem - MG - CEP 32315-000",
             capacity: "5 salas - 832 lugares numerados",
@@ -149,7 +149,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-gv",
-            cinema: "CINESERCLA GV",
+            cinema: "GV SHOPPING",
             address:
               "Av. Sete de Setembro 3500 - loja 145 - Bairro Centro - Governador Valadares - MG - CEP 35010-171",
             capacity: "4 salas - 554 lugares numerados",
@@ -165,7 +165,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-justinopolis",
-            cinema: "CINESERCLA JUSTINÓPOLIS",
+            cinema: "SHOPPING JUSTINÓPOLIS",
             address:
               "Av. Denise Cristina da Rocha, 807 - São Januário (Justinópolis), Ribeirão das Neves - MG, 33900-020",
             capacity: "4 salas - Em Instalação",
@@ -188,7 +188,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-campina-grande",
-            cinema: "CINESERCLA CAMPINA GRANDE",
+            cinema: "PARTAGE CAMPINA GRANDE",
             address:
               "Av. Prefeito Severino Bezerra Cabral, 1050 - Loja 3001 - Piso L01 - Bairro Catolé - Campina Grande - PB - CEP: 58410-185",
             capacity: "5 salas - 1134 lugares numerados",
@@ -204,7 +204,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-tambia",
-            cinema: "CINESERCLA TAMBIA",
+            cinema: "SHOPPING TAMBIA",
             address:
               "Rua Deputado Odon Bezerra, 184, Piso Ipê - Loja 260 - Bairro Tambiá - João Pessoa - PB - CEP 58020-500",
             capacity: "6 salas - 824 lugares numerados",
@@ -227,7 +227,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-itaguai",
-            cinema: "CINESERCLA ITAGUAI",
+            cinema: "SHOPPING PÁTIOMIX COSTA VERDE",
             address:
               "RODOVIA RIO SANTOS, S/N - LOJA 1061 - SHOPPING PÁTIOMIX - ITAGUAÍ - RJ",
             capacity: "4 salas - 581 lugares numerados",
@@ -243,7 +243,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-nilopolis",
-            cinema: "CINESERCLA NILÓPOLIS",
+            cinema: "SHOPPING NILÓPOLIS SQUARE",
             address:
               "Rua Professor Alfredo Gonçalves Figueiras, 100 - Centro - Nilópolis - RJ - CEP 26525-060",
             capacity: "3 salas - 404 lugares numerados",
@@ -266,7 +266,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-osasco",
-            cinema: "CINESERCLA OSASCO",
+            cinema: "OSASCO PLAZA SHOPPING",
             address:
               "Rua Antônio Agú, 300 - Loja 11/160 - Centro - Osasco - SP - CEP 06093-000",
             capacity: "4 salas - 597 lugares numerados",
@@ -289,7 +289,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-aracaju",
-            cinema: "CINESERCLA ARACAJU",
+            cinema: "SHOPPING PRAIA SUL",
             address:
               "Av. Melicio Machado nº 4880 - Bairro Aruana - Aracaju/SE - CEP 49038-443",
             capacity: "5 salas - Em Instalação",
@@ -305,7 +305,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-premio",
-            cinema: "CINESERCLA PREMIO",
+            cinema: "SHOPPING PREMIO",
             address:
               "Avenida Coletora A, s/n Loja 122 - Conjunto Marcos Freire I - Nossa Senhora do Socorro - SE - CEP 49155-890",
             capacity: "4 salas - 807 lugares numerados",
