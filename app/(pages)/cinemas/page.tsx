@@ -39,7 +39,7 @@ const Cinemas = () => {
       {cinemaList.length === 0 ? (
         <CinemaSearch />
       ) : (
-        <CenteredElement direction="col" items="start">
+        <CenteredElement className="gap-y-10" direction="col" items="start">
           <Typography
             className="text-2xl md:text-3xl tablet:text-4xl text-black/90 dark:text-white"
             weight="800"

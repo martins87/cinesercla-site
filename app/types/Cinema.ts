@@ -5,4 +5,5 @@ export type Cinema = {
   opening: string;
   contact: string;
   address: string;
+  mapURL: string;
 };

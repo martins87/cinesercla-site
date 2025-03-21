@@ -10,7 +10,7 @@ type CityListProps = {
 const CityList: FC<CityListProps> = ({ list }) => {
   return (
     <CenteredElement
-      className="gap-y-6"
+      className="gap-y-20"
       items="start"
       justify="start"
       direction="col"
