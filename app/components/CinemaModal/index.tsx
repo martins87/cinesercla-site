@@ -14,6 +14,7 @@ import StateSelection from "./StateSelection";
 import CitySelection from "./CitySelection";
 import PlaceSelected from "./PlaceSelected";
 import CinemaSelection from "./CinemaSelection";
+import { useLocation } from "@/app/store/location";
 
 const INITIAL_LABEL = "Selecione um estado";
 
@@ -29,6 +30,8 @@ enum Steps {
 }
 
 const CinemaModal: FC<CinemaModalProps> = ({ closeFn }) => {
+  // @ts-expect-error:next-line
+  const updateCity = useLocation((state) => state.updateCity);
   const [step, setStep] = useState<Steps>(Steps.Initial);
   const [estado, setEstado] = useState<string>(INITIAL_LABEL);
   const [cidade, setCidade] = useState<string>("");
@@ -96,7 +99,10 @@ const CinemaModal: FC<CinemaModalProps> = ({ closeFn }) => {
         <Button
           className="w-full h-[80px] uppercase"
           label={`${cinema} | CONFIRMAR`}
-          onClick={() => setStep(Steps.CinemaSelected)}
+          onClick={() => {
+            setStep(Steps.CinemaSelected);
+            updateCity(cidade.toUpperCase());
+          }}
         />
       ) : null}
     </CenteredElement>
