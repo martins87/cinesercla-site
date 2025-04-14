@@ -13,7 +13,7 @@ const Rating: FC<RatingProps> = ({ rating, className }) => {
   return (
     <CenteredElement
       className={twMerge(
-        "w-8 aspect-square rounded-md",
+        "absolute top-3 right-3 w-8 aspect-square rounded-md",
         rating === "L"
           ? "bg-[#008000]"
           : rating === "10"

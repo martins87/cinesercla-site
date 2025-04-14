@@ -9,7 +9,8 @@ import CenteredEl from "../ui/CenteredElement";
 import MovieCard from "./MovieCard";
 import HeaderFilter from "@/app/components/HeaderFilter";
 import CarouselArrow from "../CarouselArrow";
-import { movies } from "../../constants/cards-movies";
+// import { movies } from "../../constants/cards-movies";
+import { useMovies } from "@/app/hooks/useMovies";
 
 const filters: { label: string; filter: MovieItemType }[] = [
   { label: "Em Cartaz", filter: "em-cartaz" },
@@ -20,6 +21,11 @@ const filters: { label: string; filter: MovieItemType }[] = [
 const Movies = () => {
   let sliderRef = useRef(null);
   const [filterType, setFilterType] = useState<Filter>("em-cartaz");
+  const {
+    data: movies,
+    // isLoading
+  } = useMovies();
+  console.log("filmes", movies);
 
   const handleFilter = (type: Filter) => setFilterType(type);
 
@@ -34,7 +40,7 @@ const Movies = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 4,
+    slidesToScroll: 1,
     autoplay: false,
     autoplaySpeed: 3000,
     arrows: false,
@@ -67,6 +73,8 @@ const Movies = () => {
     ],
   };
 
+  if (!movies) return;
+
   return (
     <CenteredEl className="my-10" direction="col">
       <CenteredEl className="mt-20 mb-6">
@@ -96,10 +104,12 @@ const Movies = () => {
       >
         {movies
           .filter((item) => {
-            return filterType === null ? true : item.status === filterType;
+            // return filterType === null ? true : item.status === filterType;
+            return filterType === null ? true : item.situacao === filterType;
           })
           .map((movie) => (
-            <div key={movie.id} className="mobile:px-1">
+            // <div key={movie.id} className="mobile:px-1">
+            <div key={movie.tmdbId} className="mobile:px-1">
               <MovieCard movie={movie} />
             </div>
           ))}
