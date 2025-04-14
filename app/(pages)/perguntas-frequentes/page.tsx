@@ -4,34 +4,57 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 
+import { FAQCategory } from "@/app/types/FAQ";
+import { useFaqStore } from "@/app/store/faq";
 import BgImageContainer from "@/app/components/ui/BgImageContainer";
 import Container from "@/app/components/ui/Container";
+import Centered from "@/app/components/ui/CenteredElement";
 import Input from "@/app/components/Input";
 import Typography from "@/app/components/Typography";
-import Centered from "@/app/components/ui/CenteredElement";
 import FAQBox from "@/app/components/FAQ/FAQBox";
 import Button from "@/app/components/ui/Button";
 import Accordion from "@/app/components/Accordion";
-import { FAQData, topics } from "@/app/constants/faq";
-import { FAQCategory } from "@/app/types/FAQ";
-import CenteredElement from "@/app/components/ui/CenteredElement";
+import { topics } from "@/app/constants/faq";
 import Bg from "../../assets/images/backgrounds/perguntas-frequentes.png";
 import close from "@/app/assets/icons/close.svg";
+import { AccordionData } from "@/app/types/AccordionData";
 
 const PerguntasFrequentes = () => {
   const router = useRouter();
+  const { faqList, fetchFaqList } = useFaqStore();
   const [category, setCategory] = useState<FAQCategory | null>(null);
-  const [faq, setFaq] = useState(
-    FAQData.filter((question) => question.mostAsked)
-  );
+  const [list, setList] = useState<AccordionData[]>([]);
 
   useEffect(() => {
-    setFaq(
-      FAQData.filter((question) => {
-        return category ? question.category === category : question.mostAsked;
-      })
-    );
-  }, [category]);
+    const fetchFaq = async () => {
+      // TODO treat database fetch error here
+      await fetchFaqList();
+    };
+
+    fetchFaq();
+  }, [fetchFaqList]);
+
+  useEffect(() => {
+    const arr = [];
+
+    for (let i = 0; i < faqList.length; i++) {
+      if (faqList[i].principalDuvida)
+        arr.push({ title: faqList[i].pergunta, content: faqList[i].resposta });
+    }
+
+    setList(arr);
+  }, [faqList]);
+
+  useEffect(() => {
+    const arr = [];
+
+    for (let i = 0; i < faqList.length; i++) {
+      if (faqList[i].categoria === category)
+        arr.push({ title: faqList[i].pergunta, content: faqList[i].resposta });
+    }
+
+    setList(arr);
+  }, [category, faqList]);
 
   const handleClick = () => router.push("/contato");
 
@@ -80,7 +103,7 @@ const PerguntasFrequentes = () => {
               </Typography>
             </>
           ) : (
-            <CenteredElement className="mt-6 -mb-6" justify="between">
+            <Centered className="mt-6 -mb-6" justify="between">
               <Typography
                 className="text-3xl text-black/90 dark:text-white"
                 weight="800"
@@ -93,9 +116,9 @@ const PerguntasFrequentes = () => {
                 alt="close icon"
                 onClick={closeFn}
               />
-            </CenteredElement>
+            </Centered>
           )}
-          <Accordion list={faq} />
+          <Accordion list={list} />
           <Centered className="gap-y-4" direction="col">
             <Typography className="text-2xl text-black/90 dark:text-white">
               Precisa de mais ajuda?

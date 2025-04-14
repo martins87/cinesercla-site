@@ -17,14 +17,14 @@ export const FAQData: FAQItem[] = [
     title: "Como funciona a venda de ingressos na bilheteria?",
     content:
       "A venda de ingressos na bilheteria funciona 30 minutos antes da sessão e até 10 minutos após o início da sessão. Após esse tempo, o nosso sistema é programado para encerrar as vendas automaticamente e iniciar a comercialização de bilhetes para próxima sessão do dia.",
-    mostAsked: true,
+    principalDuvida: true,
     category: "ingressos",
   },
   {
     title: "Posso alterar o horário do filme comprado?",
     content:
       "Não é permitido alterar o horário do filme comprado. Deverá solicitar o estorno e efetuar uma nova compra. Estorno de ingressos comprados na web => através de um e-mail enviado a ingressos@ingressoplus.com.br Estorno de ingressos comprados na bilheteria e ATM => presencialmente no cinema",
-    mostAsked: true,
+    principalDuvida: true,
     category: "ingressos",
   },
   {
@@ -40,7 +40,7 @@ export const FAQData: FAQItem[] = [
     title: "Como funciona a venda de ingresso na Web?",
     content:
       "O serviço de venda de ingressos na web é de inteira responsabilidade da empresa INGRESSO PLUS, a qual cobra uma taxa de serviço pela venda. As regras e forma de utilização estão disponiveis no campo ATENDIMENTO do link abaixo: www.ingressoplus.com.br/site/",
-    mostAsked: true,
+    principalDuvida: true,
     category: "ingressos",
   },
   {
@@ -49,7 +49,7 @@ export const FAQData: FAQItem[] = [
       Estudantes, idosos, pessoas com deficiência (incluindo seu acompanhante) e jovens de 15 a 29 anos comprovadamente carentes.
       Mais informações: http://www.cinesercla.com.br/Home/Leis
     `,
-    mostAsked: true,
+    principalDuvida: true,
     category: "meia-entrada",
   },
   {
@@ -59,7 +59,7 @@ export const FAQData: FAQItem[] = [
       LEI Nº 12.933, DE 26 DE DEZEMBRO DE 2013 - Art. 1º paragráfo 2º : 
       "Terão direito ao benefício os estudantes regularmente matriculados nos níveis e modalidades de educação e ensino previstos no Título V da Lei nº 9.394, de 20 de dezembro de 1996, que comprovem sua condição de discente, mediante a apresentação, no momento da aquisição do ingresso e na portaria do local de realização do evento, da Carteira de Identificação Estudantil (CIE), emitida pela Associação Nacional de Pós-Graduandos (ANPG), pela União Nacional dos Estudantes (UNE), pela União Brasileira dos Estudantes Secundaristas (Ubes), pelas entidades estaduais e municipais filiadas àquelas, pelos Diretórios Centrais dos Estudantes (DCEs) e pelos Centros e Diretórios Acadêmicos, com prazo de validade renovável a cada ano, conforme modelo único nacionalmente padronizado e publicamente disponibilizado pelas entidades nacionais antes referidas e pelo Instituto Nacional de Tecnologia da Informação (ITI), com certificação digital deste, podendo a carteira de identificação estudantil ter 50% (cinquenta por cento) de características locais". 
     `,
-    mostAsked: true,
+    principalDuvida: true,
     category: "meia-entrada",
   },
   {
@@ -126,7 +126,7 @@ export const FAQData: FAQItem[] = [
     Além disso, poderá usar o benefício de comprar o COMBO DUPLO 500 para seus convidados.
     Confira na tabela de preços da unidade que você frequenta.
     `,
-    mostAsked: true,
+    principalDuvida: true,
     category: "promocoes-e-beneficios",
   },
   {

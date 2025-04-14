@@ -12,11 +12,24 @@ export type FAQCategory =
   | "fidelidade";
 
 export type FAQItem = AccordionData & {
-  mostAsked?: boolean;
+  principalDuvida?: boolean;
   category: FAQCategory;
 };
 
 export type Topic = {
   label: string;
   category: string;
+};
+
+export type Faq = {
+  _id: string;
+  pergunta: string;
+  resposta: string;
+  cadastro: string;
+  cliques: string;
+  ordem: string;
+  categoria: FAQCategory;
+  principalDuvida: boolean;
+  ordemPrincipalDuvida: string;
+  ativa: boolean;
 };
