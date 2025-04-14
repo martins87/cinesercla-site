@@ -1,5 +1,8 @@
-import type { Metadata } from "next";
+"use client";
+
+// import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ThemeProvider } from "next-themes";
 
 import "./globals.css";
@@ -34,11 +37,13 @@ const gellix = localFont({
   variable: "--font-gellix",
 });
 
-export const metadata: Metadata = {
-  title: "Cinesercla | Home",
-  description:
-    "CINESERCLA é um dos mais tradicionais grupos de cinemas do Brasil e mantém uma política de crescimento, com qualidade e eficiência em todos os seus complexos.",
-};
+// export const metadata: Metadata = {
+//   title: "Cinesercla | Home",
+//   description:
+//     "CINESERCLA é um dos mais tradicionais grupos de cinemas do Brasil e mantém uma política de crescimento, com qualidade e eficiência em todos os seus complexos.",
+// };
+
+const queryClient = new QueryClient();
 
 export default function RootLayout({
   children,
@@ -46,16 +51,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <ThemeProvider attribute="class">
-        <body
-          className={`${proximaNova.variable} ${gellix.variable} antialiased bg-[#EAEAEA] dark:bg-[#0f1619] transition-colors duration-200 easy-in-out`}
-        >
-          <Navbar />
-          {children}
-          <Footer />
-        </body>
-      </ThemeProvider>
-    </html>
+    <ThemeProvider attribute="class">
+      <QueryClientProvider client={queryClient}>
+        <html lang="en">
+          <body
+            className={`${proximaNova.variable} ${gellix.variable} antialiased bg-[#EAEAEA] dark:bg-[#0f1619] transition-colors duration-200 easy-in-out`}
+          >
+            <Navbar />
+            {children}
+            <Footer />
+          </body>
+        </html>
+      </QueryClientProvider>
+    </ThemeProvider>
   );
 }

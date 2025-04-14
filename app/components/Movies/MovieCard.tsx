@@ -4,33 +4,42 @@ import { FC } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-import { Movie } from "@/app/types/Movie";
+import {
+  // Movie,
+  TMDBMovie,
+} from "@/app/types/Movie";
 import GlassCard from "./GlassCard";
 import Typography from "../Typography";
 import CenteredElement from "../ui/CenteredElement";
-import Rating from "../Rating";
+// import Rating from "../Rating";
 import CarouselItem from "../Carousel/CarouselItem";
 
 type MovieCardProps = {
-  movie: Movie;
+  // movie: Movie;
+  movie: TMDBMovie;
 };
 
 const MovieCard: FC<MovieCardProps> = ({ movie }) => {
   const router = useRouter();
 
-  const handleClick = () => router.push(`/movie/${movie.id}`);
+  // const handleClick = () => router.push(`/movie/${movie.id}`);
+  const handleClick = () => router.push(`/movie/${movie.tmdbId}`);
 
   return (
     <CarouselItem onClick={handleClick}>
       <div className="flex flex-col gap-y-2 bg-[#3B3B3B] rounded-2xl p-4">
         <div className="relative min-h-72 max-h-72 lg:min-h-80 lg:max-h-80 xl:min-h-96 xl:max-h-96 flex flex-1 object-center">
           <Image
-            className="w-full object-cover rounded-xl"
-            src={movie.cover!}
+            src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+            // src={movie.cover!}
+            className="object-cover rounded-xl"
+            fill
             alt="movie cover"
+            priority
           />
-          <GlassCard label={movie.status} />
-          <Rating className="absolute top-3 right-3" rating={movie.rating} />
+          {/* <GlassCard label={movie.status} /> */}
+          <GlassCard label={movie.situacao} />
+          {/* <Rating rating={movie.rating} /> */}
         </div>
         <CenteredElement className="min-h-12" items="start">
           <CenteredElement className="w-1/2" justify="start">
@@ -44,7 +53,8 @@ const MovieCard: FC<MovieCardProps> = ({ movie }) => {
             items="end"
           >
             <Typography className="text-lg opacity-60" weight="400">
-              {movie.genre}
+              {/* {movie.genre} */}
+              {movie.genres}
             </Typography>
           </CenteredElement>
         </CenteredElement>
