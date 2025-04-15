@@ -1,13 +1,13 @@
 import { FC } from "react";
-// import Image from "next/image";
 
 import CenteredElement from "../ui/CenteredElement";
 import Typography from "../Typography";
 // import like from "@/app/assets/icons/like.svg";
-import { Movie } from "@/app/types/Movie";
+import { TMDBMovie } from "@/app/types/Movie";
+import { formatRuntime } from "@/lib/utils";
 
 type MovieInfoProps = {
-  movie: Movie;
+  movie: TMDBMovie;
 };
 
 const MovieInfo: FC<MovieInfoProps> = ({ movie }) => {
@@ -37,31 +37,25 @@ const MovieInfo: FC<MovieInfoProps> = ({ movie }) => {
             className="text-lg text-black/65 dark:text-white"
             weight="400"
           >
-            Duração: {movie.duration}
+            Duração: {formatRuntime(movie.runtime)}
           </Typography>
           <Typography
             className="text-lg text-black/65 dark:text-white"
             weight="400"
           >
-            Gênero: {movie.genre}
+            Gênero: {movie.genres}
           </Typography>
           <Typography
             className="text-lg text-black/65 dark:text-white"
             weight="400"
           >
-            Data de Lançamento: {movie.launchDate}
+            Data de Lançamento: {movie.release_date}
           </Typography>
           <Typography
             className="w-[75%] text-lg text-black/65 dark:text-white"
             weight="400"
           >
-            Elenco: {movie.cast}
-          </Typography>
-          <Typography
-            className="text-lg text-black/65 dark:text-white"
-            weight="400"
-          >
-            IMDB
+            Elenco: //TODO
           </Typography>
         </CenteredElement>
         <CenteredElement className="tablet:w-1/2">
@@ -69,7 +63,7 @@ const MovieInfo: FC<MovieInfoProps> = ({ movie }) => {
             className="text-xl text-black/90 dark:text-white"
             weight="400"
           >
-            {movie.description}
+            {movie.overview}
           </Typography>
         </CenteredElement>
       </CenteredElement>

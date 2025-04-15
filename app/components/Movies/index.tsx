@@ -9,7 +9,6 @@ import CenteredEl from "../ui/CenteredElement";
 import MovieCard from "./MovieCard";
 import HeaderFilter from "@/app/components/HeaderFilter";
 import CarouselArrow from "../CarouselArrow";
-// import { movies } from "../../constants/cards-movies";
 import { useMovies } from "@/app/hooks/useMovies";
 
 const filters: { label: string; filter: MovieItemType }[] = [
@@ -25,7 +24,7 @@ const Movies = () => {
     data: movies,
     // isLoading
   } = useMovies();
-  console.log("filmes", movies);
+  console.log("[Movies component] movies", movies);
 
   const handleFilter = (type: Filter) => setFilterType(type);
 
@@ -40,7 +39,7 @@ const Movies = () => {
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 1,
+    slidesToScroll: 4,
     autoplay: false,
     autoplaySpeed: 3000,
     arrows: false,
@@ -104,11 +103,9 @@ const Movies = () => {
       >
         {movies
           .filter((item) => {
-            // return filterType === null ? true : item.status === filterType;
             return filterType === null ? true : item.situacao === filterType;
           })
           .map((movie) => (
-            // <div key={movie.id} className="mobile:px-1">
             <div key={movie.tmdbId} className="mobile:px-1">
               <MovieCard movie={movie} />
             </div>

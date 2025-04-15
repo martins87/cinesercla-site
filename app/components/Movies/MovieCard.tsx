@@ -33,6 +33,7 @@ const MovieCard: FC<MovieCardProps> = ({ movie }) => {
             src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
             // src={movie.cover!}
             className="object-cover rounded-xl"
+            sizes="(min-width: 1024px) 20vw, 50vw"
             fill
             alt="movie cover"
             priority

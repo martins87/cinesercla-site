@@ -8,7 +8,7 @@ if (!API_BASE_URL) {
 
 export const getMovies = async (): Promise<TMDBMovie[]> => {
   try {
-    const response = await fetch(`${API_BASE_URL}/api/movies/`, {
+    const response = await fetch("/api/movies/", {
       cache: "no-store",
     });
 

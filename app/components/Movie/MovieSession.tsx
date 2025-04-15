@@ -5,7 +5,7 @@ import Image from "next/image";
 
 import CenteredElement from "../ui/CenteredElement";
 import Typography from "../Typography";
-import { Movie } from "@/app/types/Movie";
+import { TMDBMovie } from "@/app/types/Movie";
 import Button from "../ui/Button";
 import arrow_down from "@/app/assets/icons/arrow-down-red.svg";
 import Auditorium from "./Auditorium";
@@ -14,7 +14,7 @@ import PocketGuide from "../PocketGuideModal/PocketGuide";
 import Prices from "../PricesModal/Prices";
 
 type MovieSessionProps = {
-  movie: Movie;
+  movie: TMDBMovie;
 };
 
 const MovieSession: FC<MovieSessionProps> = ({ movie }) => {
@@ -46,10 +46,11 @@ const MovieSession: FC<MovieSessionProps> = ({ movie }) => {
         className="flex-col md:flex-row gap-x-4 gap-y-4 p-4 bg-[#3B3B3B] rounded-2xl"
         items="start"
       >
-        <CenteredElement className="w-full md:w-2/5 h-auto">
+        <CenteredElement className="w-full md:w-2/5 aspect-[2/3] relative">
           <Image
-            className="h-full rounded-xl"
-            src={movie.card!}
+            className="rounded-xl"
+            src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+            fill
             alt="movie card"
           />
         </CenteredElement>
