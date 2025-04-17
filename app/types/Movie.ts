@@ -6,6 +6,8 @@ export type Trailer = {
   videoTitle: string;
   videoDuration: string;
   timestamp: string;
+  name?: string;
+  key?: string;
 };
 
 export type Movie = {
@@ -43,4 +45,5 @@ export type TMDBMovie = {
   title: string;
   vote_average?: number;
   vote_count?: number;
+  trailers?: Trailer[];
 };
