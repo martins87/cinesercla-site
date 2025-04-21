@@ -12,7 +12,11 @@ type MovieTrailerProps = {
 
 const MovieTrailer: FC<MovieTrailerProps> = ({ trailer }) => {
   return (
-    <CenteredElement className="w-fit gap-y-4" direction="col" items="start">
+    <CenteredElement
+      className="w-fit max-w-80 gap-y-4"
+      direction="col"
+      items="start"
+    >
       <CenteredElement className="relative">
         <Image
           src={`https://img.youtube.com/vi/${trailer.key}/hqdefault.jpg`}
