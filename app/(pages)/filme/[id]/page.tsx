@@ -32,6 +32,7 @@ const MoviePage = () => {
           <TrailerVideo
             videoKey={movie.trailers![0].key!}
             setPlaying={setPlaying}
+            banner
           />
           <GradientOverlay hero />
         </CenteredElement>
