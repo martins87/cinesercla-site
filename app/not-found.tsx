@@ -28,13 +28,22 @@ const NotFound = () => {
           direction="col"
         >
           <Image src={_404Img} alt="404 not found" />
-          <Typography className="text-4xl text-black" weight="800">
+          <Typography
+            className="text-4xl text-black dark:text-white"
+            weight="800"
+          >
             Página não encontrada.
           </Typography>
-          <Typography className="text-2xl text-black" weight="400">
+          <Typography
+            className="text-2xl text-black dark:text-white"
+            weight="400"
+          >
             Elementar, meu caro navegante...
           </Typography>
-          <Typography className="-mt-4 text-2xl text-black" weight="400">
+          <Typography
+            className="-mt-4 text-2xl text-black dark:text-white"
+            weight="400"
+          >
             Essa página sumiu, mas a inicial está logo ali.
           </Typography>
           <Button label="IR PARA O INÍCIO" onClick={handleClick} />
