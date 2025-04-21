@@ -55,7 +55,7 @@ const MovieInfo: FC<MovieInfoProps> = ({ movie }) => {
             className="w-[75%] text-lg text-black/65 dark:text-white"
             weight="400"
           >
-            Elenco: //TODO
+            Elenco: {movie.cast}
           </Typography>
         </CenteredElement>
         <CenteredElement className="tablet:w-1/2">

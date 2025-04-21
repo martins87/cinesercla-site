@@ -46,4 +46,5 @@ export type TMDBMovie = {
   vote_average?: number;
   vote_count?: number;
   trailers?: Trailer[];
+  cast: string;
 };
