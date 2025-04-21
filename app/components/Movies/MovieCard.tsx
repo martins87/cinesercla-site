@@ -22,8 +22,7 @@ type MovieCardProps = {
 const MovieCard: FC<MovieCardProps> = ({ movie }) => {
   const router = useRouter();
 
-  // const handleClick = () => router.push(`/movie/${movie.id}`);
-  const handleClick = () => router.push(`/movie/${movie.tmdbId}`);
+  const handleClick = () => router.push(`/filme/${movie.tmdbId}`);
 
   return (
     <CarouselItem onClick={handleClick}>
