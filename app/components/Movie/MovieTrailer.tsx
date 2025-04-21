@@ -12,20 +12,17 @@ type MovieTrailerProps = {
 
 const MovieTrailer: FC<MovieTrailerProps> = ({ trailer }) => {
   return (
-    <CenteredElement
-      className="w-64 gap-y-2"
-      items="start"
-      justify="start"
-      direction="col"
-    >
+    <CenteredElement className="w-fit gap-y-4" direction="col" items="start">
       <CenteredElement className="relative">
         <Image
-          className="w-full h-full rounded-2xl"
-          src={trailer.videoThumb}
-          alt="moviethumbnail"
+          src={`https://img.youtube.com/vi/${trailer.key}/hqdefault.jpg`}
+          alt="Trailer thumbnail"
+          width={319}
+          height={188}
+          className="rounded-xl"
         />
         <Image
-          className="absolute grid place-items-center opacity-75"
+          className="absolute grid place-items-center opacity-75 hover:cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out"
           src={play}
           alt="play icon"
         />
@@ -34,13 +31,7 @@ const MovieTrailer: FC<MovieTrailerProps> = ({ trailer }) => {
         className="text-xl text-black/90 dark:text-white leading-6"
         weight="700"
       >
-        {trailer.videoTitle}
-      </Typography>
-      <Typography
-        className="text-xl text-black/65 dark:text-white"
-        weight="400"
-      >
-        {`${trailer.videoDuration} ${trailer.timestamp}`}
+        {trailer.name}
       </Typography>
     </CenteredElement>
   );

@@ -54,10 +54,12 @@ const MoviePage = () => {
           <GradientOverlay hero />
         </CenteredElement>
       )}
-      <Container className="mt-10 gap-y-10">
+      <Container className="mt-10 gap-y-14">
         <MovieInfo movie={movie} />
         <MovieSession movie={movie} />
-        <MovieTrailers movie={movie} />
+        {movieTrailer && (
+          <MovieTrailers movieTitle={movie.title} trailers={movie.trailers!} />
+        )}
       </Container>
     </>
   );
