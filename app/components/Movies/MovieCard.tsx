@@ -21,6 +21,7 @@ type MovieCardProps = {
 
 const MovieCard: FC<MovieCardProps> = ({ movie }) => {
   const router = useRouter();
+  const mainGenre = movie.genres.split(",")[0];
 
   const handleClick = () => router.push(`/filme/${movie.tmdbId}`);
 
@@ -54,7 +55,7 @@ const MovieCard: FC<MovieCardProps> = ({ movie }) => {
           >
             <Typography className="text-lg opacity-60" weight="400">
               {/* {movie.genre} */}
-              {movie.genres}
+              {mainGenre}
             </Typography>
           </CenteredElement>
         </CenteredElement>
