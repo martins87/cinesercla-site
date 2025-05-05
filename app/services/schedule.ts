@@ -1,4 +1,4 @@
-import { Schedule } from "@/app/types/schedule";
+import { Schedule } from "@/app/types/Schedule";
 
 export const createSchedule = async (scheduleList: Schedule[]) => {
   try {
