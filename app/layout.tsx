@@ -51,18 +51,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ThemeProvider attribute="class">
-      <QueryClientProvider client={queryClient}>
-        <html lang="en">
-          <body
-            className={`${proximaNova.variable} ${gellix.variable} antialiased bg-[#EAEAEA] dark:bg-[#0f1619] transition-colors duration-200 easy-in-out`}
-          >
+    <html lang="en">
+      <body
+        className={`${proximaNova.variable} ${gellix.variable} antialiased bg-[#EAEAEA] dark:bg-[#0f1619] transition-colors duration-200 easy-in-out`}
+      >
+        <ThemeProvider attribute="class">
+          <QueryClientProvider client={queryClient}>
             <Navbar />
             {children}
             <Footer />
-          </body>
-        </html>
-      </QueryClientProvider>
-    </ThemeProvider>
+          </QueryClientProvider>
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }
