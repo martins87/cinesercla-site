@@ -13,6 +13,7 @@ import play from "@/app/assets/icons/play.svg";
 import CenteredElement from "@/app/components/ui/CenteredElement";
 import TrailerVideo from "@/app/components/Movie/TrailerVideo";
 import { useMovieStore } from "@/app/store/movie";
+import { useSchedule } from "@/app/hooks/useSchedule";
 
 const MoviePage = () => {
   const params = useParams();
@@ -21,7 +22,9 @@ const MoviePage = () => {
   const { getMovieById } = useMovieStore();
   const movie = getMovieById(+id);
   console.log("movie", movie);
+  const { data: movieSchedule } = useSchedule(movie!.idERP, "1");
   if (!movie) return;
+  console.log("movieSchedule", movieSchedule);
 
   const movieTrailer = movie.trailers && movie.trailers.length > 0;
 

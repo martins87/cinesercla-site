@@ -47,4 +47,5 @@ export type TMDBMovie = {
   vote_count?: number;
   trailers?: Trailer[];
   cast: string;
+  idERP: string;
 };
