@@ -23,7 +23,7 @@ const PocketGuide: FC<PocketGuideProps> = ({ closeFn }) => {
           className="max-w-[75%] md:w-auto text-2xl text-black/90 dark:text-white leading-7"
           weight="700"
         >
-          Guia de Bolso para hoje, 26 de Setembro
+          Guia de Bolso para hoje, 6 de maio
         </Typography>
         <Image
           className="hover:cursor-pointer"

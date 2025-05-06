@@ -116,7 +116,7 @@ const MovieSession: FC<MovieSessionProps> = ({ movie }) => {
             />
           </CenteredElement>
           <Typography className="">Calendar</Typography>
-          <Typography className="">Hoje, 26 de Setembro</Typography>
+          <Typography className="">Hoje</Typography>
           {movieSchedule && <MovieSchedule movieSchedule={movieSchedule} />}
           <Typography className="text-sm h-full text-white/65" weight="400">
             A Rede Cinesercla reserva o direito de alterar a programação sem

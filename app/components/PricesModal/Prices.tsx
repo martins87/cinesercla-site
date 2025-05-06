@@ -24,7 +24,7 @@ const Prices: FC<PricesProps> = ({ closeFn, movie }) => {
           className="max-w-[75%] md:w-auto text-2xl text-black/90 dark:text-white leading-7"
           weight="700"
         >
-          Preços para hoje, 26 de Setembro
+          Preços para hoje, 6 de maio
         </Typography>
         <Image
           className="hover:cursor-pointer"

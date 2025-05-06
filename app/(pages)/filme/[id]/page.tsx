@@ -63,9 +63,7 @@ const MoviePage = () => {
       <Container className="mt-10 gap-y-14">
         <MovieInfo movie={movie} />
         <MovieSession movie={movie} />
-        {movieTrailer && (
-          <MovieTrailers movieTitle={movie.title} trailers={movie.trailers!} />
-        )}
+        {movieTrailer && <MovieTrailers trailers={movie.trailers!} />}
       </Container>
     </>
   );
