@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 
 import GradientOverlay from "@/app/components/GradientOverlay";
 import Container from "@/app/components/ui/Container";
@@ -13,18 +13,20 @@ import play from "@/app/assets/icons/play.svg";
 import CenteredElement from "@/app/components/ui/CenteredElement";
 import TrailerVideo from "@/app/components/Movie/TrailerVideo";
 import { useMovieStore } from "@/app/store/movie";
-import { useSchedule } from "@/app/hooks/useSchedule";
 
 const MoviePage = () => {
+  const router = useRouter();
   const params = useParams();
   const { id } = params as { id: string };
   const [playing, setPlaying] = useState(false);
   const { getMovieById } = useMovieStore();
   const movie = getMovieById(+id);
   console.log("movie", movie);
-  const { data: movieSchedule } = useSchedule(movie!.idERP, "1");
-  if (!movie) return;
-  console.log("movieSchedule", movieSchedule);
+
+  if (!movie) {
+    router.push("/");
+    return;
+  }
 
   const movieTrailer = movie.trailers && movie.trailers.length > 0;
 

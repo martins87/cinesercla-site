@@ -3,21 +3,23 @@
 import { FC, useState } from "react";
 import Image from "next/image";
 
-import CenteredElement from "../ui/CenteredElement";
-import Typography from "../Typography";
 import { TMDBMovie } from "@/app/types/Movie";
-import Button from "../ui/Button";
+import { useSchedule } from "@/app/hooks/useSchedule";
+import CenteredElement from "@/app/components/ui/CenteredElement";
+import Typography from "@/app/components/Typography";
+import Button from "@/app/components/ui/Button";
+import Modal from "@/app/components/ui/Modal";
+import PocketGuide from "@/app/components/PocketGuideModal/PocketGuide";
+import Prices from "@/app/components/PricesModal/Prices";
+import MovieSchedule from "./MovieSchedule";
 import arrow_down from "@/app/assets/icons/arrow-down-red.svg";
-import Auditorium from "./Auditorium";
-import Modal from "../ui/Modal";
-import PocketGuide from "../PocketGuideModal/PocketGuide";
-import Prices from "../PricesModal/Prices";
 
 type MovieSessionProps = {
   movie: TMDBMovie;
 };
 
 const MovieSession: FC<MovieSessionProps> = ({ movie }) => {
+  const { data: movieSchedule } = useSchedule(movie.idERP, "1");
   const [pocketGuideModalOpen, setPocketGuideModalOpen] =
     useState<boolean>(false);
   const [pricesModalOpen, setPricesModalOpen] = useState<boolean>(false);
@@ -54,7 +56,12 @@ const MovieSession: FC<MovieSessionProps> = ({ movie }) => {
             alt="movie card"
           />
         </CenteredElement>
-        <CenteredElement className="gap-y-4" direction="col" items="start">
+        <CenteredElement
+          className="gap-y-4"
+          direction="col"
+          items="start"
+          justify="between"
+        >
           <CenteredElement
             className="p-4 border-[1.5px] border-[#980038] rounded-xl"
             justify="between"
@@ -110,14 +117,8 @@ const MovieSession: FC<MovieSessionProps> = ({ movie }) => {
           </CenteredElement>
           <Typography className="">Calendar</Typography>
           <Typography className="">Hoje, 26 de Setembro</Typography>
-          <Typography className="text-base text-white/65" weight="400">
-            2D Dublado
-          </Typography>
-          <CenteredElement className="gap-x-2" justify="start">
-            <Auditorium number="2" time="20:20" />
-            <Auditorium number="4" time="15:20" />
-          </CenteredElement>
-          <Typography className="text-sm text-white/65" weight="400">
+          {movieSchedule && <MovieSchedule movieSchedule={movieSchedule} />}
+          <Typography className="text-sm h-full text-white/65" weight="400">
             A Rede Cinesercla reserva o direito de alterar a programação sem
             prévio aviso.
           </Typography>

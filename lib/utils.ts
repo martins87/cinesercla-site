@@ -5,6 +5,8 @@ import { Estado } from "@/app/types/Estado";
 import { Cidade } from "@/app/types/Cidade";
 import { Cinema } from "@/app/types/Cinema";
 import { cinemaData } from "@/app/constants/cinemas";
+import { Schedule } from "@/app/types/Schedule";
+import { AuditoriumSchedule } from "@/app/types/AuditoriumSchedule";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -70,3 +72,31 @@ export const formatRuntime = (minutes: number) => {
   const mins = minutes % 60;
   return `${hours}h${mins}m`;
 };
+
+export function getAuditoriumSchedule(
+  schedules: Schedule[]
+): AuditoriumSchedule[] {
+  return schedules.map((schedule) => {
+    const horarios: string[] = [];
+
+    for (let i = 0; i <= 7; i++) {
+      const horarioKey = `horario${i}` as keyof Schedule;
+      const horario = schedule[horarioKey];
+      if (horario && horario !== "00:00:00") {
+        horarios.push(horario.slice(0, 5));
+      }
+    }
+
+    return {
+      dataInicio: schedule.dataInicio,
+      dataFim: schedule.dataFim,
+      sala: schedule.sala,
+      versao: schedule.versao,
+      idioma: schedule.idioma,
+      horarios,
+      idERP: schedule.idERP,
+      idFilme: schedule.idFilme,
+      filmeUrl: schedule.filmeUrl,
+    };
+  });
+}

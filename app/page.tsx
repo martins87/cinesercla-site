@@ -12,6 +12,7 @@ import Promotions from "./components/Promotions";
 import Services from "./components/Services";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Typography from "./components/Typography";
 
 export default function Home() {
   const { data: movies, isLoading } = useMovies();
@@ -25,7 +26,7 @@ export default function Home() {
     <main>
       <Hero />
       <Container className="-mt-10">
-        {isLoading ? null : <Movies />}
+        {isLoading ? <Typography>Carregando filmes...</Typography> : <Movies />}
         <Newsletter />
         <Services />
         <Promotions />
