@@ -13,13 +13,14 @@ import PocketGuide from "@/app/components/PocketGuideModal/PocketGuide";
 import Prices from "@/app/components/PricesModal/Prices";
 import MovieSchedule from "./MovieSchedule";
 import arrow_down from "@/app/assets/icons/arrow-down-red.svg";
+import Calendar from "./Calendar";
 
 type MovieSessionProps = {
   movie: TMDBMovie;
 };
 
 const MovieSession: FC<MovieSessionProps> = ({ movie }) => {
-  const { data: movieSchedule } = useSchedule(movie.idERP, "1");
+  const { data: movieSchedule } = useSchedule(movie.idFilme, "1");
   const [pocketGuideModalOpen, setPocketGuideModalOpen] =
     useState<boolean>(false);
   const [pricesModalOpen, setPricesModalOpen] = useState<boolean>(false);
@@ -115,7 +116,7 @@ const MovieSession: FC<MovieSessionProps> = ({ movie }) => {
               secondary
             />
           </CenteredElement>
-          <Typography className="">Calendar</Typography>
+          <Calendar />
           <Typography className="">Hoje</Typography>
           {movieSchedule && <MovieSchedule movieSchedule={movieSchedule} />}
           <Typography className="text-sm h-full text-white/65" weight="400">
