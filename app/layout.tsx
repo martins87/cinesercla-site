@@ -1,13 +1,10 @@
-"use client";
-
-// import type { Metadata } from "next";
+import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ThemeProvider } from "next-themes";
 
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Providers from "./components/Providers";
 
 const proximaNova = localFont({
   src: [
@@ -37,13 +34,11 @@ const gellix = localFont({
   variable: "--font-gellix",
 });
 
-// export const metadata: Metadata = {
-//   title: "Cinesercla | Home",
-//   description:
-//     "CINESERCLA é um dos mais tradicionais grupos de cinemas do Brasil e mantém uma política de crescimento, com qualidade e eficiência em todos os seus complexos.",
-// };
-
-const queryClient = new QueryClient();
+export const metadata: Metadata = {
+  title: "Cinesercla | Home",
+  description:
+    "CINESERCLA é um dos mais tradicionais grupos de cinemas do Brasil e mantém uma política de crescimento, com qualidade e eficiência em todos os seus complexos.",
+};
 
 export default function RootLayout({
   children,
@@ -51,17 +46,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${proximaNova.variable} ${gellix.variable} antialiased bg-[#EAEAEA] dark:bg-[#0f1619] transition-colors duration-200 easy-in-out`}
       >
-        <ThemeProvider attribute="class">
-          <QueryClientProvider client={queryClient}>
-            <Navbar />
-            {children}
-            <Footer />
-          </QueryClientProvider>
-        </ThemeProvider>
+        <Providers>
+          <Navbar />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
