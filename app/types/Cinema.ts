@@ -1,5 +1,6 @@
 export type Cinema = {
   id: string;
+  idCinema: string;
   cinema: string;
   capacity: string;
   opening: string;

@@ -21,6 +21,8 @@ const Navbar = () => {
   const [cinemaModalOpen, setCinemaModalOpen] = useState<boolean>(false);
   const [isSearchActive, setIsSearchActive] = useState<boolean>(false);
 
+  const openCinemaModal = () => setCinemaModalOpen(true);
+
   const closeCinemaModal = () => setCinemaModalOpen(false);
 
   useEffect(() => {
@@ -34,8 +36,6 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  const openCinemaModal = () => setCinemaModalOpen(true);
 
   return (
     <>

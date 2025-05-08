@@ -14,16 +14,21 @@ import Prices from "@/app/components/PricesModal/Prices";
 import MovieSchedule from "./MovieSchedule";
 import arrow_down from "@/app/assets/icons/arrow-down-red.svg";
 import Calendar from "./Calendar";
+import CinemaModal from "../CinemaModal";
+import { useLocation } from "@/app/store/location";
 
 type MovieSessionProps = {
   movie: TMDBMovie;
 };
 
 const MovieSession: FC<MovieSessionProps> = ({ movie }) => {
-  const { data: movieSchedule } = useSchedule(movie.idFilme, "1");
+  // @ts-expect-error:next-line
+  const { city, idCinema } = useLocation();
+  const { data: movieSchedule } = useSchedule(movie.idFilme, idCinema);
   const [pocketGuideModalOpen, setPocketGuideModalOpen] =
     useState<boolean>(false);
   const [pricesModalOpen, setPricesModalOpen] = useState<boolean>(false);
+  const [cinemaModalOpen, setCinemaModalOpen] = useState<boolean>(false);
 
   const openPocketGuideModal = () => setPocketGuideModalOpen(true);
 
@@ -32,6 +37,10 @@ const MovieSession: FC<MovieSessionProps> = ({ movie }) => {
   const openPricesModal = () => setPricesModalOpen(true);
 
   const closePricesModal = () => setPricesModalOpen(false);
+
+  const openCinemaModal = () => setCinemaModalOpen(true);
+
+  const closeCinemaModal = () => setCinemaModalOpen(false);
 
   return (
     <>
@@ -43,6 +52,11 @@ const MovieSession: FC<MovieSessionProps> = ({ movie }) => {
       {pricesModalOpen && (
         <Modal setModalOpen={setPricesModalOpen}>
           <Prices movie={movie} closeFn={closePricesModal} />
+        </Modal>
+      )}
+      {cinemaModalOpen && (
+        <Modal setModalOpen={setCinemaModalOpen}>
+          <CinemaModal closeFn={closeCinemaModal} />
         </Modal>
       )}
       <CenteredElement
@@ -67,21 +81,26 @@ const MovieSession: FC<MovieSessionProps> = ({ movie }) => {
             className="p-4 border-[1.5px] border-[#980038] rounded-xl"
             justify="between"
           >
-            <CenteredElement className="w-auto gap-x-2" justify="start">
+            <CenteredElement className="w-auto gap-x-4" justify="start">
               <CenteredElement className="w-auto">
                 <Typography className="hidden sm:flex">
                   Exibindo&nbsp;
                 </Typography>
                 <Typography className="w-full">Sessões Para:</Typography>
               </CenteredElement>
-              <CenteredElement className="w-auto">
-                <Typography className="text-xl md:text-2xl" weight="800">
-                  SHOPPING NORTE
-                </Typography>
-              </CenteredElement>
-              <CenteredElement className="w-fit">
-                <Image src={arrow_down} alt="arrow down icon" />
-              </CenteredElement>
+              <div
+                className="flex gap-x-3 hover:cursor-pointer hover:scale-105 transition-all duration-200 ease-in-out"
+                onClick={openCinemaModal}
+              >
+                <CenteredElement className="w-auto">
+                  <Typography className="text-xl md:text-2xl" weight="800">
+                    {city}
+                  </Typography>
+                </CenteredElement>
+                <CenteredElement className="w-fit">
+                  <Image src={arrow_down} alt="arrow down icon" />
+                </CenteredElement>
+              </div>
             </CenteredElement>
             <CenteredElement
               className="w-fit hidden tablet:flex gap-x-2"

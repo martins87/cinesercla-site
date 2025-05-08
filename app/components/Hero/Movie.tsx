@@ -24,6 +24,7 @@ const Movie: FC<MovieProps> = ({ movie }) => {
           className="w-screen h-screen object-cover tablet:object-fill"
           src={movie.cover!}
           alt="Image"
+          priority
         />
       </DarkerBackground>
       <GradientOverlay hero />

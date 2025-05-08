@@ -4,9 +4,9 @@ import { twMerge } from "tailwind-merge";
 import { Estado } from "@/app/types/Estado";
 import { Cidade } from "@/app/types/Cidade";
 import { Cinema } from "@/app/types/Cinema";
-import { cinemaData } from "@/app/constants/cinemas";
 import { Schedule } from "@/app/types/Schedule";
 import { AuditoriumSchedule } from "@/app/types/AuditoriumSchedule";
+import { cinemaData } from "@/app/constants/cinemas";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -26,7 +26,9 @@ export const getCinemasByCity = (cidade: string): Cinema[] => {
   for (const estado of cinemaData) {
     const cidadeData = estado.cidades.find((c: Cidade) => c.cidade === cidade);
     if (cidadeData) {
-      return cidadeData.cinemas.map((cinema: Cinema) => cinema);
+      return cidadeData.cinemas.filter(
+        (cinema: Cinema) => cinema.idCinema !== "x"
+      );
     }
   }
   return [];

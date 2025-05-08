@@ -7,14 +7,14 @@ import { Cidade } from "@/app/types/Cidade";
 import { Cinema } from "@/app/types/Cinema";
 import { cinemaData } from "@/app/constants/cinemas";
 import { getCidadesByState, getCinemasByCity } from "@/lib/utils";
-import CenteredElement from "../ui/CenteredElement";
-import Button from "../ui/Button";
+import { useLocation } from "@/app/store/location";
+import CenteredElement from "@/app/components/ui/CenteredElement";
+import Button from "@/app/components/ui/Button";
 import CinemaModalHeader from "./CinemaModalHeader";
 import StateSelection from "./StateSelection";
 import CitySelection from "./CitySelection";
 import PlaceSelected from "./PlaceSelected";
 import CinemaSelection from "./CinemaSelection";
-import { useLocation } from "@/app/store/location";
 
 const INITIAL_LABEL = "Selecione um estado";
 
@@ -31,7 +31,7 @@ enum Steps {
 
 const CinemaModal: FC<CinemaModalProps> = ({ closeFn }) => {
   // @ts-expect-error:next-line
-  const updateCity = useLocation((state) => state.updateCity);
+  const { updateCinema, updateCity } = useLocation();
   const [step, setStep] = useState<Steps>(Steps.Initial);
   const [estado, setEstado] = useState<string>(INITIAL_LABEL);
   const [cidade, setCidade] = useState<string>("");
@@ -55,6 +55,12 @@ const CinemaModal: FC<CinemaModalProps> = ({ closeFn }) => {
   useEffect(() => {
     if (step === Steps.CinemaSelected) closeFn();
   }, [step, closeFn]);
+
+  const confirmCity = () => {
+    setStep(Steps.CinemaSelected);
+    updateCity(cidade.toUpperCase());
+    updateCinema(cinemaList[0].idCinema); // Somente um cinema por cidade
+  };
 
   return (
     <CenteredElement className="flex-1 justify-start gap-y-4" direction="col">
@@ -99,10 +105,7 @@ const CinemaModal: FC<CinemaModalProps> = ({ closeFn }) => {
         <Button
           className="w-full h-[80px] uppercase"
           label={`${cinema} | CONFIRMAR`}
-          onClick={() => {
-            setStep(Steps.CinemaSelected);
-            updateCity(cidade.toUpperCase());
-          }}
+          onClick={confirmCity}
         />
       ) : null}
     </CenteredElement>

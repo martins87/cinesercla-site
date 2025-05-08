@@ -13,6 +13,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-america-outlet",
+            idCinema: "x",
             cinema: "AMÉRICA OUTLET",
             address:
               "Av. Deputado Luis Eduardo Magalhães, s/n - BR 324 - Limoeiro, Feira de Santana - BA, CEP: 44135-00",
@@ -24,6 +25,7 @@ export const cinemaData: Estado[] = [
           },
           {
             id: "cinesercla-shopping-avenida",
+            idCinema: "18",
             cinema: "SHOPPING AVENIDA",
             address:
               "Avenida Nóide Ferreira De Cerqueira, 5710 - Feira De Santana/BA CEP:44085-052",
@@ -43,6 +45,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-cajazeiras",
+            idCinema: "9",
             cinema: "SHOPPING CAJAZEIRAS",
             address:
               "Estrada do Coqueiro Grande s/n, loja 229 - Bairro Cajazeiras - Salvador-BA - CEP: 41.343-855",
@@ -61,6 +64,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-teixeira-de-freitas",
+            idCinema: "12",
             cinema: "PÁTIOMIX TEIXEIRA DE FREITAS",
             address:
               "Avenida São Paulo, nº 2575, Loja 1024 - Bairro Vila Verde, Teixeira de Freitas/BA - CEP 45.990-678",
@@ -86,6 +90,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-linhares",
+            idCinema: "15",
             cinema: "SHOPPING PÁTIOMIX LINHARES",
             address:
               "Shopping Pátio Mix Linhares - Avenida Cerejeiras, 300 - Bairro Movelar - Linhares - ES",
@@ -104,6 +109,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-montserrat",
+            idCinema: "13",
             cinema: "SHOPPING MONTSERRAT",
             address:
               "Avenida Eldes Scherrer de Souza, 2162 - Bairro Colina de Laranjeiras - Serra - ES",
@@ -129,6 +135,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-norte",
+            idCinema: "1",
             cinema: "SHOPPING NORTE",
             address:
               "Av. Vilarinho, 1300 - Lojas 88-89-90 - Venda Nova - Belo Horizonte - MG - CEP 31615-250",
@@ -147,6 +154,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-big",
+            idCinema: "2",
             cinema: "BIG SHOPPING",
             address:
               "Av. João César de Oliveira, 1275 - Loja 227 - Jardim Eldorado - Contagem - MG - CEP 32315-000",
@@ -165,6 +173,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-gv",
+            idCinema: "3",
             cinema: "GV SHOPPING",
             address:
               "Av. Sete de Setembro 3500 - loja 145 - Bairro Centro - Governador Valadares - MG - CEP 35010-171",
@@ -183,6 +192,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-justinopolis",
+            idCinema: "x",
             cinema: "SHOPPING JUSTINÓPOLIS",
             address:
               "Av. Denise Cristina da Rocha, 807 - São Januário (Justinópolis), Ribeirão das Neves - MG, 33900-020",
@@ -208,6 +218,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-campina-grande",
+            idCinema: "5",
             cinema: "PARTAGE CAMPINA GRANDE",
             address:
               "Av. Prefeito Severino Bezerra Cabral, 1050 - Loja 3001 - Piso L01 - Bairro Catolé - Campina Grande - PB - CEP: 58410-185",
@@ -226,6 +237,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-tambia",
+            idCinema: "4",
             cinema: "SHOPPING TAMBIA",
             address:
               "Rua Deputado Odon Bezerra, 184, Piso Ipê - Loja 260 - Bairro Tambiá - João Pessoa - PB - CEP 58020-500",
@@ -251,6 +263,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-itaguai",
+            idCinema: "10",
             cinema: "SHOPPING PÁTIOMIX COSTA VERDE",
             address:
               "RODOVIA RIO SANTOS, S/N - LOJA 1061 - SHOPPING PÁTIOMIX - ITAGUAÍ - RJ",
@@ -269,6 +282,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-nilopolis",
+            idCinema: "11",
             cinema: "SHOPPING NILÓPOLIS SQUARE",
             address:
               "Rua Professor Alfredo Gonçalves Figueiras, 100 - Centro - Nilópolis - RJ - CEP 26525-060",
@@ -294,6 +308,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-osasco",
+            idCinema: "14",
             cinema: "OSASCO PLAZA SHOPPING",
             address:
               "Rua Antônio Agú, 300 - Loja 11/160 - Centro - Osasco - SP - CEP 06093-000",
@@ -319,6 +334,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-aracaju",
+            idCinema: "x",
             cinema: "SHOPPING PRAIA SUL",
             address:
               "Av. Melicio Machado nº 4880 - Bairro Aruana - Aracaju/SE - CEP 49038-443",
@@ -337,6 +353,7 @@ export const cinemaData: Estado[] = [
         cinemas: [
           {
             id: "cinesercla-premio",
+            idCinema: "7",
             cinema: "SHOPPING PREMIO",
             address:
               "Avenida Coletora A, s/n Loja 122 - Conjunto Marcos Freire I - Nossa Senhora do Socorro - SE - CEP 49155-890",
