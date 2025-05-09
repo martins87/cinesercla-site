@@ -1,15 +1,17 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 
 import { MovieItemType } from "@/app/types/MovieItem";
 import { Filter } from "@/app/types/Filter";
-import CenteredEl from "../ui/CenteredElement";
-import MovieCard from "./MovieCard";
-import HeaderFilter from "@/app/components/HeaderFilter";
-import CarouselArrow from "../CarouselArrow";
+import { useMovieStore } from "@/app/store/movie";
 import { useMovies } from "@/app/hooks/useMovies";
+import CenteredEl from "@/app/components/ui/CenteredElement";
+import HeaderFilter from "@/app/components/HeaderFilter";
+import CarouselArrow from "@/app/components/CarouselArrow";
+import MovieCard from "./MovieCard";
+import MovieCardsSkeleton from "./MovieCardsSkeleton";
 
 const filters: { label: string; filter: MovieItemType }[] = [
   { label: "Em Cartaz", filter: "em-cartaz" },
@@ -20,11 +22,12 @@ const filters: { label: string; filter: MovieItemType }[] = [
 const Movies = () => {
   let sliderRef = useRef(null);
   const [filterType, setFilterType] = useState<Filter>("em-cartaz");
-  const {
-    data: movies,
-    // isLoading
-  } = useMovies();
-  console.log("[Movies component] movies", movies);
+  const { data: movies, isLoading, isFetching } = useMovies();
+  const { setMovieList } = useMovieStore();
+
+  useEffect(() => {
+    if (movies) setMovieList(movies);
+  }, [movies, setMovieList]);
 
   const handleFilter = (type: Filter) => setFilterType(type);
 
@@ -72,8 +75,6 @@ const Movies = () => {
     ],
   };
 
-  if (!movies) return;
-
   return (
     <CenteredEl className="my-10" direction="col">
       <CenteredEl className="mt-20 mb-6">
@@ -93,24 +94,28 @@ const Movies = () => {
           <CarouselArrow direction="right" onClick={next} />
         </CenteredEl>
       </CenteredEl>
-      <Slider
-        className="w-full"
-        ref={(slider) => {
-          // @ts-expect-error:next-line
-          sliderRef = slider;
-        }}
-        {...settings}
-      >
-        {movies
-          .filter((item) => {
-            return filterType === null ? true : item.situacao === filterType;
-          })
-          .map((movie) => (
-            <div key={movie.tmdbId} className="mobile:px-1">
-              <MovieCard movie={movie} />
-            </div>
-          ))}
-      </Slider>
+      {isLoading || isFetching || !movies ? (
+        <MovieCardsSkeleton />
+      ) : (
+        <Slider
+          className="w-full"
+          ref={(slider) => {
+            // @ts-expect-error:next-line
+            sliderRef = slider;
+          }}
+          {...settings}
+        >
+          {movies
+            .filter((item) => {
+              return filterType === null ? true : item.situacao === filterType;
+            })
+            .map((movie) => (
+              <div key={movie.tmdbId} className="mobile:px-1">
+                <MovieCard movie={movie} />
+              </div>
+            ))}
+        </Slider>
+      )}
     </CenteredEl>
   );
 };

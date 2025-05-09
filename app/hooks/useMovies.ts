@@ -5,6 +5,7 @@ export const useMovies = () => {
   return useQuery({
     queryKey: ["movies"],
     queryFn: getMovies,
-    staleTime: 60000,
+    // staleTime: 60000,
+    staleTime: 0,
   });
 };
