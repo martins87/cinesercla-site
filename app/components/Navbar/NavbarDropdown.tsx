@@ -1,14 +1,14 @@
 "use client";
 
 import { FC, useState } from "react";
-import { motion } from "motion/react";
 import Image from "next/image";
+import { motion } from "motion/react";
+import { twMerge } from "tailwind-merge";
 
-import Typography from "../Typography";
-import CenteredElement from "../ui/CenteredElement";
+import CenteredElement from "@/app/components/ui/CenteredElement";
+import Typography from "@/app/components/Typography";
 import arrowDown from "@/app/assets/icons/arrow-down.svg";
 import arrowUp from "@/app/assets/icons/arrow-up.svg";
-import { twMerge } from "tailwind-merge";
 
 type NavbarDropdownProps = {
   title: string;

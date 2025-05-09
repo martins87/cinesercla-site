@@ -59,7 +59,7 @@ const Navbar = () => {
               items={[
                 { label: "EM CARTAZ", href: "/programacao" },
                 { label: "EM BREVE", href: "/programacao" },
-                { label: "PRÉ-VENDA", href: "/programacao" },
+                // { label: "PRÉ-VENDA", href: "/programacao" },
               ]}
               isOnTop={isScrolling}
             />

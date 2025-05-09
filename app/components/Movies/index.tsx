@@ -16,7 +16,6 @@ import MovieCardsSkeleton from "./MovieCardsSkeleton";
 const filters: { label: string; filter: MovieItemType }[] = [
   { label: "Em Cartaz", filter: "em-cartaz" },
   { label: "Em Breve", filter: "em-breve" },
-  { label: "Pré-Venda", filter: "pre-venda" },
 ];
 
 const Movies = () => {
@@ -39,7 +38,7 @@ const Movies = () => {
 
   const settings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
@@ -106,8 +105,10 @@ const Movies = () => {
           {...settings}
         >
           {movies
-            .filter((item) => {
-              return filterType === null ? true : item.situacao === filterType;
+            .filter((movie) => {
+              return filterType === "em-breve"
+                ? movie.situacao === "em-breve"
+                : true;
             })
             .map((movie) => (
               <div key={movie.tmdbId} className="mobile:px-1">
