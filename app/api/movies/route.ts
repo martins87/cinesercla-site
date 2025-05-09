@@ -7,7 +7,7 @@ export async function GET() {
   try {
     await connectToDatabase();
 
-    const movieList = await Movie.find();
+    const movieList = await Movie.find({ situacao: { $ne: "encerrado" } });
 
     return NextResponse.json(movieList);
   } catch (error) {

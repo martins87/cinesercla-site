@@ -4,18 +4,14 @@ import { FC } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-import {
-  // Movie,
-  TMDBMovie,
-} from "@/app/types/Movie";
+import { TMDBMovie } from "@/app/types/Movie";
+import CenteredElement from "@/app/components/ui/CenteredElement";
+import Typography from "@/app/components/Typography";
+import CarouselItem from "@/app/components/Carousel/CarouselItem";
 import GlassCard from "./GlassCard";
-import Typography from "../Typography";
-import CenteredElement from "../ui/CenteredElement";
 // import Rating from "../Rating";
-import CarouselItem from "../Carousel/CarouselItem";
 
 type MovieCardProps = {
-  // movie: Movie;
   movie: TMDBMovie;
 };
 
@@ -38,23 +34,28 @@ const MovieCard: FC<MovieCardProps> = ({ movie }) => {
             alt="movie cover"
             priority
           />
-          {/* <GlassCard label={movie.status} /> */}
-          <GlassCard label={movie.situacao} />
+          <GlassCard
+            label={
+              // movie.situacao
+              movie.situacao === "em-breve"
+                ? movie.release_date
+                : movie.situacao
+            }
+          />
           {/* <Rating rating={movie.rating} /> */}
         </div>
         <CenteredElement className="min-h-12" items="start">
-          <CenteredElement className="w-1/2" justify="start">
+          <CenteredElement className="w-3/5" justify="start">
             <Typography className="text-lg leading-6" weight="700" maxChar={24}>
               {movie.title}
             </Typography>
           </CenteredElement>
           <CenteredElement
-            className="w-1/2 gap-y-1"
+            className="w-2/5 gap-y-1"
             direction="col"
             items="end"
           >
             <Typography className="text-lg opacity-60" weight="400">
-              {/* {movie.genre} */}
               {mainGenre}
             </Typography>
           </CenteredElement>

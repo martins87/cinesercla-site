@@ -12,9 +12,9 @@ const GlassCard: FC<GlassCardProps> = ({ label }) => {
       <Typography className="tracking-wide">
         {label === "em-cartaz"
           ? "Em Cartaz"
-          : label === "em-breve"
-          ? "Em Breve"
-          : "Pré-venda"}
+          : label === "pre-venda"
+          ? "Pré-venda"
+          : label}
       </Typography>
     </div>
   );
