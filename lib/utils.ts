@@ -72,7 +72,7 @@ export function getMallsByState(stateId: string): Cinema[] {
 export const formatRuntime = (minutes: number) => {
   const hours = Math.floor(minutes / 60);
   const mins = minutes % 60;
-  return `${hours}h${mins}m`;
+  return `${hours}h ${mins}m`;
 };
 
 export function getAuditoriumSchedule(

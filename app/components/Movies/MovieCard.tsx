@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 import { TMDBMovie } from "@/app/types/Movie";
+import { formatRuntime } from "@/lib/utils";
 import CenteredElement from "@/app/components/ui/CenteredElement";
 import Typography from "@/app/components/Typography";
 import CarouselItem from "@/app/components/Carousel/CarouselItem";
@@ -44,19 +45,18 @@ const MovieCard: FC<MovieCardProps> = ({ movie }) => {
           />
           {/* <Rating rating={movie.rating} /> */}
         </div>
-        <CenteredElement className="min-h-12" items="start">
+        <CenteredElement items="start">
           <CenteredElement className="w-3/5" justify="start">
             <Typography className="text-lg leading-6" weight="700" maxChar={24}>
               {movie.title}
             </Typography>
           </CenteredElement>
-          <CenteredElement
-            className="w-2/5 gap-y-1"
-            direction="col"
-            items="end"
-          >
-            <Typography className="text-lg opacity-60" weight="400">
+          <CenteredElement className="w-2/5" direction="col" items="end">
+            <Typography className="text-lg opacity-60" weight="700">
               {mainGenre}
+            </Typography>
+            <Typography className="text-lg opacity-60 -mt-1" weight="400">
+              {formatRuntime(movie.runtime)}
             </Typography>
           </CenteredElement>
         </CenteredElement>
