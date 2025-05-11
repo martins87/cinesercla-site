@@ -34,7 +34,7 @@ export const getCinemasByCity = (cidade: string): Cinema[] => {
   return [];
 };
 
-export function getCidadeByCityId(cidadeId: string): Cidade[] {
+export const getCidadeByCityId = (cidadeId: string): Cidade[] => {
   for (const estado of cinemaData) {
     for (const cidade of estado.cidades) {
       if (cidade.id === cidadeId) {
@@ -43,9 +43,9 @@ export function getCidadeByCityId(cidadeId: string): Cidade[] {
     }
   }
   return [];
-}
+};
 
-export function getMallsByCity(cityId: string): Cinema[] {
+export const getMallsByCity = (cityId: string): Cinema[] => {
   for (const estado of cinemaData) {
     const cidade = estado.cidades.find((cidade) => cidade.id === cityId);
     if (cidade) {
@@ -53,9 +53,9 @@ export function getMallsByCity(cityId: string): Cinema[] {
     }
   }
   return [];
-}
+};
 
-export function getMallsByState(stateId: string): Cinema[] {
+export const getMallsByState = (stateId: string): Cinema[] => {
   const cinemasArr = [];
   for (const estado of cinemaData) {
     if (estado.id === stateId) {
@@ -67,7 +67,7 @@ export function getMallsByState(stateId: string): Cinema[] {
     }
   }
   return cinemasArr;
-}
+};
 
 export const formatRuntime = (minutes: number) => {
   const hours = Math.floor(minutes / 60);
@@ -75,9 +75,9 @@ export const formatRuntime = (minutes: number) => {
   return `${hours}h ${mins}m`;
 };
 
-export function getAuditoriumSchedule(
+export const getAuditoriumSchedule = (
   schedules: Schedule[]
-): AuditoriumSchedule[] {
+): AuditoriumSchedule[] => {
   return schedules.map((schedule) => {
     const horarios: string[] = [];
 
@@ -101,4 +101,43 @@ export function getAuditoriumSchedule(
       filmeUrl: schedule.filmeUrl,
     };
   });
-}
+};
+
+export const getTodayDateFormatted = () => {
+  const today = new Date();
+  const formatter = new Intl.DateTimeFormat("pt-BR", {
+    day: "numeric",
+    month: "long",
+    // year: "numeric",
+  });
+
+  const formattedDate = `Hoje, ${formatter.format(today)}`;
+
+  return formattedDate;
+};
+
+export const getNext7Days = () => {
+  const formatter = new Intl.DateTimeFormat("pt-BR", {
+    weekday: "short",
+    day: "2-digit",
+  });
+
+  const days = [];
+
+  for (let i = 0; i < 7; i++) {
+    const date = new Date();
+    date.setDate(date.getDate() + i);
+
+    const formatted = formatter.format(date);
+
+    const [weekday, day] = formatted.replace(".,", "").toUpperCase().split(" ");
+
+    days.push({
+      weekDay: i === 0 ? "HOJE" : weekday,
+      monthDay: day,
+      today: i === 0,
+    });
+  }
+
+  return days;
+};

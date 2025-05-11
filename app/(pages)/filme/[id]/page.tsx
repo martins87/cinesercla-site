@@ -17,9 +17,9 @@ import { useMovieStore } from "@/app/store/movie";
 const MoviePage = () => {
   const router = useRouter();
   const params = useParams();
-  const { id } = params as { id: string };
-  const [playing, setPlaying] = useState(false);
   const { getMovieById } = useMovieStore();
+  const [playing, setPlaying] = useState(false);
+  const { id } = params as { id: string };
   const movie = getMovieById(+id);
   console.log("movie", movie);
 
