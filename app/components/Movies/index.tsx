@@ -108,7 +108,8 @@ const Movies = () => {
             .filter((movie) => {
               return filterType === "em-breve"
                 ? movie.situacao === "em-breve"
-                : true;
+                : movie.situacao === "pre-venda" ||
+                    movie.situacao === "em-cartaz";
             })
             .map((movie) => (
               <div key={movie.tmdbId} className="mobile:px-1">
