@@ -103,17 +103,28 @@ export const getAuditoriumSchedule = (
   });
 };
 
-export const getTodayDateFormatted = () => {
+export const getDateFormatted = (date: Date): string => {
   const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const inputDate = new Date(date);
+  inputDate.setHours(0, 0, 0, 0);
+
+  const isToday = today.getTime() === inputDate.getTime();
+
   const formatter = new Intl.DateTimeFormat("pt-BR", {
+    weekday: "long",
     day: "numeric",
     month: "long",
-    // year: "numeric",
   });
 
-  const formattedDate = `Hoje, ${formatter.format(today)}`;
+  const formatted = formatter.format(date);
 
-  return formattedDate;
+  if (isToday) {
+    return `Hoje, ${formatted.replace(/^.*?,\s*/, "")}`;
+  }
+
+  return formatted.charAt(0).toUpperCase() + formatted.slice(1);
 };
 
 export const getNext7Days = () => {
