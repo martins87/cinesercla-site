@@ -13,6 +13,7 @@ import play from "@/app/assets/icons/play.svg";
 import CenteredElement from "@/app/components/ui/CenteredElement";
 import TrailerVideo from "@/app/components/Movie/TrailerVideo";
 import { useMovieStore } from "@/app/store/movie";
+import PremiereCard from "@/app/components/Movie/PremiereCard";
 
 const MoviePage = () => {
   const router = useRouter();
@@ -62,7 +63,12 @@ const MoviePage = () => {
       )}
       <Container className="mt-10 gap-y-14">
         <MovieInfo movie={movie} />
-        <MovieSession movie={movie} />
+        {movie.situacao === "em-breve" ? (
+          <PremiereCard releaseDate={movie.release_date} />
+        ) : (
+          <MovieSession movie={movie} />
+        )}
+
         {movieTrailer && <MovieTrailers trailers={movie.trailers!} />}
       </Container>
     </>

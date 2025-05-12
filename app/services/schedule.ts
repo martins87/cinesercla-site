@@ -22,6 +22,8 @@ export const createSchedule = async (scheduleList: Schedule[]) => {
 
 export const getSchedule = async (idFilme?: string, idUnidade?: string) => {
   try {
+    if (!idFilme || !idUnidade) return [];
+
     const queryParams =
       idFilme && idUnidade ? `?idFilme=${idFilme}&idUnidade=${idUnidade}` : "";
 
