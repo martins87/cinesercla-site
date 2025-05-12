@@ -3,8 +3,14 @@ import CenteredElement from "@/app/components/ui/CenteredElement";
 import Typography from "@/app/components/Typography";
 import CarouselArrow from "@/app/components/CarouselArrow";
 import Ticket from "./Ticket";
+import { FC } from "react";
 
-const Calendar = () => {
+type CalendarProps = {
+  selectedDate: Date;
+  onSelectDate: (date: Date) => void;
+};
+
+const Calendar: FC<CalendarProps> = ({ selectedDate, onSelectDate }) => {
   const days = getNext7Days();
 
   return (
@@ -17,16 +23,17 @@ const Calendar = () => {
         </CenteredElement>
       </CenteredElement>
       <CenteredElement className="gap-x-1" justify="start">
-        {days.map(({ weekDay, monthDay, today }) => (
+        {days.map(({ weekDay, monthDay, date }) => (
           <Ticket
             key={`${weekDay}-${monthDay}`}
             weekDay={weekDay}
             monthDay={monthDay}
-            today={today}
+            selected={selectedDate.toDateString() === date.toDateString()}
+            onClick={() => onSelectDate(date)}
           />
         ))}
       </CenteredElement>
-      <Typography className="text-xl mt-4">
+      <Typography className="text-xl mt-3">
         {getTodayDateFormatted()}
       </Typography>
     </CenteredElement>

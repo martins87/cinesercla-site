@@ -13,7 +13,6 @@ import PocketGuide from "@/app/components/PocketGuideModal/PocketGuide";
 import Prices from "@/app/components/PricesModal/Prices";
 import MovieSchedule from "./MovieSchedule";
 import arrow_down from "@/app/assets/icons/arrow-down-red.svg";
-import Calendar from "./Calendar";
 import CinemaModal from "../CinemaModal";
 import { useLocation } from "@/app/store/location";
 
@@ -135,8 +134,6 @@ const MovieSession: FC<MovieSessionProps> = ({ movie }) => {
               secondary
             />
           </CenteredElement>
-          <Calendar />
-
           {movieSchedule && <MovieSchedule movieSchedule={movieSchedule} />}
           <Typography className="text-sm h-full text-white/65" weight="400">
             A Rede Cinesercla reserva o direito de alterar a programação sem

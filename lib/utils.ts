@@ -135,22 +135,37 @@ export const getNext7Days = () => {
     days.push({
       weekDay: i === 0 ? "HOJE" : weekday,
       monthDay: day,
-      today: i === 0,
+      date,
     });
   }
 
   return days;
 };
 
+// export const filterValidSchedules = <T extends { dataFim: string }>(
+//   schedules: T[],
+//   date: Date
+// ): T[] => {
+//   date.setHours(0, 0, 0, 0);
+
+//   return schedules.filter((schedule) => {
+//     const dataFimDate = new Date(schedule.dataFim);
+//     dataFimDate.setHours(0, 0, 0, 0);
+//     return dataFimDate >= date;
+//   });
+// };
+
 export const filterValidSchedules = <T extends { dataFim: string }>(
-  schedules: T[]
+  schedules: T[],
+  date: Date
 ): T[] => {
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
+  const formatDate = (d: Date) => d.toISOString().split("T")[0];
+  const selected = formatDate(date);
 
   return schedules.filter((schedule) => {
     const dataFimDate = new Date(schedule.dataFim);
-    dataFimDate.setHours(0, 0, 0, 0);
-    return dataFimDate >= today;
+    dataFimDate.setDate(dataFimDate.getDate() + 1);
+    const dataFimFormatted = formatDate(dataFimDate);
+    return dataFimFormatted >= selected;
   });
 };
