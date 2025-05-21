@@ -28,6 +28,7 @@ const MovieSchedule: FC<MovieScheduleProps> = ({ movieSchedule }) => {
             <AuditoriumSchedule
               key={index}
               auditoriumSchedule={auditoriumSchedule}
+              selectedDate={selectedDate}
             />
           ))
         ) : (

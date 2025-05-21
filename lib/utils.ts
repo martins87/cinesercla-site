@@ -180,3 +180,16 @@ export const filterValidSchedules = <T extends { dataFim: string }>(
     return dataFimFormatted >= selected;
   });
 };
+
+export const getScheduleUrl = (
+  baseUrl: string,
+  date: Date,
+  sala: string,
+  horario: string
+): string => {
+  const dia = date.toLocaleDateString("pt-BR").replace(/\//g, "");
+
+  const sessao = `SALA${sala}_${horario.replace(":", "")}`;
+
+  return `${baseUrl}?&dia=${dia}&sessao=${sessao}`;
+};

@@ -5,6 +5,7 @@ import Image from "next/image";
 
 import { TMDBMovie } from "@/app/types/Movie";
 import { useSchedule } from "@/app/hooks/useSchedule";
+import { useLocation } from "@/app/store/location";
 import CenteredElement from "@/app/components/ui/CenteredElement";
 import Typography from "@/app/components/Typography";
 import Button from "@/app/components/ui/Button";
@@ -12,9 +13,8 @@ import Modal from "@/app/components/ui/Modal";
 import PocketGuide from "@/app/components/PocketGuideModal/PocketGuide";
 import Prices from "@/app/components/PricesModal/Prices";
 import MovieSchedule from "./MovieSchedule";
-import arrow_down from "@/app/assets/icons/arrow-down-red.svg";
 import CinemaModal from "../CinemaModal";
-import { useLocation } from "@/app/store/location";
+import arrow_down from "@/app/assets/icons/arrow-down-red.svg";
 
 type MovieSessionProps = {
   movie: TMDBMovie;
@@ -28,6 +28,8 @@ const MovieSession: FC<MovieSessionProps> = ({ movie }) => {
     useState<boolean>(false);
   const [pricesModalOpen, setPricesModalOpen] = useState<boolean>(false);
   const [cinemaModalOpen, setCinemaModalOpen] = useState<boolean>(false);
+
+  console.log("movie schedule", movieSchedule);
 
   const openPocketGuideModal = () => setPocketGuideModalOpen(true);
 
