@@ -191,5 +191,5 @@ export const getScheduleUrl = (
 
   const sessao = `SALA${sala}_${horario.replace(":", "")}`;
 
-  return `${baseUrl}?&dia=${dia}&sessao=${sessao}`;
+  return `${baseUrl}&dia=${dia}&sessao=${sessao}`;
 };
