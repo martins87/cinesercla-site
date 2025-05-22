@@ -2,28 +2,30 @@
 
 import { useState } from "react";
 
-import { BomboniereItem, BomboniereItemType } from "@/app/types/BomboniereItem";
+import { BomboniereItemType } from "@/app/types/BomboniereItem";
+import { Filter } from "@/app/types/Filter";
+import { Bomboniere as BomboniereItem } from "@/app/types/bomboniere";
+import { useBomboniere } from "@/app/hooks/useBomboniere";
 import BgImageContainer from "@/app/components/ui/BgImageContainer";
 import BomboniereCard from "@/app/components/BomboniereCard";
 import Container from "@/app/components/ui/Container";
 import CenteredEl from "@/app/components/ui/CenteredElement";
-import { bomboniereItems } from "../../constants/bomboniere";
 import CarouselArrow from "@/app/components/CarouselArrow";
-// import OfertasPromocionais from "./OfertasPromocionais";
 import HeaderFilter from "../../components/HeaderFilter";
 import Bg from "../../assets/images/backgrounds/bomboniere.png";
-import { Filter } from "@/app/types/Filter";
 
 const filters: { label: string; filter: BomboniereItemType }[] = [
   { label: "Tudo", filter: null },
-  { label: "Pipocas", filter: "pipoca" },
-  { label: "Bebidas", filter: "bebida" },
-  { label: "Doces", filter: "doce" },
-  { label: "Combos", filter: "combo" },
+  { label: "Pipocas", filter: "pipocas" },
+  { label: "Bebidas", filter: "bebidas" },
+  { label: "Doces", filter: "doces" },
+  { label: "Combos", filter: "combos" },
 ];
 
 const Bomboniere = () => {
   const [filterType, setFilterType] = useState<Filter>(null);
+  const { data: productList } = useBomboniere();
+  console.log("product list", productList);
 
   const handleFilter = (type: Filter) => setFilterType(type);
 
@@ -48,15 +50,19 @@ const Bomboniere = () => {
             <CarouselArrow direction="right" onClick={() => {}} />
           </CenteredEl>
         </CenteredEl>
-        <CenteredEl className="grid grid-cols-1 md:grid-cols-3 tablet:grid-cols-4 gap-2">
-          {bomboniereItems
-            .filter((item) => {
-              return filterType === null ? true : item.type === filterType;
-            })
-            .map((item: BomboniereItem) => (
-              <BomboniereCard key={item.id} item={item} />
-            ))}
-        </CenteredEl>
+        {productList && (
+          <CenteredEl className="grid grid-cols-1 md:grid-cols-3 tablet:grid-cols-4 gap-2">
+            {productList
+              .filter((product) => {
+                return filterType === null
+                  ? true
+                  : product.categoria === filterType;
+              })
+              .map((product: BomboniereItem) => (
+                <BomboniereCard key={product._id} product={product} />
+              ))}
+          </CenteredEl>
+        )}
         {/* <OfertasPromocionais /> */}
       </Container>
     </>
