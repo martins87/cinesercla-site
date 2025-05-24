@@ -4,16 +4,18 @@ import { useState } from "react";
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
 
-import GradientOverlay from "@/app/components/GradientOverlay";
+import { useMovieStore } from "@/app/store/movie";
 import Container from "@/app/components/ui/Container";
+import CenteredElement from "@/app/components/ui/CenteredElement";
+import GradientOverlay from "@/app/components/GradientOverlay";
 import MovieInfo from "@/app/components/Movie/MovieInfo";
 import MovieSession from "@/app/components/Movie/MovieSession";
 import MovieTrailers from "@/app/components/Movie/MovieTrailers";
-import play from "@/app/assets/icons/play.svg";
-import CenteredElement from "@/app/components/ui/CenteredElement";
 import TrailerVideo from "@/app/components/Movie/TrailerVideo";
-import { useMovieStore } from "@/app/store/movie";
 import PremiereCard from "@/app/components/Movie/PremiereCard";
+import NoBackdropImage from "@/app/components/Movie/NoBackdropImage";
+import BackdropImage from "@/app/components/Movie/BackdropImage";
+import play from "@/app/assets/icons/play.svg";
 
 const MoviePage = () => {
   const router = useRouter();
@@ -30,6 +32,7 @@ const MoviePage = () => {
   }
 
   const movieTrailer = movie.trailers && movie.trailers.length > 0;
+  const noBackdropImg = movie.backdrop_path === null;
 
   return (
     <>
@@ -43,13 +46,12 @@ const MoviePage = () => {
           <GradientOverlay hero />
         </CenteredElement>
       ) : (
-        <CenteredElement className="relative h-screen">
-          <Image
-            className="object-cover tablet:object-fill transition-all duration-300 ease-in-out"
-            src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
-            fill
-            alt="Image"
-          />
+        <CenteredElement className="relative h-screen bg-[#D8D8D8]">
+          {noBackdropImg ? (
+            <NoBackdropImage />
+          ) : (
+            <BackdropImage backdropPath={movie.backdrop_path} />
+          )}
           {movieTrailer && (
             <Image
               className="absolute top-1/2 opacity-75 -m-10 hover:cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out z-10"
