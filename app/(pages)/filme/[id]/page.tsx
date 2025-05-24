@@ -46,7 +46,7 @@ const MoviePage = () => {
           <GradientOverlay hero />
         </CenteredElement>
       ) : (
-        <CenteredElement className="relative h-screen bg-[#D8D8D8]">
+        <CenteredElement className="relative h-screen bg-[#D8D8D8] dark:bg-[#1F2A31]">
           {noBackdropImg ? (
             <NoBackdropImage />
           ) : (
