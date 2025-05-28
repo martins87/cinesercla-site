@@ -7,20 +7,19 @@ import { useBannerStore } from "@/app/store/banner";
 import { useMovieStore } from "@/app/store/movie";
 import CenteredEl from "../ui/CenteredElement";
 import Arrow from "../CarouselArrow";
-import Typography from "../Typography";
 import HeroBanner from "./HeroBanner";
+import HeroSkeleton from "./HeroSkeleton";
 
 const Hero = () => {
   let sliderRef = useRef(null);
   const { bannerList, fetchBannerList } = useBannerStore();
   const { fetchMovieList } = useMovieStore();
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
   console.log("banner list", bannerList);
 
   useEffect(() => {
     const fetchBanners = async () => {
       try {
-        setLoading(true);
         await fetchBannerList();
       } catch (error) {
         console.error("Failed to fetch banners", error);
@@ -35,7 +34,6 @@ const Hero = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        setLoading(true);
         await fetchMovieList();
       } catch (error) {
         console.error("Failed to fetch movies", error);
@@ -67,7 +65,9 @@ const Hero = () => {
 
   return (
     <>
-      {!loading ? (
+      {loading ? (
+        <HeroSkeleton />
+      ) : (
         <div className="relative mb-10">
           <Slider
             ref={(slider) => {
@@ -88,8 +88,6 @@ const Hero = () => {
             <Arrow direction="right" onClick={next} />
           </CenteredEl>
         </div>
-      ) : (
-        <Typography>Carregando banners...</Typography>
       )}
     </>
   );
