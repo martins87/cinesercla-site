@@ -10,15 +10,19 @@ import GradientOverlay from "@/app/components/GradientOverlay";
 import Dot from "@/app/components/Dot";
 import DarkerBackground from "./DarkerBackground";
 import Play from "@/app/assets/icons/play.svg";
+import { useRouter } from "next/navigation";
 
 type HeroBannerProps = {
   banner: Banner;
 };
 
 const HeroBanner: FC<HeroBannerProps> = ({ banner }) => {
+  const router = useRouter();
   const { getMovieById } = useMovieStore();
   const idFilme = banner.idFilme;
   const movie = getMovieById(idFilme);
+
+  const handleClick = () => router.push(`/filme/${movie?.tmdbId}`);
 
   return (
     <div className="relative h-screen">
@@ -60,7 +64,7 @@ const HeroBanner: FC<HeroBannerProps> = ({ banner }) => {
                 {movie?.overview}
               </Typography>
               <div className="flex items-center justify-start gap-x-2">
-                <Button label="COMPRAR" />
+                <Button label="COMPRAR" onClick={handleClick} />
                 <Image width={48} src={Play} alt="play icon" />
               </div>
             </div>
