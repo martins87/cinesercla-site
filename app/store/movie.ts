@@ -1,16 +1,24 @@
 import { create } from "zustand";
 import { TMDBMovie } from "../types/Movie";
+import { getMovies } from "../services/movies";
 
 type MovieStore = {
   movieList: TMDBMovie[];
-  setMovieList: (movies: TMDBMovie[]) => void;
-  getMovieById: (id: number) => TMDBMovie | undefined;
+  hasFetched: boolean;
+  fetchMovieList: () => Promise<void>;
+  getMovieById: (id: string) => TMDBMovie | undefined;
 };
 
 export const useMovieStore = create<MovieStore>((set, get) => ({
   movieList: [],
-  setMovieList: (movies) => set({ movieList: movies }),
-  getMovieById: (id: number) => {
-    return get().movieList.find((movie) => movie.tmdbId === id);
+  hasFetched: false,
+  fetchMovieList: async () => {
+    if (get().hasFetched) return;
+
+    const list = await getMovies();
+
+    set({ movieList: list, hasFetched: true });
   },
+  getMovieById: (id: string) =>
+    get().movieList.find((movie) => movie.idFilme === id),
 }));

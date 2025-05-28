@@ -6,7 +6,6 @@ import Slider from "react-slick";
 import { MovieItemType } from "@/app/types/MovieItem";
 import { Filter } from "@/app/types/Filter";
 import { useMovieStore } from "@/app/store/movie";
-import { useMovies } from "@/app/hooks/useMovies";
 import CenteredEl from "@/app/components/ui/CenteredElement";
 import HeaderFilter from "@/app/components/HeaderFilter";
 import CarouselArrow from "@/app/components/CarouselArrow";
@@ -20,13 +19,24 @@ const filters: { label: string; filter: MovieItemType }[] = [
 
 const Movies = () => {
   let sliderRef = useRef(null);
+  const { movieList, fetchMovieList } = useMovieStore();
   const [filterType, setFilterType] = useState<Filter>("em-cartaz");
-  const { data: movies, isLoading, isFetching } = useMovies();
-  const { setMovieList } = useMovieStore();
+  const [loading, setLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    if (movies) setMovieList(movies);
-  }, [movies, setMovieList]);
+    const fetchMovies = async () => {
+      try {
+        setLoading(true);
+        await fetchMovieList();
+      } catch (error) {
+        console.error("Failed to fetch movies", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchMovies();
+  }, [fetchMovieList]);
 
   const handleFilter = (type: Filter) => setFilterType(type);
 
@@ -93,7 +103,7 @@ const Movies = () => {
           <CarouselArrow direction="right" onClick={next} />
         </CenteredEl>
       </CenteredEl>
-      {isLoading || isFetching || !movies ? (
+      {loading || !movieList ? (
         <MovieCardsSkeleton />
       ) : (
         <Slider
@@ -104,7 +114,7 @@ const Movies = () => {
           }}
           {...settings}
         >
-          {movies
+          {movieList
             .filter((movie) => {
               return filterType === "em-breve"
                 ? movie.situacao === "em-breve"
