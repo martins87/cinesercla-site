@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { Dispatch, FC, SetStateAction } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
@@ -11,9 +11,15 @@ import Play from "@/app/assets/icons/play.svg";
 
 type HeroMovieDetailsProps = {
   movie: TMDBMovie;
+  movieTrailer: boolean | undefined;
+  setPlayingFn: Dispatch<SetStateAction<boolean>>;
 };
 
-const HeroMovieDetails: FC<HeroMovieDetailsProps> = ({ movie }) => {
+const HeroMovieDetails: FC<HeroMovieDetailsProps> = ({
+  movie,
+  movieTrailer,
+  setPlayingFn,
+}) => {
   const router = useRouter();
   const handleClick = () => router.push(`/filme/${movie?.tmdbId}`);
 
@@ -42,7 +48,14 @@ const HeroMovieDetails: FC<HeroMovieDetailsProps> = ({ movie }) => {
             </Typography>
             <div className="flex items-center justify-start gap-x-2">
               <Button label="COMPRAR" onClick={handleClick} />
-              <Image width={48} src={Play} alt="play icon" />
+              {movieTrailer && (
+                <Image
+                  width={48}
+                  src={Play}
+                  alt="play icon"
+                  onClick={() => setPlayingFn(true)}
+                />
+              )}
             </div>
           </div>
         </div>

@@ -15,6 +15,7 @@ const Hero = () => {
   const { bannerList, fetchBannerList } = useBannerStore();
   const { fetchMovieList } = useMovieStore();
   const [loading, setLoading] = useState<boolean>(true);
+  const [playing, setPlaying] = useState<boolean>(false);
   console.log("banner list", bannerList);
 
   useEffect(() => {
@@ -57,7 +58,7 @@ const Hero = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: !playing,
     autoplaySpeed: 7000,
     arrows: false,
     pauseOnHover: false,
@@ -77,7 +78,12 @@ const Hero = () => {
             {...settings}
           >
             {bannerList.map((banner) => (
-              <HeroBanner key={banner._id} banner={banner} />
+              <HeroBanner
+                key={banner._id}
+                banner={banner}
+                playing={playing}
+                setPlaying={setPlaying}
+              />
             ))}
           </Slider>
           <CenteredEl
