@@ -21,12 +21,11 @@ const Movies = () => {
   let sliderRef = useRef(null);
   const { movieList, fetchMovieList } = useMovieStore();
   const [filterType, setFilterType] = useState<Filter>("em-cartaz");
-  const [loading, setLoading] = useState<boolean>(false);
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        setLoading(true);
         await fetchMovieList();
       } catch (error) {
         console.error("Failed to fetch movies", error);

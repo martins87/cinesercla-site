@@ -7,8 +7,8 @@ const HeroSkeleton = () => {
   return (
     <div className="relative h-screen">
       <GradientOverlay hero />
+      {/* <div className="absolute top-0 left-0 w-screen h-screen bg-[#D8D8D8] dark:bg-[#3B3B3B]"> */}
       <div className="absolute top-0 left-0 w-screen h-screen bg-[#D8D8D8] dark:bg-[#49575A]">
-        {/* <div className="absolute top-0 left-0 w-screen h-screen bg-[#D8D8D8] dark:bg-[#3B3B3B]"> */}
         <Container className="">
           <CenteredElement items="start" direction="col">
             <CenteredElement
