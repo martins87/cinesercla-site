@@ -20,7 +20,10 @@ const MovieCard: FC<MovieCardProps> = ({ movie }) => {
   const router = useRouter();
   const mainGenre = movie.genres ? movie.genres.split(",")[0] : "";
 
-  const handleClick = () => router.push(`/filme/${movie.idFilme}`);
+  const handleClick = () =>
+    router.push(
+      `/filme/${movie.situacao === "em-breve" ? movie.tmdbId : movie.idFilme}`
+    );
 
   return (
     <CarouselItem onClick={handleClick}>

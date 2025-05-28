@@ -10,7 +10,7 @@ import MoviePageSkeleton from "@/app/components/Movie/MoviePageSkeleton";
 
 const MoviePage = () => {
   const params = useParams();
-  const { getMovieById, fetchMovieList } = useMovieStore();
+  const { getMovieById, getMovieByTMDBId, fetchMovieList } = useMovieStore();
   const [movie, setMovie] = useState<TMDBMovie | undefined>(undefined);
   const [loading, setLoading] = useState<boolean>(true);
   const { id } = params as { id: string };
@@ -20,8 +20,13 @@ const MoviePage = () => {
       try {
         await fetchMovieList();
         const foundMovie = getMovieById(id);
+        if (!foundMovie) {
+          const emBreveMovie = getMovieByTMDBId(+id);
+          setMovie(emBreveMovie);
+        } else {
+          setMovie(foundMovie);
+        }
         console.log("found movie", foundMovie);
-        setMovie(foundMovie);
       } catch (error) {
         console.error("Failed to fetch movies", error);
       } finally {
@@ -30,7 +35,7 @@ const MoviePage = () => {
     };
 
     loadMovie();
-  }, [fetchMovieList, getMovieById, id]);
+  }, [fetchMovieList, getMovieById, getMovieByTMDBId, id]);
 
   if (loading) return <MoviePageSkeleton />;
 
