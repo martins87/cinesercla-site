@@ -5,8 +5,8 @@ import { notFound, useParams } from "next/navigation";
 
 import { TMDBMovie } from "@/app/types/Movie";
 import { useMovieStore } from "@/app/store/movie";
-import Typography from "@/app/components/Typography";
 import MoviePageClient from "@/app/components/Movie/MoviePage";
+import MoviePageSkeleton from "@/app/components/Movie/MoviePageSkeleton";
 
 const MoviePage = () => {
   const params = useParams();
@@ -32,7 +32,7 @@ const MoviePage = () => {
     loadMovie();
   }, [fetchMovieList, getMovieById, id]);
 
-  if (loading) return <Typography>Carregando filme...</Typography>;
+  if (loading) return <MoviePageSkeleton />;
 
   if (!movie) notFound();
 
