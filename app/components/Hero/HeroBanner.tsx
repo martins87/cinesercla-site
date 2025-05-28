@@ -2,14 +2,14 @@ import { FC } from "react";
 import Image from "next/image";
 
 import { Banner } from "@/app/types/banner";
-import Typography from "../Typography";
-import DarkerBackground from "./DarkerBackground";
-import Container from "../ui/Container";
-import Play from "../../assets/icons/play.svg";
-import GradientOverlay from "../GradientOverlay";
-import Dot from "../Dot";
-import Button from "../ui/Button";
 import { useMovieStore } from "@/app/store/movie";
+import Container from "@/app/components/ui/Container";
+import Button from "@/app/components/ui/Button";
+import Typography from "../Typography";
+import GradientOverlay from "@/app/components/GradientOverlay";
+import Dot from "@/app/components/Dot";
+import DarkerBackground from "./DarkerBackground";
+import Play from "@/app/assets/icons/play.svg";
 
 type HeroBannerProps = {
   banner: Banner;
@@ -32,7 +32,7 @@ const HeroBanner: FC<HeroBannerProps> = ({ banner }) => {
         />
       </DarkerBackground>
       <GradientOverlay hero />
-      <div className="absolute top-0 left-0 h-screen z-20">
+      <div className="absolute top-0 left-0 w-screen h-screen z-20">
         <Container>
           <div className="w-full flex flex-col">
             <div className="sm:w-1/2 flex flex-col gap-y-4">
