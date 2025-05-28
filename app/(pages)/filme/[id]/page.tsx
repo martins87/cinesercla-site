@@ -23,7 +23,7 @@ const MoviePage = () => {
   const { getMovieById } = useMovieStore();
   const [playing, setPlaying] = useState(false);
   const { id } = params as { id: string };
-  const movie = getMovieById(+id);
+  const movie = getMovieById(id);
   console.log("movie", movie);
 
   if (!movie) {
