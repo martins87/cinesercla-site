@@ -121,7 +121,7 @@ const Movies = () => {
                     movie.situacao === "em-cartaz";
             })
             .map((movie) => (
-              <div key={movie.tmdbId} className="mobile:px-1">
+              <div key={movie.idFilme} className="mobile:px-1">
                 <MovieCard movie={movie} />
               </div>
             ))}

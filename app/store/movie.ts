@@ -7,7 +7,6 @@ type MovieStore = {
   hasFetched: boolean;
   fetchMovieList: () => Promise<void>;
   getMovieById: (id: string) => TMDBMovie | undefined;
-  getMovieByTMDBId: (id: number) => TMDBMovie | undefined;
 };
 
 export const useMovieStore = create<MovieStore>((set, get) => ({
@@ -22,6 +21,4 @@ export const useMovieStore = create<MovieStore>((set, get) => ({
   },
   getMovieById: (id: string) =>
     get().movieList.find((movie) => movie.idFilme === id),
-  getMovieByTMDBId: (id: number) =>
-    get().movieList.find((movie) => movie.tmdbId === id),
 }));

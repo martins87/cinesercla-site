@@ -21,7 +21,7 @@ const HeroMovieDetails: FC<HeroMovieDetailsProps> = ({
   setPlayingFn,
 }) => {
   const router = useRouter();
-  const handleClick = () => router.push(`/filme/${movie?.tmdbId}`);
+  const handleClick = () => router.push(`/filme/${movie?.idFilme}`);
 
   return (
     <div className="absolute top-0 left-0 w-screen h-screen z-20">

@@ -20,10 +20,10 @@ import play from "@/app/assets/icons/play.svg";
 const MoviePage = () => {
   const router = useRouter();
   const params = useParams();
-  const { getMovieByTMDBId } = useMovieStore();
+  const { getMovieById } = useMovieStore();
   const [playing, setPlaying] = useState(false);
   const { id } = params as { id: string };
-  const movie = getMovieByTMDBId(+id);
+  const movie = getMovieById(id);
   console.log("movie", movie);
 
   if (!movie) {
