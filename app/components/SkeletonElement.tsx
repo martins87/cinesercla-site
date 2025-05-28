@@ -9,8 +9,7 @@ const SkeletonElement: FC<SkeletonElementProps> = ({ className }) => {
   return (
     <div
       className={twMerge(
-        "rounded-md bg-[#B8B8B8] dark:bg-[#3B3B3B]",
-        // "rounded-md bg-[#B8B8B8] dark:bg-[#49575A]",
+        "rounded-md bg-[#B8B8B8] dark:bg-[#A8A8A8]",
         className
       )}
     />
