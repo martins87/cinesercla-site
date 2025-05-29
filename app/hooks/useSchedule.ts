@@ -2,10 +2,10 @@ import { useQuery } from "@tanstack/react-query";
 
 import { getSchedule } from "../services/schedule";
 
-export const useSchedule = (idFilme?: string, idUnidade?: string) => {
+export const useSchedule = (idUnidade: string, idFilme: string) => {
   return useQuery({
-    queryKey: ["schedule", idFilme, idUnidade],
-    queryFn: () => getSchedule(idFilme, idUnidade),
+    queryKey: ["schedule", idUnidade, idFilme],
+    queryFn: () => getSchedule(idUnidade, idFilme),
     staleTime: 60000,
   });
 };

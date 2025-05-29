@@ -8,13 +8,16 @@ export async function GET(request: NextRequest) {
     await connectToDatabase();
 
     const { searchParams } = new URL(request.url);
-    const idFilme = searchParams.get("idFilme");
     const idUnidade = searchParams.get("idUnidade");
+    const idFilme = searchParams.get("idFilme");
 
     let query = {};
 
-    if (idFilme && idUnidade) {
-      query = { idFilme, idUnidade };
+    if (idUnidade) {
+      query = { ...query, idUnidade };
+    }
+    if (idFilme) {
+      query = { ...query, idFilme };
     }
 
     const scheduleList = await Schedule.find(query).lean();

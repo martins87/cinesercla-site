@@ -20,12 +20,13 @@ export const createSchedule = async (scheduleList: Schedule[]) => {
   }
 };
 
-export const getSchedule = async (idFilme?: string, idUnidade?: string) => {
+export const getSchedule = async (idUnidade: string, idFilme: string) => {
   try {
-    if (!idFilme || !idUnidade) return [];
-
-    const queryParams =
-      idFilme && idUnidade ? `?idFilme=${idFilme}&idUnidade=${idUnidade}` : "";
+    let queryParams = "?";
+    queryParams = idUnidade
+      ? queryParams + `&idUnidade=${idUnidade}`
+      : queryParams;
+    queryParams = idFilme ? queryParams + `&idFilme=${idFilme}` : queryParams;
 
     const response = await fetch(`/api/schedule${queryParams}`, {
       method: "GET",
