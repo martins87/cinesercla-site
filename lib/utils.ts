@@ -7,6 +7,7 @@ import { Cinema } from "@/app/types/Cinema";
 import { Schedule } from "@/app/types/Schedule";
 import { AuditoriumSchedule } from "@/app/types/AuditoriumSchedule";
 import { cinemaData } from "@/app/constants/cinemas";
+import { MovieSchedule } from "@/app/types/Movie";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -192,4 +193,24 @@ export const getScheduleUrl = (
   const sessao = `SALA${sala}_${horario.replace(":", "")}`;
 
   return `${baseUrl}&dia=${dia}&sessao=${sessao}`;
+};
+
+export const groupScheduleByMovie = (schedule: Schedule[]): MovieSchedule[] => {
+  if (schedule.length === 0) return [];
+
+  let movieIndex = 0;
+  let idFilme = schedule[0].idFilme;
+  const movieScheduleList: MovieSchedule[] = [{ idFilme, scheduleList: [] }];
+
+  for (let i = 0; i < schedule.length; i++) {
+    if (schedule[i].idFilme === idFilme) {
+      movieScheduleList[movieIndex].scheduleList.push(schedule[i]);
+    } else {
+      movieIndex++;
+      idFilme = schedule[i].idFilme;
+      movieScheduleList.push({ idFilme, scheduleList: [schedule[i]] });
+    }
+  }
+
+  return movieScheduleList;
 };

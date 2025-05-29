@@ -1,5 +1,6 @@
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { MovieItemType } from "./MovieItem";
+import { Schedule } from "./Schedule";
 
 export type Trailer = {
   videoThumb: StaticImport;
@@ -48,4 +49,9 @@ export type TMDBMovie = {
   trailers?: Trailer[];
   cast: string;
   idFilme: string;
+};
+
+export type MovieSchedule = {
+  idFilme: string;
+  scheduleList: Schedule[];
 };
