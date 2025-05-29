@@ -13,7 +13,6 @@ type CitySelectorProps = {
 };
 
 const CitySelector: FC<CitySelectorProps> = ({ isOnTop, onClick }) => {
-  // @ts-expect-error:next-line
   const { city } = useLocation();
 
   return (

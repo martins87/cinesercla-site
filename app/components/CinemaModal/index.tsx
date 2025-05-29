@@ -30,7 +30,6 @@ enum Steps {
 }
 
 const CinemaModal: FC<CinemaModalProps> = ({ closeFn }) => {
-  // @ts-expect-error:next-line
   const { updateCinema, updateCity } = useLocation();
   const [step, setStep] = useState<Steps>(Steps.Initial);
   const [estado, setEstado] = useState<string>(INITIAL_LABEL);
