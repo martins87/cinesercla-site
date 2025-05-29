@@ -21,7 +21,6 @@ type MovieSessionProps = {
 };
 
 const MovieSession: FC<MovieSessionProps> = ({ movie }) => {
-  // @ts-expect-error:next-line
   const { city, idCinema } = useLocation();
   const { data: movieSchedule } = useSchedule(movie.idFilme, idCinema);
   const [pocketGuideModalOpen, setPocketGuideModalOpen] =
