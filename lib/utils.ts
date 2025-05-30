@@ -154,19 +154,6 @@ export const getNext7Days = () => {
   return days;
 };
 
-// export const filterValidSchedules = <T extends { dataFim: string }>(
-//   schedules: T[],
-//   date: Date
-// ): T[] => {
-//   date.setHours(0, 0, 0, 0);
-
-//   return schedules.filter((schedule) => {
-//     const dataFimDate = new Date(schedule.dataFim);
-//     dataFimDate.setHours(0, 0, 0, 0);
-//     return dataFimDate >= date;
-//   });
-// };
-
 export const filterValidSchedules = <T extends { dataFim: string }>(
   schedules: T[],
   date: Date
@@ -176,7 +163,7 @@ export const filterValidSchedules = <T extends { dataFim: string }>(
 
   return schedules.filter((schedule) => {
     const dataFimDate = new Date(schedule.dataFim);
-    dataFimDate.setDate(dataFimDate.getDate() + 1);
+    dataFimDate.setDate(dataFimDate.getDate());
     const dataFimFormatted = formatDate(dataFimDate);
     return dataFimFormatted >= selected;
   });
