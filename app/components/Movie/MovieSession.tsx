@@ -21,8 +21,9 @@ type MovieSessionProps = {
 };
 
 const MovieSession: FC<MovieSessionProps> = ({ movie }) => {
+  console.log("[id] movie", movie);
   const { city, idCinema } = useLocation();
-  const { data: movieSchedule } = useSchedule(movie.idFilme, idCinema);
+  const { data: movieSchedule } = useSchedule(idCinema, movie.idFilme);
   const [pocketGuideModalOpen, setPocketGuideModalOpen] =
     useState<boolean>(false);
   const [pricesModalOpen, setPricesModalOpen] = useState<boolean>(false);

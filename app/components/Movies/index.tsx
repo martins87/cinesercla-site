@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { FC, useRef, useState } from "react";
 import Slider from "react-slick";
 
 import { MovieItemType } from "@/app/types/MovieItem";
@@ -17,25 +17,14 @@ const filters: { label: string; filter: MovieItemType }[] = [
   { label: "Em Breve", filter: "em-breve" },
 ];
 
-const Movies = () => {
+type MoviesProps = {
+  loading: boolean;
+};
+
+const Movies: FC<MoviesProps> = ({ loading }) => {
   let sliderRef = useRef(null);
-  const { movieList, fetchMovieList } = useMovieStore();
+  const { movieList } = useMovieStore();
   const [filterType, setFilterType] = useState<Filter>("em-cartaz");
-  const [loading, setLoading] = useState<boolean>(true);
-
-  useEffect(() => {
-    const fetchMovies = async () => {
-      try {
-        await fetchMovieList();
-      } catch (error) {
-        console.error("Failed to fetch movies", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchMovies();
-  }, [fetchMovieList]);
 
   const handleFilter = (type: Filter) => setFilterType(type);
 

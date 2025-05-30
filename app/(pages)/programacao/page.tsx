@@ -12,7 +12,6 @@ import MovieScheduleCard from "@/app/components/Movie/MovieScheduleCard";
 import CenteredElement from "@/app/components/ui/CenteredElement";
 import Typography from "@/app/components/Typography";
 import { useMovieStore } from "@/app/store/movie";
-// import SkeletonElement from "@/app/components/SkeletonElement";
 
 const Programacao = () => {
   const { fetchMovieList } = useMovieStore();
@@ -57,7 +56,6 @@ const Programacao = () => {
           {`Guia de Bolso para ${getDateFormatted(new Date()).toLowerCase()}`}
         </Typography>
         {loading ? (
-          // <SkeletonElement className="w-full h-[200px] rounded-xl" />
           <Typography
             className="text-xl text-black dark:text-white"
             weight="400"

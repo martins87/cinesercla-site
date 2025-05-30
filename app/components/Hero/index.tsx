@@ -1,50 +1,23 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { FC, useRef, useState } from "react";
 import Slider from "react-slick";
 
 import { useBannerStore } from "@/app/store/banner";
-import { useMovieStore } from "@/app/store/movie";
 import CenteredEl from "../ui/CenteredElement";
 import Arrow from "../CarouselArrow";
 import HeroBanner from "./HeroBanner";
 import HeroSkeleton from "./HeroSkeleton";
 
-const Hero = () => {
+type HeroProps = {
+  loading: boolean;
+};
+
+const Hero: FC<HeroProps> = ({ loading }) => {
   let sliderRef = useRef(null);
-  const { bannerList, fetchBannerList } = useBannerStore();
-  const { fetchMovieList } = useMovieStore();
-  const [loading, setLoading] = useState<boolean>(true);
+  const { bannerList } = useBannerStore();
   const [playing, setPlaying] = useState<boolean>(false);
   console.log("banner list", bannerList);
-
-  useEffect(() => {
-    const fetchBanners = async () => {
-      try {
-        await fetchBannerList();
-      } catch (error) {
-        console.error("Failed to fetch banners", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchBanners();
-  }, [fetchBannerList]);
-
-  useEffect(() => {
-    const fetchMovies = async () => {
-      try {
-        await fetchMovieList();
-      } catch (error) {
-        console.error("Failed to fetch movies", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchMovies();
-  }, [fetchMovieList]);
 
   // @ts-expect-error:next-line
   const next = () => sliderRef.slickNext();
