@@ -22,7 +22,11 @@ const MovieCard: FC<MovieCardProps> = ({ movie }) => {
 
   const handleClick = () =>
     router.push(
-      `/filme/${movie.situacao === "em-breve" ? movie.tmdbId : movie.idFilme}`
+      `/filme/${
+        movie.situacao === "em-breve" || movie.situacao === "pre-venda"
+          ? movie.tmdbId
+          : movie.idFilme
+      }`
     );
 
   return (
