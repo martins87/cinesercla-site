@@ -55,7 +55,7 @@ const MoviePageClient: FC<MoviePageClientProps> = ({ movie }) => {
       )}
       <Container className="mt-10 gap-y-14">
         <MovieInfo movie={movie} />
-        {movie.situacao === "em-breve" ? (
+        {movie.situacao === "em-breve" || movie.idFilme === undefined ? (
           <PremiereCard releaseDate={movie.release_date} />
         ) : (
           <MovieSession movie={movie} />
