@@ -10,7 +10,7 @@ import CenteredElement from "@/app/components/ui/CenteredElement";
 import Typography from "@/app/components/Typography";
 import CarouselItem from "@/app/components/Carousel/CarouselItem";
 import GlassCard from "./GlassCard";
-// import Rating from "../Rating";
+import Rating from "../Rating";
 
 type MovieCardProps = {
   movie: TMDBMovie;
@@ -35,22 +35,22 @@ const MovieCard: FC<MovieCardProps> = ({ movie }) => {
         <div className="relative min-h-72 max-h-72 lg:min-h-80 lg:max-h-80 xl:min-h-96 xl:max-h-96 flex flex-1 object-center">
           <Image
             src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-            // src={movie.cover!}
             className="object-cover rounded-xl"
             sizes="(min-width: 1024px) 20vw, 50vw"
             fill
             alt="movie cover"
             priority
           />
-          <GlassCard
-            label={
-              // movie.situacao
-              movie.situacao === "em-breve"
-                ? movie.release_date
-                : movie.situacao
-            }
-          />
-          {/* <Rating rating={movie.rating} /> */}
+          {(movie.situacao || movie.release_date) && (
+            <GlassCard
+              label={
+                movie.situacao === "em-breve"
+                  ? movie.release_date
+                  : movie.situacao
+              }
+            />
+          )}
+          {movie.classificacao && <Rating rating={movie.classificacao} />}
         </div>
         <CenteredElement items="start">
           <CenteredElement className="w-3/5" justify="start">
