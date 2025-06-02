@@ -8,6 +8,7 @@ import Button from "@/app/components/ui/Button";
 import Typography from "@/app/components/Typography";
 import Dot from "@/app/components/Dot";
 import Play from "@/app/assets/icons/play.svg";
+import Rating from "../Rating";
 
 type HeroMovieDetailsProps = {
   movie: TMDBMovie;
@@ -34,11 +35,12 @@ const HeroMovieDetails: FC<HeroMovieDetailsProps> = ({
             >
               {movie?.title}
             </Typography>
-            <div className="w-full flex items-center justify-start gap-x-1 ">
+            <div className="relative w-full flex items-center justify-start gap-x-1">
               <Typography className="text-base tablet:text-lg">
-                {movie?.genres}
+                {movie?.genres.split(",")[0]}
               </Typography>
               <Dot className="text-base tablet:text-lg" />
+              <Rating rating={movie?.classificacao} />
             </div>
             <Typography
               className="text-base tablet:text-xl opacity-85"

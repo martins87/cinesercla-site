@@ -50,7 +50,7 @@ const MovieCard: FC<MovieCardProps> = ({ movie }) => {
               }
             />
           )}
-          <Rating rating={movie.classificacao} />
+          <Rating rating={movie.classificacao} absolute />
         </div>
         <CenteredElement items="start">
           <CenteredElement className="w-3/5" justify="start">

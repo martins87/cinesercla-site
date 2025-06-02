@@ -1,5 +1,6 @@
 import { FC } from "react";
 import Image from "next/image";
+import { twMerge } from "tailwind-merge";
 
 import cLivre from "@/app/assets/icons/classificacao-indicativa/Classificacao_livre.svg";
 import c10 from "@/app/assets/icons/classificacao-indicativa/Classificacao_10.svg";
@@ -11,9 +12,10 @@ import cND from "@/app/assets/icons/classificacao-indicativa/Classificacao_n_def
 
 type RatingProps = {
   rating: string | undefined;
+  absolute?: boolean;
 };
 
-const Rating: FC<RatingProps> = ({ rating }) => {
+const Rating: FC<RatingProps> = ({ rating, absolute }) => {
   const ratingIcon =
     rating === "L"
       ? cLivre
@@ -30,7 +32,7 @@ const Rating: FC<RatingProps> = ({ rating }) => {
       : cND;
 
   return (
-    <div className="absolute top-2 right-1 rounded-md px-4 py-2">
+    <div className={twMerge("scale-110", absolute && "absolute top-4 right-4")}>
       <Image src={ratingIcon} alt="" />
     </div>
   );
