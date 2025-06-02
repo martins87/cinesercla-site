@@ -3,7 +3,6 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 import { TMDBMovie } from "@/app/types/Movie";
-import { truncate } from "@/lib/utils";
 import Container from "@/app/components/ui/Container";
 import Button from "@/app/components/ui/Button";
 import Typography from "@/app/components/Typography";
@@ -45,7 +44,7 @@ const HeroMovieDetails: FC<HeroMovieDetailsProps> = ({
               className="text-base tablet:text-xl opacity-85"
               weight="400"
             >
-              {truncate(movie?.overview, 300)}
+              {movie?.overview}
             </Typography>
             <div className="flex items-center justify-start gap-x-2">
               <Button label="COMPRAR" onClick={handleClick} />
