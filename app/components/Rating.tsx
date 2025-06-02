@@ -1,34 +1,37 @@
-import React, { FC } from "react";
-import { twMerge } from "tailwind-merge";
+import { FC } from "react";
+import Image from "next/image";
 
-import CenteredElement from "./ui/CenteredElement";
-import Typography from "./Typography";
+import cLivre from "@/app/assets/icons/classificacao-indicativa/Classificacao_livre.svg";
+import c10 from "@/app/assets/icons/classificacao-indicativa/Classificacao_10.svg";
+import c12 from "@/app/assets/icons/classificacao-indicativa/Classificacao_12.svg";
+import c14 from "@/app/assets/icons/classificacao-indicativa/Classificacao_14.svg";
+import c16 from "@/app/assets/icons/classificacao-indicativa/Classificacao_16.svg";
+import c18 from "@/app/assets/icons/classificacao-indicativa/Classificacao_18.svg";
+import cND from "@/app/assets/icons/classificacao-indicativa/Classificacao_n_definida.svg";
 
 type RatingProps = {
   rating: string | undefined;
-  className?: string;
 };
 
-const Rating: FC<RatingProps> = ({ rating, className }) => {
+const Rating: FC<RatingProps> = ({ rating }) => {
+  const ratingIcon =
+    rating === "L"
+      ? cLivre
+      : rating === "10"
+      ? c10
+      : rating === "12"
+      ? c12
+      : rating === "14"
+      ? c14
+      : rating === "16"
+      ? c16
+      : rating === "18"
+      ? c18
+      : cND;
+
   return (
     <div className="absolute top-2 right-1 rounded-md px-4 py-2">
-      <CenteredElement
-        className={twMerge(
-          "w-8 aspect-square rounded-md",
-          rating === "L"
-            ? "bg-[#008000]"
-            : rating === "10"
-            ? "bg-[#0000FF]"
-            : rating === "14"
-            ? "bg-[#FFA500]"
-            : rating === "16"
-            ? "bg-[#FF0000]"
-            : "bg-[#000000]",
-          className
-        )}
-      >
-        <Typography className="text-base tablet:text-lg">{rating}</Typography>
-      </CenteredElement>
+      <Image src={ratingIcon} alt="" />
     </div>
   );
 };
