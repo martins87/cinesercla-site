@@ -41,6 +41,10 @@ const HeroMovieDetails: FC<HeroMovieDetailsProps> = ({
               </Typography>
               <Dot className="text-base tablet:text-lg" />
               <Rating rating={movie?.classificacao} />
+              <Dot className="text-base tablet:text-lg" />
+              <Typography className="text-base tablet:text-lg">
+                {movie?.runtime} min
+              </Typography>
             </div>
             <Typography
               className="text-base tablet:text-xl opacity-85"
