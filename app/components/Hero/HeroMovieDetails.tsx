@@ -43,7 +43,6 @@ const HeroMovieDetails: FC<HeroMovieDetailsProps> = ({
             <Typography
               className="text-base tablet:text-xl opacity-85"
               weight="400"
-              maxChar={300}
             >
               {movie?.overview}
             </Typography>
