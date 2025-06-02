@@ -44,7 +44,12 @@ const HeroMovieDetails: FC<HeroMovieDetailsProps> = ({
               className="text-base tablet:text-xl opacity-85"
               weight="400"
             >
-              {movie?.overview}
+              {movie &&
+              movie.overview &&
+              movie.overview.length &&
+              movie.overview.length > 300
+                ? movie.overview.slice(0, 300) + "..."
+                : movie?.overview}
             </Typography>
             <div className="flex items-center justify-start gap-x-2">
               <Button label="COMPRAR" onClick={handleClick} />
