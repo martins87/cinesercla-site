@@ -10,11 +10,13 @@ import Auditorium from "./Auditorium";
 type AuditoriumScheduleProps = {
   auditoriumSchedule: AS;
   selectedDate: Date;
+  small?: boolean;
 };
 
 const AuditoriumSchedule: FC<AuditoriumScheduleProps> = ({
   auditoriumSchedule,
   selectedDate,
+  small,
 }) => {
   return (
     <CenteredElement direction="col" items="start" className="gap-y-2">
@@ -34,7 +36,11 @@ const AuditoriumSchedule: FC<AuditoriumScheduleProps> = ({
             rel="noopener noreferrer"
             target="_blank"
           >
-            <Auditorium number={auditoriumSchedule.sala} time={horario} />
+            <Auditorium
+              number={auditoriumSchedule.sala}
+              time={horario}
+              small={small}
+            />
           </Link>
         ))}
       </CenteredElement>

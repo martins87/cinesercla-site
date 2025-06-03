@@ -65,6 +65,7 @@ const MovieScheduleCard: FC<MovieScheduleCardProps> = ({ movieSchedule }) => {
                 key={index}
                 auditoriumSchedule={auditoriumSchedule}
                 selectedDate={new Date()}
+                small
               />
             ))
           ) : (
