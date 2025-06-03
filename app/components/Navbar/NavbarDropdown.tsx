@@ -2,6 +2,7 @@
 
 import { FC, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "motion/react";
 import { twMerge } from "tailwind-merge";
 
@@ -85,19 +86,20 @@ const NavbarDropdown: FC<NavbarDropdownProps> = ({ title, items, isOnTop }) => {
           </CenteredElement>
         </CenteredElement>
         {items.map((item, index) => (
-          <motion.a
+          <motion.div
             key={index}
-            href={item.href}
             className="block px-4 py-2 text-sm text-white transition-colors hover:text-gray-300"
             variants={itemVariants}
           >
-            <Typography
-              className="text-xs tracking-wider text-white/50 hover:text-white transition-colors duration-300 ease-in-out"
-              weight="700"
-            >
-              {item.label}
-            </Typography>
-          </motion.a>
+            <Link href={item.href}>
+              <Typography
+                className="text-xs tracking-wider text-white/50 hover:text-white transition-colors duration-300 ease-in-out"
+                weight="700"
+              >
+                {item.label}
+              </Typography>
+            </Link>
+          </motion.div>
         ))}
       </motion.div>
     </div>
