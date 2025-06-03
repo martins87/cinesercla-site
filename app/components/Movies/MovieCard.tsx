@@ -11,6 +11,7 @@ import Typography from "@/app/components/Typography";
 import CarouselItem from "@/app/components/Carousel/CarouselItem";
 import GlassCard from "./GlassCard";
 import Rating from "../Rating";
+import noPoster from "@/app/assets/images/no_poster.png";
 
 type MovieCardProps = {
   movie: TMDBMovie;
@@ -19,6 +20,9 @@ type MovieCardProps = {
 const MovieCard: FC<MovieCardProps> = ({ movie }) => {
   const router = useRouter();
   const mainGenre = movie.genres ? movie.genres.split(",")[0] : "";
+  const poster = movie.poster_path
+    ? `https://image.tmdb.org/t/p/original${movie.poster_path}`
+    : noPoster;
 
   const handleClick = () =>
     router.push(
@@ -34,7 +38,7 @@ const MovieCard: FC<MovieCardProps> = ({ movie }) => {
       <div className="flex flex-col gap-y-2 bg-[#3B3B3B] rounded-2xl p-4">
         <div className="relative min-h-72 max-h-72 lg:min-h-80 lg:max-h-80 xl:min-h-96 xl:max-h-96 flex flex-1 object-center">
           <Image
-            src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+            src={poster}
             className="object-cover rounded-xl"
             sizes="(min-width: 1024px) 20vw, 50vw"
             fill
