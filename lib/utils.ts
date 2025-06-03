@@ -104,7 +104,7 @@ export const getAuditoriumSchedule = (
   });
 };
 
-export const getDateFormatted = (date: Date): string => {
+export const getFullDate = (date: Date): string => {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
@@ -126,6 +126,14 @@ export const getDateFormatted = (date: Date): string => {
   }
 
   return formatted.charAt(0).toUpperCase() + formatted.slice(1);
+};
+
+export const getFormattedDate = (date: Date): string => {
+  const year = date.getFullYear();
+  const month = `${date.getMonth() + 1}`.padStart(2, "0"); // Months are 0-indexed
+  const day = `${date.getDate()}`.padStart(2, "0");
+
+  return `${year}-${month}-${day}`;
 };
 
 export const getNext7Days = () => {

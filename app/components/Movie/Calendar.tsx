@@ -1,4 +1,4 @@
-import { getDateFormatted, getNext7Days } from "@/lib/utils";
+import { getFullDate, getNext7Days } from "@/lib/utils";
 import CenteredElement from "@/app/components/ui/CenteredElement";
 import Typography from "@/app/components/Typography";
 import CarouselArrow from "@/app/components/CarouselArrow";
@@ -34,7 +34,7 @@ const Calendar: FC<CalendarProps> = ({ selectedDate, onSelectDate }) => {
         ))}
       </CenteredElement>
       <Typography className="text-xl mt-3">
-        {getDateFormatted(selectedDate)}
+        {getFullDate(selectedDate)}
       </Typography>
     </CenteredElement>
   );
