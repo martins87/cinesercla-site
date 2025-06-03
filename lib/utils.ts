@@ -136,6 +136,40 @@ export const getFormattedDate = (date: Date): string => {
   return `${year}-${month}-${day}`;
 };
 
+export const formatShortDate = (date: Date): string => {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  const inputDate = new Date(date);
+  inputDate.setHours(0, 0, 0, 0);
+
+  const isToday = today.getTime() === inputDate.getTime();
+
+  if (isToday) {
+    return "Hoje";
+  }
+
+  const formatter = new Intl.DateTimeFormat("pt-BR", {
+    weekday: "long",
+    day: "numeric",
+    month: "short",
+  });
+
+  // Example: "sexta-feira, 23 de mai."
+  let formatted = formatter.format(inputDate);
+
+  // Capitalize the first letter
+  formatted = formatted.charAt(0).toUpperCase() + formatted.slice(1);
+
+  // Remove "-feira" from weekdays like "sexta-feira" -> "Sexta"
+  formatted = formatted.replace(/-feira/g, "");
+
+  // Remove "de" to match your example format
+  formatted = formatted.replace(/\sde\s/g, " ");
+
+  return formatted;
+};
+
 export const getNext7Days = () => {
   const formatter = new Intl.DateTimeFormat("pt-BR", {
     weekday: "short",

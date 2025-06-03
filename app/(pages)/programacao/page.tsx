@@ -7,6 +7,7 @@ import { Schedule } from "@/app/types/Schedule";
 import { useSchedule } from "@/app/hooks/useSchedule";
 import { useLocation } from "@/app/store/location";
 import {
+  formatShortDate,
   getFormattedDate,
   getFullDate,
   getNext7Days,
@@ -22,11 +23,11 @@ const Programacao = () => {
   const { fetchMovieList } = useMovieStore();
   const { idCinema } = useLocation();
   const { data: scheduleList } = useSchedule(idCinema, "");
-  console.log("schedule list", scheduleList);
   const [loading, setLoading] = useState<boolean>(true);
   const [movies, setMovies] = useState<MovieSchedule[]>([]);
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
   const days = getNext7Days();
+  // console.log("schedule list", scheduleList);
 
   useEffect(() => {
     const fetchMovies = async () => {
@@ -54,7 +55,7 @@ const Programacao = () => {
 
       const groupedMovies = groupScheduleByMovie(exibicoes);
       setMovies(groupedMovies);
-      console.log("grouped movies by schedule", groupedMovies);
+      // console.log("grouped movies by schedule", groupedMovies);
     }
   }, [idCinema, scheduleList, selectedDate]);
 
@@ -74,24 +75,30 @@ const Programacao = () => {
           >
             {`Guia de Bolso para ${getFullDate(selectedDate).toLowerCase()}`}
           </Typography>
-          <CenteredElement className="gap-x-2" justify="between">
+          <CenteredElement className="gap-x-2" justify="around">
             {days.map(({ weekDay, monthDay, date }) => (
               <Typography
                 key={`${weekDay}-${monthDay}`}
-                className="text-md mt-3 hover:cursor-pointer"
+                className="text-md text-black dark:text-white mt-3 hover:cursor-pointer"
                 weight="700"
                 onClick={() => handleSelectDate(date)}
               >
-                {getFullDate(date)}
+                {formatShortDate(date)}
               </Typography>
             ))}
           </CenteredElement>
-          {movies.map((movieSchedule) => (
-            <MovieScheduleCard
-              key={movieSchedule.idFilme}
-              movieSchedule={movieSchedule}
-            />
-          ))}
+          {movies.length > 0 ? (
+            movies.map((movieSchedule) => (
+              <MovieScheduleCard
+                key={movieSchedule.idFilme}
+                movieSchedule={movieSchedule}
+              />
+            ))
+          ) : (
+            <Typography className="text-xl text-black dark:text-white mt-6">
+              Sem programação para esta data.
+            </Typography>
+          )}
         </CenteredElement>
       )}
     </Container>
