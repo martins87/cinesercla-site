@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 import { TMDBMovie } from "@/app/types/Movie";
-import { formatRuntime } from "@/lib/utils";
 import CenteredElement from "@/app/components/ui/CenteredElement";
 import Typography from "@/app/components/Typography";
 import CarouselItem from "@/app/components/Carousel/CarouselItem";
@@ -35,7 +34,7 @@ const MovieCard: FC<MovieCardProps> = ({ movie }) => {
 
   return (
     <CarouselItem onClick={handleClick}>
-      <div className="flex flex-col gap-y-2 bg-[#3B3B3B] rounded-2xl p-4">
+      <div className="flex flex-col gap-y-4 bg-[#3B3B3B] rounded-2xl p-4">
         <div className="relative min-h-72 max-h-72 lg:min-h-80 lg:max-h-80 xl:min-h-96 xl:max-h-96 flex flex-1 object-center">
           <Image
             src={poster}
@@ -56,18 +55,26 @@ const MovieCard: FC<MovieCardProps> = ({ movie }) => {
           )}
           <Rating rating={movie.classificacao} absolute />
         </div>
-        <CenteredElement items="start">
+        <CenteredElement items="start" className="min-h-14">
           <CenteredElement className="w-3/5" justify="start">
-            <Typography className="text-lg leading-6" weight="700" maxChar={24}>
+            <Typography className="text-lg leading-5" weight="700">
               {movie.title}
             </Typography>
           </CenteredElement>
-          <CenteredElement className="w-2/5" direction="col" items="end">
-            <Typography className="text-lg opacity-60" weight="700">
+          <CenteredElement
+            className="w-2/5 min-h-14"
+            direction="col"
+            items="end"
+            justify="between"
+          >
+            <Typography
+              className="text-right text-lg leading-4 opacity-60"
+              weight="700"
+            >
               {mainGenre}
             </Typography>
             <Typography className="text-lg opacity-60 -mt-1" weight="400">
-              {formatRuntime(movie.runtime)}
+              {movie.runtime} min
             </Typography>
           </CenteredElement>
         </CenteredElement>
