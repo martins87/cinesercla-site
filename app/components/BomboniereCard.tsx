@@ -20,7 +20,7 @@ const BomboniereCard: FC<BomboniereCardProps> = ({ product }) => {
         />
       </div>
       <CenteredEl
-        className="absolute w-4/5 h-[84px] bottom-6 px-4 py-2 rounded-2xl bg-[#D9D9D9]"
+        className="absolute w-4/5 h-14 bottom-6 px-4 py-2 rounded-2xl bg-[#D9D9D9]"
         direction="col"
         items="start"
         justify="between"
@@ -28,9 +28,9 @@ const BomboniereCard: FC<BomboniereCardProps> = ({ product }) => {
         <Typography className="text-lg text-black leading-5" weight="700">
           {product.nome}
         </Typography>
-        <Typography className="text-black" weight="400">
+        {/* <Typography className="text-black" weight="400">
           {product.preco}
-        </Typography>
+        </Typography> */}
       </CenteredEl>
     </CenteredEl>
   );
