@@ -58,7 +58,7 @@ const Navbar = () => {
               title="PROGRAMAÇÃO"
               items={[
                 { label: "EM CARTAZ", href: "/programacao" },
-                { label: "EM BREVE", href: "/programacao" },
+                { label: "EM BREVE", href: "/em-breve" },
                 // { label: "PRÉ-VENDA", href: "/programacao" },
               ]}
               isOnTop={isScrolling}

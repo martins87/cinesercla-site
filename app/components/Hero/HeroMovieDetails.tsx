@@ -61,6 +61,7 @@ const HeroMovieDetails: FC<HeroMovieDetailsProps> = ({
               <Button label="COMPRAR" onClick={handleClick} />
               {movieTrailer && (
                 <Image
+                  className="hover:cursor-pointer hover:scale-105 transition-all duration-200 ease-in-out"
                   width={48}
                   src={Play}
                   alt="play icon"
