@@ -10,6 +10,8 @@ import Button from "@/app/components/ui/Button";
 import Typography from "@/app/components/Typography";
 import AuditoriumSchedule from "./AuditoriumSchedule";
 import noPoster from "@/app/assets/images/no_poster.png";
+import Rating from "../Rating";
+import HorizontalLine from "../Footer/HorizontalLine";
 
 type MovieScheduleCardProps = {
   movieSchedule: MovieSchedule;
@@ -43,7 +45,7 @@ const MovieScheduleCard: FC<MovieScheduleCardProps> = ({ movieSchedule }) => {
         <CenteredElement className="">
           {/* movie data inside column */}
           <CenteredElement
-            className="mr-auto"
+            className="mr-auto gap-y-2"
             items="start"
             justify="start"
             direction="col"
@@ -51,12 +53,19 @@ const MovieScheduleCard: FC<MovieScheduleCardProps> = ({ movieSchedule }) => {
             <Typography className="text-2xl" weight="700">
               {movie!.title}
             </Typography>
-            <Typography className="text-lg" weight="400">
-              {movie!.genres}
-            </Typography>
+            <CenteredElement className="gap-x-4" justify="start">
+              <Typography className="text-lg" weight="400">
+                {movie!.genres.split(",")[0]}
+              </Typography>
+              <Rating rating={movie.classificacao} />
+              <Typography className="text-lg" weight="400">
+                {movie!.runtime} min
+              </Typography>
+            </CenteredElement>
           </CenteredElement>
           <Button label="PREÇOS" secondary />
         </CenteredElement>
+        <HorizontalLine className="my-4 bg-white/20 dark:bg-white/20" />
         <CenteredElement className="gap-y-6" justify="start" direction="col">
           {validScheduleList.length > 0 ? (
             validScheduleList.map((auditoriumSchedule, index: number) => (
